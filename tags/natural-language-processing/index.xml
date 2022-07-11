@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Natural Language Processing on Andy Cao</title>
+    <link>https://andysucao.github.io/Andy_Portfolio/tags/natural-language-processing/</link>
+    <description>Recent content in Natural Language Processing on Andy Cao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Jul 2022 08:58:08 -0400</lastBuildDate><atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/natural-language-processing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project 2: Natural Language Processing with Tweets</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-2/</link>
+      <pubDate>Mon, 11 Jul 2022 08:58:08 -0400</pubDate>
+      
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-2/</guid>
+      <description> </description>
+    </item>
+    
+  </channel>
+</rss>

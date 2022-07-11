@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Science Portfolio on Andy Cao</title>
+    <link>https://andysucao.github.io/Andy_Portfolio/</link>
+    <description>Recent content in Data Science Portfolio on Andy Cao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Jul 2022 08:58:08 -0400</lastBuildDate><atom:link href="https://andysucao.github.io/Andy_Portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project 1: Used Car Buying Guide</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-1/</link>
+      <pubDate>Mon, 11 Jul 2022 08:58:08 -0400</pubDate>
+      
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-1/</guid>
+      <description>===========================================================
+The interactive version of figure can be found at
+/images/project-1-4.html
+https://plotly.com/python/interactive-html-export/</description>
+    </item>
+    
+    <item>
+      <title>Project 2: Natural Language Processing with Tweets</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-2/</link>
+      <pubDate>Mon, 11 Jul 2022 08:58:08 -0400</pubDate>
+      
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-2/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>Project 3: Segmenting the Connecticut Wholesale Liquor Market</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-3/</link>
+      <pubDate>Mon, 11 Jul 2022 07:58:08 -0400</pubDate>
+      
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-3/</guid>
+      <description> Segmenting the Connecticut Wholesale Liquor Market 1 Business Objective 2 Data Ingestion 3 Visualization Choropleth Time Series 4 Machine Learning Feature Engineering Feature selection Clustering Interpretation 5 Deliverable </description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://andysucao.github.io/Andy_Portfolio/contact/</guid>
+      <description> Email: andy.su.cao@gmail.com Phone: (203) 500-5096 LinkedIn: https://www.linkedin.com/in/cao/ GitHub: https://github.com/andysucao </description>
+    </item>
+    
+  </channel>
+</rss>
