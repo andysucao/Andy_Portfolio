@@ -8,33 +8,61 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 02 Mar 2017 12:00:00 -0500</lastBuildDate><atom:link href="https://andysucao.github.io/Andy_Portfolio/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Project 1: Used Car Buying Guide</title>
+      <title>Project 0: Template &amp; Misc</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-0/</link>
+      <pubDate>Mon, 11 Jul 2022 08:58:08 -0400</pubDate>
+      
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-0/</guid>
+      <description>conda activate YTstreamlit cd /23-Data Scientist/340-Data_Professor/120-Andy_Portfolio_src hugo server ctrl + c hugo -D https://unsplash.com/
+https://pixabay.com/
+https://themes.gohugo.io/
+I also recommend checking out the Data Professor&amp;rsquo;s YouTube Channel. He has great tutorials and an awesome virtual internship series: / @dataprofessor
+A data science portfolio website can greatly help your career opportunities. It is a clean way to showcase your data science projects, and it also shows that you can clearly communicate your work and findings.</description>
+    </item>
+    
+    <item>
+      <title>Project 1: Natural Language Processing</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-1/</link>
       <pubDate>Mon, 11 Jul 2022 08:58:08 -0400</pubDate>
       
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-1/</guid>
-      <description>===========================================================
-The interactive version of figure can be found at
-/images/project-1-4.html
-https://plotly.com/python/interactive-html-export/</description>
+      <description></description>
     </item>
     
     <item>
-      <title>Project 2: Natural Language Processing with Tweets</title>
+      <title>Project 2: Segmenting the Connecticut Wholesale Liquor Market</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-2/</link>
-      <pubDate>Mon, 11 Jul 2022 08:58:08 -0400</pubDate>
+      <pubDate>Mon, 11 Jul 2022 07:58:08 -0400</pubDate>
       
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-2/</guid>
-      <description> </description>
+      <description></description>
     </item>
     
     <item>
-      <title>Project 3: Segmenting the Connecticut Wholesale Liquor Market</title>
+      <title>Project 3: Time Series Analysis</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-3/</link>
       <pubDate>Mon, 11 Jul 2022 07:58:08 -0400</pubDate>
       
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-3/</guid>
-      <description> Segmenting the Connecticut Wholesale Liquor Market 1 Business Objective 2 Data Ingestion 3 Visualization Choropleth Time Series 4 Machine Learning Feature Engineering Feature selection Clustering Interpretation 5 Deliverable </description>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Project 4: Computer Vision</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-4/</link>
+      <pubDate>Mon, 11 Jul 2022 07:58:08 -0400</pubDate>
+      
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Project 5: Q&amp;A system</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-5/</link>
+      <pubDate>Mon, 11 Jul 2022 07:58:08 -0400</pubDate>
+      
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-5/</guid>
+      <description></description>
     </item>
     
   </channel>
