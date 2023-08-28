@@ -1,46 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>time series analysis on Andy Cao</title>
+    <title>Time Series Analysis on Andy Cao</title>
     <link>https://andysucao.github.io/Andy_Portfolio/tags/time-series-analysis/</link>
-    <description>Recent content in time series analysis on Andy Cao</description>
+    <description>Recent content in Time Series Analysis on Andy Cao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Jul 2022 07:58:08 -0400</lastBuildDate><atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/time-series-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Aug 2023 09:58:08 -0400</lastBuildDate><atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/time-series-analysis/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Project 2: Segmenting the Connecticut Wholesale Liquor Market</title>
-      <link>https://andysucao.github.io/Andy_Portfolio/post/project-2/</link>
-      <pubDate>Mon, 11 Jul 2022 07:58:08 -0400</pubDate>
+      <title>Project 6: Time Series Analysis</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-6/</link>
+      <pubDate>Sun, 20 Aug 2023 09:58:08 -0400</pubDate>
       
-      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Project 3: Time Series Analysis</title>
-      <link>https://andysucao.github.io/Andy_Portfolio/post/project-3/</link>
-      <pubDate>Mon, 11 Jul 2022 07:58:08 -0400</pubDate>
-      
-      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Project 4: Computer Vision</title>
-      <link>https://andysucao.github.io/Andy_Portfolio/post/project-4/</link>
-      <pubDate>Mon, 11 Jul 2022 07:58:08 -0400</pubDate>
-      
-      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-4/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Project 5: Q&amp;A system</title>
-      <link>https://andysucao.github.io/Andy_Portfolio/post/project-5/</link>
-      <pubDate>Mon, 11 Jul 2022 07:58:08 -0400</pubDate>
-      
-      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-5/</guid>
-      <description></description>
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-6/</guid>
+      <description>* Statistical Inference * Clustering Analysis * SARIMA / VAR / Holt-Winters * Random Forest / XGBoost * LSTM * SVR / GP / HA / MA </description>
     </item>
     
   </channel>

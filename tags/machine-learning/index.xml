@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning on Andy Cao</title>
+    <link>https://andysucao.github.io/Andy_Portfolio/tags/machine-learning/</link>
+    <description>Recent content in Machine Learning on Andy Cao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Aug 2023 09:58:08 -0400</lastBuildDate><atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project 6: Time Series Analysis</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-6/</link>
+      <pubDate>Sun, 20 Aug 2023 09:58:08 -0400</pubDate>
+      
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-6/</guid>
+      <description>* Statistical Inference * Clustering Analysis * SARIMA / VAR / Holt-Winters * Random Forest / XGBoost * LSTM * SVR / GP / HA / MA </description>
+    </item>
+    
+    <item>
+      <title>Project 7: Logistic Regression</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-7/</link>
+      <pubDate>Sun, 20 Aug 2023 08:58:08 -0400</pubDate>
+      
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-7/</guid>
+      <description> tel customer churn probability prediction - Logistic Regression / Decision Tree / Ensemble (Random Forest, Adaboost, GBDT) / MLP </description>
+    </item>
+    
+    <item>
+      <title>Project 8: Predict Real Estate Prices in Beijing</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-8/</link>
+      <pubDate>Sun, 20 Aug 2023 07:58:08 -0400</pubDate>
+      
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-8/</guid>
+      <description>1. Project Overview In this project, we will build a linear regression model to help people better understand the factors that can affect the price of a house in Beijing.
+The main sections of this article are: (1) Exploratory Data Analysis (EDA), (2) Developing Linear Regression model for predicting real estate price, and (3) Use that model to make predictions. The Pytyhon Notebook containing the complete model development process can be found at Google Drive.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Logistic Regression on Andy Cao</title>
+    <link>https://andysucao.github.io/Andy_Portfolio/tags/logistic-regression/</link>
+    <description>Recent content in Logistic Regression on Andy Cao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Aug 2023 08:58:08 -0400</lastBuildDate><atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/logistic-regression/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project 7: Logistic Regression</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-7/</link>
+      <pubDate>Sun, 20 Aug 2023 08:58:08 -0400</pubDate>
+      
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-7/</guid>
+      <description> tel customer churn probability prediction - Logistic Regression / Decision Tree / Ensemble (Random Forest, Adaboost, GBDT) / MLP </description>
+    </item>
+    
+  </channel>
+</rss>

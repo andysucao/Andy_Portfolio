@@ -2,63 +2,113 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://andysucao.github.io/Andy_Portfolio/tags/data-analytics/</loc>
-    <lastmod>2022-07-11T08:58:08-04:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://andysucao.github.io/Andy_Portfolio/</loc>
-    <lastmod>2022-07-11T08:58:08-04:00</lastmod>
+    <lastmod>2023-08-20T14:58:08-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://andysucao.github.io/Andy_Portfolio/tags/natural-language-processing/</loc>
-    <lastmod>2022-07-11T08:58:08-04:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://andysucao.github.io/Andy_Portfolio/tags/nlp/</loc>
-    <lastmod>2022-07-11T08:58:08-04:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://andysucao.github.io/Andy_Portfolio/post/project-0/</loc>
-    <lastmod>2022-07-11T08:58:08-04:00</lastmod>
+    <lastmod>2023-08-20T14:58:08-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://andysucao.github.io/Andy_Portfolio/post/project-1/</loc>
-    <lastmod>2022-07-11T08:58:08-04:00</lastmod>
+    <lastmod>2023-08-20T14:58:08-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://andysucao.github.io/Andy_Portfolio/tags/</loc>
-    <lastmod>2022-07-11T08:58:08-04:00</lastmod>
+    <lastmod>2023-08-20T14:58:08-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://andysucao.github.io/Andy_Portfolio/post/project-2/</loc>
-    <lastmod>2022-07-11T07:58:08-04:00</lastmod>
+    <lastmod>2023-08-20T13:58:08-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://andysucao.github.io/Andy_Portfolio/post/project-3/</loc>
-    <lastmod>2022-07-11T07:58:08-04:00</lastmod>
+    <lastmod>2023-08-20T12:58:08-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://andysucao.github.io/Andy_Portfolio/tags/computer-vision/</loc>
+    <lastmod>2023-08-20T11:58:08-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://andysucao.github.io/Andy_Portfolio/post/project-4/</loc>
-    <lastmod>2022-07-11T07:58:08-04:00</lastmod>
+    <lastmod>2023-08-20T11:58:08-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://andysucao.github.io/Andy_Portfolio/post/project-5/</loc>
-    <lastmod>2022-07-11T07:58:08-04:00</lastmod>
+    <lastmod>2023-08-20T10:58:08-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://andysucao.github.io/Andy_Portfolio/tags/machine-learning/</loc>
+    <lastmod>2023-08-20T09:58:08-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://andysucao.github.io/Andy_Portfolio/post/project-6/</loc>
+    <lastmod>2023-08-20T09:58:08-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://andysucao.github.io/Andy_Portfolio/tags/time-series-analysis/</loc>
-    <lastmod>2022-07-11T07:58:08-04:00</lastmod>
+    <lastmod>2023-08-20T09:58:08-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://andysucao.github.io/Andy_Portfolio/tags/logistic-regression/</loc>
+    <lastmod>2023-08-20T08:58:08-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://andysucao.github.io/Andy_Portfolio/post/project-7/</loc>
+    <lastmod>2023-08-20T08:58:08-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://andysucao.github.io/Andy_Portfolio/tags/linear-regression/</loc>
+    <lastmod>2023-08-20T07:58:08-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://andysucao.github.io/Andy_Portfolio/post/project-8/</loc>
+    <lastmod>2023-08-20T07:58:08-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://andysucao.github.io/Andy_Portfolio/skills/coursera-uiuc-imba/</loc>
+    <lastmod>2023-08-11T08:58:08-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://andysucao.github.io/Andy_Portfolio/tags/courses/</loc>
+    <lastmod>2023-08-11T08:58:08-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://andysucao.github.io/Andy_Portfolio/skills/data-science-courses/</loc>
+    <lastmod>2023-08-11T08:58:08-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://andysucao.github.io/Andy_Portfolio/skills/</loc>
+    <lastmod>2023-08-11T08:58:08-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://andysucao.github.io/Andy_Portfolio/tags/misc/</loc>
+    <lastmod>2023-07-11T08:58:08-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://andysucao.github.io/Andy_Portfolio/post/project-0/</loc>
+    <lastmod>2023-07-11T08:58:08-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
