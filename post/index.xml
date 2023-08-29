@@ -8,29 +8,29 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 02 Mar 2017 12:00:00 -0500</lastBuildDate><atom:link href="https://andysucao.github.io/Andy_Portfolio/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Project 1: NLP - Natural Language Inference (Bert)</title>
-      <link>https://andysucao.github.io/Andy_Portfolio/post/project-1/</link>
+      <title>Project 6: NLP - Natural Language Inference (Bert)</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-6/</link>
       <pubDate>Sun, 20 Aug 2023 14:58:08 -0400</pubDate>
       
-      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-1/</guid>
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-6/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Project 2: NLP - Question Answering</title>
-      <link>https://andysucao.github.io/Andy_Portfolio/post/project-2/</link>
+      <title>Project 7: NLP - Question Answering</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-7/</link>
       <pubDate>Sun, 20 Aug 2023 13:58:08 -0400</pubDate>
       
-      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-2/</guid>
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-7/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Project 3: NLP - Machine Translation</title>
-      <link>https://andysucao.github.io/Andy_Portfolio/post/project-3/</link>
+      <title>Project 8: NLP - Machine Translation</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-8/</link>
       <pubDate>Sun, 20 Aug 2023 12:58:08 -0400</pubDate>
       
-      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-3/</guid>
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-8/</guid>
       <description></description>
     </item>
     
@@ -53,29 +53,29 @@
     </item>
     
     <item>
-      <title>Project 6: Time Series Analysis</title>
-      <link>https://andysucao.github.io/Andy_Portfolio/post/project-6/</link>
+      <title>Project 3: Time Series Analysis</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-3/</link>
       <pubDate>Sun, 20 Aug 2023 09:58:08 -0400</pubDate>
       
-      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-6/</guid>
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-3/</guid>
       <description>* Statistical Inference * Clustering Analysis * SARIMA / VAR / Holt-Winters * Random Forest / XGBoost * LSTM * SVR / GP / HA / MA </description>
     </item>
     
     <item>
-      <title>Project 7: Logistic Regression</title>
-      <link>https://andysucao.github.io/Andy_Portfolio/post/project-7/</link>
+      <title>Project 2: Logistic Regression</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-2/</link>
       <pubDate>Sun, 20 Aug 2023 08:58:08 -0400</pubDate>
       
-      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-7/</guid>
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-2/</guid>
       <description> tel customer churn probability prediction - Logistic Regression / Decision Tree / Ensemble (Random Forest, Adaboost, GBDT) / MLP </description>
     </item>
     
     <item>
-      <title>Project 8: Predict Real Estate Prices in Beijing</title>
-      <link>https://andysucao.github.io/Andy_Portfolio/post/project-8/</link>
+      <title>Project 1: Predict Real Estate Prices in Beijing</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-1/</link>
       <pubDate>Sun, 20 Aug 2023 07:58:08 -0400</pubDate>
       
-      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-8/</guid>
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-1/</guid>
       <description>1. Project Overview In this project, we will build a linear regression model to help people better understand the factors that can affect the price of a house in Beijing.
 The main sections of this article are: (1) Exploratory Data Analysis (EDA), (2) Developing Linear Regression model for predicting real estate price, and (3) Use that model to make predictions. The Pytyhon Notebook containing the complete model development process can be found at Google Drive.</description>
     </item>
