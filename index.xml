@@ -53,12 +53,16 @@
     </item>
     
     <item>
-      <title>Project 3: Time Series Analysis</title>
+      <title>Project 3: Understanding Ridesharing Demands in New York City</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-3/</link>
       <pubDate>Sun, 20 Aug 2023 06:02:00 -0400</pubDate>
       
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-3/</guid>
-      <description>* Statistical Inference * Clustering Analysis * SARIMA / VAR / Holt-Winters * Random Forest / XGBoost * LSTM * SVR / GP / HA / MA </description>
+      <description>1. Project Overview In this project, we will focuse on New York City&amp;rsquo;s Ridesharing Trips Data Set and try to answer three interesting questions:
+(1) How do the residents of New York City use Ridesharing?
+(2) What usage patterns can we see?
+(3) Can we predict usage?
+To answer these questions, first we will clean up the trip data and integrate them with weather data and taxi zone geodata. Then we will conduct Exploratory Data Analysis (EDA) and Statistical Tests to find Temporal and Spatial Patterns, as well as weather effects and tipping behaviors.</description>
     </item>
     
     <item>
