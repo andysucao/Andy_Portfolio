@@ -44,12 +44,14 @@
     </item>
     
     <item>
-      <title>Project 4: Image Classification</title>
+      <title>Project 4: Image Classification and Explainable Artificial Intelligence</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-4/</link>
       <pubDate>Sun, 20 Aug 2023 06:03:00 -0400</pubDate>
       
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-4/</guid>
-      <description></description>
+      <description>1. Project Overview In this project, we will build a model for image classification and understand how it works.
+In the first part, we will develop a convolutional neural network (CNN) model for food image classificaton. We will also apply t-distributed Stochastic Neighbor Embedding (t-SNE) technique on the output of different layers to visualize learned visual representations of the CNN model.
+In order to understand how the model works, we will employ four popular Explainable AI approaches in the second part, including (1) Saliency map, (2) Smooth gradient, (3) Lime package, and (4) Integrated gradients.</description>
     </item>
     
     <item>
@@ -82,7 +84,8 @@ In the first part, we will conduct Exploratory Data Analysis (EDA). Here the Syn
       
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-1/</guid>
       <description>1. Project Overview In this project, we will build a linear regression model to help people better understand the factors that can affect the price of a house in Beijing.
-The main sections of this article are: (1) Exploratory Data Analysis (EDA), (2) Developing Linear Regression model for predicting real estate price, and (3) Use that model to make predictions. The Pytyhon Notebook containing the complete model development process can be found at Google Drive.</description>
+The main sections of this article are: (1) Exploratory Data Analysis (EDA), (2) Developing Linear Regression model for predicting real estate price, and (3) Use that model to make predictions.
+The Pytyhon Notebook containing the complete model development process and the data used in this project can be found at Google Drive.</description>
     </item>
     
     <item>
@@ -119,15 +122,6 @@ Data Science Specialization
 The Data Scientists Toolbox course certificate
 R Programming course certificate
 Getting and Cleaning Data course certificate</description>
-    </item>
-    
-    <item>
-      <title>Project 0: Template &amp; Misc</title>
-      <link>https://andysucao.github.io/Andy_Portfolio/post/project-0/</link>
-      <pubDate>Tue, 11 Jul 2023 08:58:08 -0400</pubDate>
-      
-      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-0/</guid>
-      <description> </description>
     </item>
     
     <item>
