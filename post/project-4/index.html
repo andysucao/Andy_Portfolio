@@ -191,9 +191,9 @@
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="1-project-overview">1. Project Overview</h2>
 <p>In this project, we will build a model for image classification and understand how it works.</p>
-<p>In the first part, we will develop a convolutional neural network (CNN) model for food image classificaton. We will also apply t-distributed Stochastic Neighbor Embedding (t-SNE) technique on the output of different layers to visualize learned visual representations of the CNN model.</p>
+<p>In the first part, we will develop a convolutional neural network (CNN) model for food image classification. We will also apply t-distributed Stochastic Neighbor Embedding (t-SNE) technique on the output of different layers to visualize learned visual representations of the CNN model.</p>
 <p>In order to understand how the model works, we will employ four popular Explainable AI approaches in the second part, including (1) Saliency map, (2) Smooth gradient, (3) Lime package, and (4) Integrated gradients.</p>
-<p>The Pytyhon Notebook containing the complete model development process and the data used in this project can be found at <a href="https://drive.google.com/drive/folders/1eaWhg_ftNmVMImGr3yemPGgf4jGEsxKU?usp=sharing">Google Drive</a>.</p>
+<p>The Python Notebook containing the complete model development process and the data used in this project can be found at <a href="https://drive.google.com/drive/folders/1eaWhg_ftNmVMImGr3yemPGgf4jGEsxKU?usp=sharing">Google Drive</a>.</p>
 <p>           
            </p>
 <h2 id="2-cnn-model-for-food-images-classification">2. CNN model for food images classification</h2>
@@ -236,7 +236,7 @@
 </span></span><span style="display:flex;"><span>    out <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>cnn(x)
 </span></span><span style="display:flex;"><span>    out <span style="color:#f92672">=</span> out<span style="color:#f92672">.</span>reshape(out<span style="color:#f92672">.</span>size()[<span style="color:#ae81ff">0</span>], <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>fc(out)
-</span></span></code></pre></div><p>The code block above shows the archeticture of the convolutional neural network (CNN) model used in this project. An useful reference of this archeticture can be found <a href="https://pytorch.org/vision/stable/models.html">here</a>.</p>
+</span></span></code></pre></div><p>The code block above shows the architecture of the convolutional neural network (CNN) model used in this project. An useful reference of this architecture can be found <a href="https://pytorch.org/vision/stable/models.html">here</a>.</p>
 <p>The picture below shows the model structure, with each block highlighted in different colors. In particular, the model is composed of a CNN part followed by a fully connected part. The CNN part contains five stacked blocks: the first three blocks are similar to each other (3*(<code>Conv2d</code>-<code>BatchNorm2d</code>-<code>ReLU</code>)+<code>MaxPool2d</code>) and the last two blocks are similar to each other (1*(<code>Conv2d</code>-<code>BatchNorm2d</code>-<code>ReLU</code>)+ <code>MaxPool2d</code>). Batch Normalization <a href="https://arxiv.org/pdf/1502.03167.pdf">ref</a> is an useful technique for model optimization. By adding it to the model, we are able to train the model faster and more stable. The model summary is shown in the second picture below, the total number of parameters is 14.2M.</p>
 <p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-4-3.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-4-3.png" alt=""> </a></p>
 <p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-4-4.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-4-4.png" alt=""> </a></p>
@@ -353,7 +353,7 @@
 </span></span><span style="display:flex;"><span>patience <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span> <span style="color:#75715e"># If no improvement in patience epochs, early stop.</span>
 </span></span><span style="display:flex;"><span>criterion <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>CrossEntropyLoss() <span style="color:#75715e"># Classification task use cross-entropy</span>
 </span></span><span style="display:flex;"><span>feature_extract <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span> <span style="color:#75715e"># Flag for feature extracting. When False finetune the whole model, when True only update the reshaped layer params</span>
-</span></span></code></pre></div><p>By using the setings shown above, we are able to achieve 99% accuracy on training set and 91% accuracy on test set.</p>
+</span></span></code></pre></div><p>By using the settings shown above, we are able to achieve 99% accuracy on training set and 91% accuracy on test set.</p>
 <p>           </p>
 <h3 id="23-layer-output-visualized-by-t-sne">2.3. Layer output visualized by t-SNE</h3>
 <p>In this section, we will use the t-distributed stochastic neighbor embedding (t-SNE) technique to visualize the output of different layers of the CNN model developed in the previous section. The selected layers are circled blue in the picture below, which corresponding to the last layer of each block.</p>
@@ -406,7 +406,7 @@
 <p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-4-11.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-4-11.png" alt=""> </a></p>
 <p>           </p>
 <h3 id="31-saliency-map">3.1. Saliency Map</h3>
-<p>The first method we will apply is the Saliency Map method <a href="https://medium.com/datadriveninvestor/visualizing-neural-networks-using-saliency-maps-in-pytorch-289d8e244ab4">Ref</a>. This method aims to measure the importance of each pixel in the picture by pertubing the pixel value and calculating the partial differential value of loss to the modified picture. The output is a heatmaps that highlight pixels of the input image that contribute the most in the classification task. In this way, we can visualize it to determine which part of the image contribute the most to the model&rsquo;s judgment.</p>
+<p>The first method we will apply is the Saliency Map method <a href="https://medium.com/datadriveninvestor/visualizing-neural-networks-using-saliency-maps-in-pytorch-289d8e244ab4">Ref</a>. This method aims to measure the importance of each pixel in the picture by perturbing the pixel value and calculating the partial differential value of loss to the modified picture. The output is a heatmap that highlight pixels of the input image that contribute the most in the classification task. In this way, we can visualize it to determine which part of the image contribute the most to the model&rsquo;s judgment.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Saliency Map</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">normalize</span>(image):
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (image <span style="color:#f92672">-</span> image<span style="color:#f92672">.</span>min()) <span style="color:#f92672">/</span> (image<span style="color:#f92672">.</span>max() <span style="color:#f92672">-</span> image<span style="color:#f92672">.</span>min())
@@ -440,7 +440,7 @@
 <p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-4-12b.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-4-12b.png" alt=""> </a></p>
 <p>           </p>
 <h3 id="32-smooth-gradient">3.2. Smooth Gradient</h3>
-<p>An improvement of Saliency Map is Smooth Gradient <a href="https://arxiv.org/pdf/1706.03825.pdf">Ref</a>. Essentially, the method of Smooth Gradient is to randomly add noise to the image and get different heatmaps, so the average of these heatmaps would be more robust to noisy gradient.</p>
+<p>An improvement of Saliency Map is Smooth Gradient <a href="https://arxiv.org/pdf/1706.03825.pdf">Ref</a>. Essentially, the method of Smooth Gradient is to randomly add noise to the image and get different heatmap, so the average of these heatmap would be more robust to noisy gradient.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Smooth Gradient</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">normalize</span>(image):
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (image <span style="color:#f92672">-</span> image<span style="color:#f92672">.</span>min()) <span style="color:#f92672">/</span> (image<span style="color:#f92672">.</span>max() <span style="color:#f92672">-</span> image<span style="color:#f92672">.</span>min())

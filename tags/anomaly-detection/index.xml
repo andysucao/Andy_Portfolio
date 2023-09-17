@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Anomaly Detection on Andy Cao</title>
+    <link>https://andysucao.github.io/Andy_Portfolio/tags/anomaly-detection/</link>
+    <description>Recent content in Anomaly Detection on Andy Cao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Aug 2023 06:04:00 -0400</lastBuildDate><atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/anomaly-detection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project 5: Using Autoencoder for Anomaly Detection and searching similar images</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-5/</link>
+      <pubDate>Sun, 20 Aug 2023 06:04:00 -0400</pubDate>
+      
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-5/</guid>
+      <description>1. Overview Anomaly detection is a technique used for identifying rare items, events or observations, which deviate significantly from the majority of the data and do not conform to a well defined notion of normal behavior wikipedia.
+Anomaly detection has very wide applications, such as Fraud detection in credit card transactions ref, Network Intrusion detection ref, and Cancer cell detection ref.
+A wide spectrum of techniques have been proposed for anomaly detection, some of the popular methods are: Density-based techniques (e.</description>
+    </item>
+    
+  </channel>
+</rss>

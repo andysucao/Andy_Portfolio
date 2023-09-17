@@ -26,18 +26,18 @@
     
     
     <meta property="og:title" content="Project 3: Understanding Ridesharing Demands in New York City" />
-<meta property="og:description" content="Develop machine learning models to predict ridesharing demand in New York City using Seasonal Autoregressive Integrated Moving Average (SARIMA), Gaussian Process (GP), Vector Autoregression (VAR), and Recurrent Nneural Network (RNN)." />
+<meta property="og:description" content="Develop machine learning models to predict ridesharing demand in New York City using Seasonal Autoregressive Integrated Moving Average (SARIMA), Gaussian Process (GP), Vector Autoregression (VAR), and Recurrent Neural Network (RNN)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://andysucao.github.io/Andy_Portfolio/post/project-3/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-08-20T06:02:00-04:00" />
 <meta property="article:modified_time" content="2023-08-20T06:02:00-04:00" />
 <meta itemprop="name" content="Project 3: Understanding Ridesharing Demands in New York City">
-<meta itemprop="description" content="Develop machine learning models to predict ridesharing demand in New York City using Seasonal Autoregressive Integrated Moving Average (SARIMA), Gaussian Process (GP), Vector Autoregression (VAR), and Recurrent Nneural Network (RNN)."><meta itemprop="datePublished" content="2023-08-20T06:02:00-04:00" />
+<meta itemprop="description" content="Develop machine learning models to predict ridesharing demand in New York City using Seasonal Autoregressive Integrated Moving Average (SARIMA), Gaussian Process (GP), Vector Autoregression (VAR), and Recurrent Neural Network (RNN)."><meta itemprop="datePublished" content="2023-08-20T06:02:00-04:00" />
 <meta itemprop="dateModified" content="2023-08-20T06:02:00-04:00" />
-<meta itemprop="wordCount" content="5177">
+<meta itemprop="wordCount" content="5183">
 <meta itemprop="keywords" content="Machine Learning,Time Series Analysis," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Project 3: Understanding Ridesharing Demands in New York City"/>
-<meta name="twitter:description" content="Develop machine learning models to predict ridesharing demand in New York City using Seasonal Autoregressive Integrated Moving Average (SARIMA), Gaussian Process (GP), Vector Autoregression (VAR), and Recurrent Nneural Network (RNN)."/>
+<meta name="twitter:description" content="Develop machine learning models to predict ridesharing demand in New York City using Seasonal Autoregressive Integrated Moving Average (SARIMA), Gaussian Process (GP), Vector Autoregression (VAR), and Recurrent Neural Network (RNN)."/>
 
   </head>
 
@@ -132,7 +132,7 @@
           <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Project 3: Understanding Ridesharing Demands in New York City</h1>
           
             <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
-              Develop machine learning models to predict ridesharing demand in New York City using Seasonal Autoregressive Integrated Moving Average (SARIMA), Gaussian Process (GP), Vector Autoregression (VAR), and Recurrent Nneural Network (RNN).
+              Develop machine learning models to predict ridesharing demand in New York City using Seasonal Autoregressive Integrated Moving Average (SARIMA), Gaussian Process (GP), Vector Autoregression (VAR), and Recurrent Neural Network (RNN).
             </h2>
           
         
@@ -189,45 +189,45 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="1-project-overview">1. Project Overview</h2>
-<p>In this project, we will focuse on New York City&rsquo;s Ridesharing Trips Data Set and try to answer three interesting questions:</p>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="1-overview">1. Overview</h2>
+<p>In this project, we will focus on New York City&rsquo;s Ridesharing Trips Data Set and try to answer three interesting questions:</p>
 <p>(1) How do the residents of New York City use Ridesharing?</p>
 <p>(2) What usage patterns can we see?</p>
 <p>(3) Can we predict usage?</p>
 <p>To answer these questions, first we will clean up the trip data and integrate them with weather data and taxi zone geodata. Then we will conduct Exploratory Data Analysis (EDA) and Statistical Tests to find Temporal and Spatial Patterns, as well as weather effects and tipping behaviors. After that, we will develop a clustering model to gain a better understanding of how ridesharing is being
-used. Finally we will develop four machine learning models to predict rideshare utilization, including Seasonal Autoregressive Integrated Moving Average (SARIMA), Gaussian Process (GP), Vector Autoregression (VAR), and Recurrent Nneural Network (RNN).</p>
-<p>The Pytyhon Notebook containing the complete model development process and the data used in this project can be found at <a href="https://drive.google.com/drive/folders/1xXM1NlsId8nJb38ftkPvg6-UEw0_Tr2y?usp=sharing">Google Drive</a>.</p>
+used. Finally we will develop four machine learning models to predict rideshare utilization, including Seasonal Autoregressive Integrated Moving Average (SARIMA), Gaussian Process (GP), Vector Autoregression (VAR), and Recurrent Neural Network (RNN).</p>
+<p>The Python Notebook containing the complete model development process and the data used in this project can be found at <a href="https://drive.google.com/drive/folders/1xXM1NlsId8nJb38ftkPvg6-UEw0_Tr2y?usp=sharing">Google Drive</a>.</p>
 <p>           
            </p>
-<h2 id="2-data-cleaning-wrangling-and-enhancement">2. Data Cleaning, Wrangling, and Enhancement</h2>
-<p>The ride-sharing vehicles in New York City are regulated by the Taxi &amp; Limousine Commission (TLC), and the trip record data since 2009 can be downloaded from the <a href="https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page">TLC Data Portal</a>. The dataset contains basic information about each ride, including: pickup and dropoff time and location, whether trips are pooled, and information about fares and tips. To protect privacy, the trips data are anonymized, so pickup and dropoff locations are generalized to the nearest taxi zones, no customer data is available, and drivers can not be linked to particular rides they provided.</p>
-<p>The trip record of each month was downloaded as a PARQUET file from the <a href="https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page">TLC Data Portal</a>.The data preprocessing steps performed includ:</p>
+<h2 id="2-data-cleaning-wrangling-and-enhancement">2. Data cleaning, wrangling, and enhancement</h2>
+<p>The ride-sharing vehicles in New York City are regulated by the Taxi &amp; Limousine Commission (TLC), and the trip record data since 2009 can be downloaded from the <a href="https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page">TLC Data Portal</a>. The dataset contains basic information about each ride, including: pickup and drop off time and location, whether trips are pooled, and information about fares and tips. To protect privacy, the trips data are anonymized, so pickup and drop off locations are generalized to the nearest taxi zones, no customer data is available, and drivers can not be linked to particular rides they provided.</p>
+<p>The trip record of each month was downloaded as a PARQUET file from the <a href="https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page">TLC Data Portal</a>.The data preprocessing steps performed include:</p>
 <ul>
 <li>Removing rides with zero distance or zero fare;</li>
-<li>Creating datetime fields with the ride sttart and end datetimes rounded to the nearest hour; and</li>
+<li>Creating datetime fields with the ride start and end datetimes rounded to the nearest hour; and</li>
 <li>Aggregating the dataset by hour and taxi zone and calculating trip counts, average fare, average distance, and average duration</li>
 </ul>
 <p>Since the dataset is very large (around 15 million trip records for each month), in addition to the wrangling steps above, I have also sampled 10% of individual trip records for Exploratory Data Analysis (EDA).</p>
-<p>In order to enrich the rideshare dataset, I merged in additional data sources that many enhance enderstanding and prediction of trip demands. A weather dataset from <a href="https://forecast.weather.gov/data/obhistory/KLGA.html">NOAA LaGuardia Airport station</a> containing hourly and daily aggregrated measurements of temperature, wind, and precipitation was merged with the Trips data by matching on the ride pickup datetime field. Taxi Zone boundary geojason file was also downloaded from the <a href="https://data.cityofnewyork.us/Transportation/NYC-Taxi-Zones/d3c5-ddgc">NYC OpenData</a>  and loaded into geodataframes using the geopandas python library.</p>
+<p>In order to enrich the rideshare dataset, I merged in additional data sources that many enhance understanding and prediction of trip demands. A weather dataset from <a href="https://forecast.weather.gov/data/obhistory/KLGA.html">NOAA LaGuardia Airport station</a> containing hourly and daily aggregated measurements of temperature, wind, and precipitation was merged with the Trips data by matching on the ride pickup datetime field. Taxi Zone boundary geojason file was also downloaded from the <a href="https://data.cityofnewyork.us/Transportation/NYC-Taxi-Zones/d3c5-ddgc">NYC OpenData</a>  and loaded into geodataframes using the geopandas python library.</p>
 <p>           
            </p>
-<h2 id="3-eda-and-statistical-analysis">3. EDA and Statistical Analysis</h2>
-<p>In this section, we will conduct Exploratory Data Analysis (EDA) and Statistical Analysis to identify interesting temporal patterns, spatial petterns, spatiotemporal patterns. We will also investigate effects of weather (e.g., temperature and precipitation) on rideshare usage as well as rider&rsquo;s tipping behavior. An excellent example of Exploratory Data Analysis (EDA) can be found <a href="https://github.com/LisaATaylor/Rideshare">here</a>.</p>
-<h3 id="31-eda-findings-temporal-pattern">3.1. EDA Findings: Temporal Pattern</h3>
-<p>In the figure below, we plotted the systemwide hourly rideshare usage as a function of time over the entire data period. From this figure, we find that rideshare usage is cyclical, with a usage pattern demostrating both hourly and weekly components.</p>
+<h2 id="3-eda-and-statistical-analysis">3. EDA and statistical analysis</h2>
+<p>In this section, we will conduct Exploratory Data Analysis (EDA) and Statistical Analysis to identify interesting temporal patterns, spatial patterns, spatiotemporal patterns. We will also investigate effects of weather (e.g., temperature and precipitation) on rideshare usage as well as rider&rsquo;s tipping behavior. An excellent example of Exploratory Data Analysis (EDA) can be found <a href="https://github.com/LisaATaylor/Rideshare">here</a>.</p>
+<h3 id="31-eda-findings-temporal-pattern">3.1. EDA findings: Temporal pattern</h3>
+<p>In the figure below, we plotted the systemwide hourly rideshare usage as a function of time over the entire data period. From this figure, we find that rideshare usage is cyclical, with a usage pattern demonstrating both hourly and weekly components.</p>
 <p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-3-2b.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-3-2b.png" alt=""> </a></p>
 <p>The cyclical pattern is further shown below by plotting the hourly demand vs. day and time. From this figure, we notice that during weekdays, there are two peaks, one for morning rush hour and the other for evening rush hour. During weekends, there is only one demand peak in the late evening.</p>
 <p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-3-3.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-3-3.png" alt=""> </a></p>
 <p>           </p>
-<h3 id="32-eda-findings-spatial-pattern">3.2. EDA Findings: Spatial Pattern</h3>
-<p>The highest rideshare usage occurs in Crown Heights, where several subway stations connecting Brooklyn with Manhattan. Downtown core (e.g., East Village) and airports (e.g., JFK and LGA) also have very high rideshare usage. Away from these areas, the rideshare usage drops of quickly. The following choropleth map, which displays the sum of total pickups and dropoffs by taxi zone, illustrates this pattern clearly.</p>
+<h3 id="32-eda-findings-spatial-pattern">3.2. EDA findings: Spatial pattern</h3>
+<p>The highest rideshare usage occurs in Crown Heights, where several subway stations connecting Brooklyn with Manhattan. Downtown core (e.g., East Village) and airports (e.g., JFK and LGA) also have very high rideshare usage. Away from these areas, the rideshare usage drops of quickly. The following choropleth map, which displays the sum of total pickups and drop offs by taxi zone, illustrates this pattern clearly.</p>
 <p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-3-4.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-3-4.png" alt=""> </a></p>
 <p>           </p>
-<h3 id="33-eda-findings-spatiotemporal-patterns">3.3. EDA Findings: Spatiotemporal Patterns</h3>
-<p>Rideshare usgae patterns vary across the city. The data demonstrates distinct patterns for airports, downtown, residential neighborhoods, etc. The following heatmaps shows usage patterns for a few areas within the city, and show distinct variations between airports, downtown, neighborhood and park.</p>
+<h3 id="33-eda-findings-spatiotemporal-patterns">3.3. EDA findings: Spatiotemporal patterns</h3>
+<p>Rideshare usage patterns vary across the city. The data demonstrates distinct patterns for airports, downtown, residential neighborhoods, etc. The following heatmap shows usage patterns for a few areas within the city, and show distinct variations between airports, downtown, neighborhood and park.</p>
 <p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-3-5.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-3-5.png" alt=""> </a></p>
 <p>           </p>
-<h3 id="34-eda-findings-weather-effects">3.4. EDA Findings: Weather Effects</h3>
+<h3 id="34-eda-findings-weather-effects">3.4. EDA findings: Weather effects</h3>
 <p>The relationship between rideshare usage patterns and weather is not obvious. When viewed at the daily level, rideshare utilization patterns do not appear sensitive to either temperature or precipitation.</p>
 <p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-3-6.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-3-6.png" alt=""> </a></p>
 <p>When we zoom to the hourly level, there appears to be no statistical relationship between rideshare usage and precipitation, and the rideshare usage only decreases lightly.</p>
@@ -235,7 +235,7 @@ used. Finally we will develop four machine learning models to predict rideshare 
 <p>If we isolate a more specific time window (e.g., PM commute and Mid evening), we can isolate small effects such as shown below, with utilization increasing during PM commute period and mid evening.</p>
 <p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-3-8.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-3-8.png" alt=""> </a></p>
 <p>           </p>
-<h3 id="35-eda-findings-tipping">3.5. EDA Findings: Tipping</h3>
+<h3 id="35-eda-findings-tipping">3.5. EDA findings: Tipping</h3>
 <p>From the figure below, we can find that riders tip the driver on approximately 15% of rides, and that for those who tip the driver, the tips are typically 20&ndash;50% of the fare.</p>
 <p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-3-9.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-3-9.png" alt=""> </a></p>
 <p>Factors influencing the likelihood of a tip include whether the ride originates or ends at the airport. A two-sample z-test of the proportion of tipped rides between airport/non-airport rides demonstrated a statistically significant increase in the odds of tipping for airport pickups.</p>
@@ -257,21 +257,21 @@ used. Finally we will develop four machine learning models to predict rideshare 
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Z-score: 256</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#This is a high z-score</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Reject H0, conclude the odds of getting a tip are higher for airport pickups</span>
-</span></span></code></pre></div><p>The following box plot, which shows the percentage of tipped rides (AirportDOorPU=True indicates the trip&rsquo;s Pickup location or Dropoff location is an airport), illustrates this effect.</p>
+</span></span></code></pre></div><p>The following box plot, which shows the percentage of tipped rides (AirportDOorPU=True indicates the trip&rsquo;s Pickup location or Drop off location is an airport), illustrates this effect.</p>
 <p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-3-10.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-3-10.png" alt=""> </a></p>
 <p>           
            </p>
-<h2 id="4-clustering-analysis">4. Clustering Analysis</h2>
-<p>In this section, a clustering model was developed to gain a better understainding of how ridesharing is being used in New York City. For this anaylysis, the rides data were grouped on the following fields:</p>
+<h2 id="4-clustering-analysis">4. Clustering analysis</h2>
+<p>In this section, a clustering model was developed to gain a better understanding of how ridesharing is being used in New York City. For this analysis, the rides data were grouped on the following fields:</p>
 <ul>
 <li>Taxi zone of Pickup;</li>
-<li>Taxi zone of Dropoff;</li>
+<li>Taxi zone of Drop off;</li>
 <li>Period within the day: early morning (11 p.m.&ndash;5 a.m.), morning (5 a.m.&ndash;9 a.m.), midday (9 a.m.&ndash;1 p.m.), afternoon (1 p.m.&ndash;4 p.m.), evening (4 p.m.&ndash;7 p.m.), and late evening (7 p.m.&ndash;11 p.m.);</li>
 <li>whether the ride occurred on a weekend or weekday;</li>
-<li>whether the ride involved the airport as Pickup or Dropoff.</li>
+<li>whether the ride involved the airport as Pickup or Drop off.</li>
 </ul>
 <p>The timing of each trip was also simplified into larger buckets (weekend/weekday, period of day) to improve interpretability of outcomes. A boolean airport flag was added since this attribute was found during EDA to have a strong influence on rideshare utilization. Holidays were excluded from the analysis. Within each grouping, the following aggregated values were calculated: number of rides, average ride duration, average ride distance, and average fare.</p>
-<p>To prepare the data for fitting a clustering model, the grouped dataset was pivoted to create columns containing ride counts for each grouping of weekend/weekday and day period. After this reworking, the final dataset contained a single record for each route, each with a MultiIndex containing the unique combinations of dropoff and pickup Community Areas, and columns containing the ride count columns, the airport flag, and the average fare for the route.</p>
+<p>To prepare the data for fitting a clustering model, the grouped dataset was pivoted to create columns containing ride counts for each grouping of weekend/weekday and day period. After this reworking, the final dataset contained a single record for each route, each with a MultiIndex containing the unique combinations of drop off and pickup Community Areas, and columns containing the ride count columns, the airport flag, and the average fare for the route.</p>
 <p>The KMeans clustering algorithm was selected for this analysis. This model requires the user to specify the number of clusters k before fitting the model. To determine an appropriate value of k, the inertia (within-cluster sum of squares) was calculated for values of k between 2 and 19.</p>
 <p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-3-11a.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-3-11a.png" alt=""> </a></p>
 <p>The silhouette score and associated plots were generated for a variety of values of k. The results shown below suggested a plateau in the
@@ -288,7 +288,7 @@ silhouette score above k=7. This is also in consistency with thea small elbow ne
 <p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-3-15.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-3-15.png" alt=""> </a></p>
 <p>           
            </p>
-<h2 id="5-rideshare-usage-prediction">5. Rideshare Usage Prediction</h2>
+<h2 id="5-rideshare-usage-prediction">5. Rideshare usage prediction</h2>
 <p>In this section, we will develop four models to predict the rideshare usage. In particular, the systemwide hourly rideshare usage will be predicted by two univariate time series models: Seasonal Autoregressive Integrated Moving Average (SARIMA), and Gaussian Process (GP).</p>
 <p>           </p>
 <h3 id="51-seasonal-autoregressive-integrated-moving-average-sarima">5.1. Seasonal Autoregressive Integrated Moving Average (SARIMA)</h3>
@@ -321,7 +321,7 @@ silhouette score above k=7. This is also in consistency with thea small elbow ne
 <p>Similarly from the Partial Autocorrelation plot, we can find there are 2 closer spikes, so the potential values of Autoregressive (AR) order p could be p = 0/1/2.</p>
 <p>Also from the Partial Autocorrelation plot, we can find spikes around seasonal lags of 168 hours, so the potential values of the Seasonal Autoregressive (SAR) order P could be P = 0/1.</p>
 <p>In summary by analyzing the plots above, we have the following potential orders as shown below. Also we need to satisfy P + Q + p + q &lt;=5 to follow the Parsimony principle: (1) P = 0/1, (2) Q = 0/1, (3) p = 0/1/2, (4) q = 0/1/2/3/4/5.</p>
-<p>During the development of SARIMA model, we have fit few different models and compare their Akaike Information Critera (AIC).</p>
+<p>During the development of SARIMA model, we have fit few different models and compare their Akaike Information Criteria (AIC).</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">===================================================================</span>
 </span></span><span style="display:flex;"><span>P	D	Q	s	p	d	q	AIC	        Ljung<span style="color:#f92672">-</span>Box (L1) (Q)	Prob(Q)
 </span></span><span style="display:flex;"><span><span style="color:#f92672">===================================================================</span>
@@ -396,12 +396,12 @@ silhouette score above k=7. This is also in consistency with thea small elbow ne
 </span></span><span style="display:flex;"><span>elapsed_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time() <span style="color:#f92672">-</span> start_time
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;elapsed time: &#39;</span>, elapsed_time)
 </span></span><span style="display:flex;"><span>print(model_fit<span style="color:#f92672">.</span>summary())
-</span></span></code></pre></div><p>The figure below shows the prediction from the SARIMA(P=1, D=1, Q=1, s=168, p=1, d=0, q=0) that we deloped above. From this figure, we can see that SARIMA model gives pretty accurate prediction, and it can successfully capture the hourly and weekly components. Also, since the Ljung-Box test has Q = 0.00 and Prob(Q) = 0.99, we can accept the null hypothesis of the test and conclude that the residuals are independent.</p>
+</span></span></code></pre></div><p>The figure below shows the prediction from the SARIMA(P=1, D=1, Q=1, s=168, p=1, d=0, q=0) that we developed above. From this figure, we can see that SARIMA model gives pretty accurate prediction, and it can successfully capture the hourly and weekly components. Also, since the Ljung-Box test has Q = 0.00 and Prob(Q) = 0.99, we can accept the null hypothesis of the test and conclude that the residuals are independent.</p>
 <p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-3-20.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-3-20.png" alt=""> </a></p>
 <p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-3-21.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-3-21.png" alt=""> </a></p>
 <p>           </p>
 <h3 id="52-gaussian-process-gp">5.2. Gaussian Process (GP)</h3>
-<p>From the figure of systemwide rideshare demand shown in Section 3.1., we can observe that there is a lower trip count near the begining of February 2021, and that there is a higher trip count near the end of October. To ensure data consistency and (weak) stationary, we will focus on data between Mar 1 and Sep 30 in this study.</p>
+<p>From the figure of systemwide rideshare demand shown in Section 3.1., we can observe that there is a lower trip count near the beginning of February 2021, and that there is a higher trip count near the end of October. To ensure data consistency and (weak) stationary, we will focus on data between Mar 1 and Sep 30 in this study.</p>
 <p>Since the length of the dataset is 5136, We will use 80% (5136 * 0.8 = 4109) as training set, and 20% (5136 - 4109 = 1027) for test. The figure below shows the training and test data after subtracting the mean from the training data.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>y_mean <span style="color:#f92672">=</span> df_train[<span style="color:#e6db74">&#39;trip_count&#39;</span>]<span style="color:#f92672">.</span>mean()
 </span></span><span style="display:flex;"><span>print(y_mean)
@@ -410,11 +410,11 @@ silhouette score above k=7. This is also in consistency with thea small elbow ne
 </span></span></code></pre></div><p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-3-22.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-3-22.png" alt=""> </a></p>
 <p>Designing proper kernel is crucial for Gaussian Process. To design the kernel to use with our Gaussian process, we can make some assumption regarding the data at hand. We observe that they have several characteristics, and we can use different appropriate kernel that would capture these features.</p>
 <ul>
-<li>a pronounced dayly variation,</li>
+<li>a pronounced daily variation,</li>
 <li>a pronounced weekly variation,</li>
 <li>some smaller irregularities and white noise</li>
 </ul>
-<p>The dayly variation is explained by the periodic exponential sine squared kernel with a fixed periodicity of 24 hour or 1 day. The length-scale of this periodic component, controlling its smoothness, is a free parameter. In order to allow decaying away from exact periodicity, the product with an RBF kernel is taken. The length-scale of this RBF component controls the decay time and is a further free parameter. This type of kernel is also known as locally periodic kernel.</p>
+<p>The daily variation is explained by the periodic exponential sine squared kernel with a fixed periodicity of 24 hour or 1 day. The length-scale of this periodic component, controlling its smoothness, is a free parameter. In order to allow decaying away from exact periodicity, the product with an RBF kernel is taken. The length-scale of this RBF component controls the decay time and is a further free parameter. This type of kernel is also known as locally periodic kernel.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># periodic range : 0.5 --2 days</span>
 </span></span><span style="display:flex;"><span>k1 <span style="color:#f92672">=</span> ConstantKernel(constant_value<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">*</span> ExpSineSquared(length_scale<span style="color:#f92672">=</span><span style="color:#ae81ff">1.0</span>, periodicity<span style="color:#f92672">=</span><span style="color:#ae81ff">24.0</span>, periodicity_bounds<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">50</span>))
 </span></span></code></pre></div><p>Similarly, the weekly variation is explained by the periodic exponential sine squared kernel with a fixed periodicity of 168 hour or 7 days. The length-scale of this periodic component, controlling its smoothness, is a free parameter. In order to allow decaying away from exact periodicity, the product with an RBF kernel is taken. The length-scale of this RBF component controls the decay time and is a further free parameter. This type of kernel is also known as locally periodic kernel.</p>
@@ -443,7 +443,7 @@ silhouette score above k=7. This is also in consistency with thea small elbow ne
 <p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-3-24.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-3-24.png" alt=""> </a></p>
 <p>           </p>
 <h3 id="53-vector-autoregression-var">5.3. Vector Autoregression (VAR)</h3>
-<p>There are 263 taxi zones in New York city, the 61 taxi zones with highest rideshare usage only take 23% of taxi zones and contribute more than 50% of rideshare usage. These 61 taxi zones with highest rideshare usage will be predicted by the two multivariate time series models studied in this work, including Vector Autoregression (VAR) in this section and Recurrent Nneural Network (RNN) in the next section.</p>
+<p>There are 263 taxi zones in New York city, the 61 taxi zones with highest rideshare usage only take 23% of taxi zones and contribute more than 50% of rideshare usage. These 61 taxi zones with highest rideshare usage will be predicted by the two multivariate time series models studied in this work, including Vector Autoregression (VAR) in this section and Recurrent Neural Network (RNN) in the next section.</p>
 <p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-3-16.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-3-16.png" alt=""> </a></p>
 <p>Similar to the SARIMA model in Section 5.1., hourly rideshare demands of 20 weeks starting from March 12 will be used. We choose this time window for Vector Autoregression (VAR) model because it better satisfies the stationarity requirement. One key difference is that in Section 5.1., the SARIMA model is an univariate time series model which will predict the systemwide total rideshare demand; while the VAR model developed in this section is a multivariate time series model which will predict the rideshare demand of 61 taxi zones simultaneously.</p>
 <p>The first step of developing VAR model is to check Granger Causality of all possible combinations of the Time series <a href="https://www.machinelearningplus.com/time-series/vector-autoregression-examples-python/">Ref</a>. The values in the figure below are the P-Values. P-Values lesser than the significance level (0.05), implies the Null Hypothesis that the coefficients of the corresponding past values is zero, that is, the X does not cause Y can be rejected. Looking at the P-Values in the figure below, we can pretty much observe that all the variables (time series) in the system are interchangeably causing each other. This makes this system of multi time series a good candidate for using VAR models to forecast.</p>
@@ -465,7 +465,7 @@ silhouette score above k=7. This is also in consistency with thea small elbow ne
 </span></span><span style="display:flex;"><span>fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">24</span>,<span style="color:#ae81ff">16</span>))
 </span></span><span style="display:flex;"><span>dataplot <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>heatmap(grangers, cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;icefire&#34;</span>, annot<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, ax<span style="color:#f92672">=</span>ax)
 </span></span></code></pre></div><p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-3-25.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-3-25.png" alt=""> </a></p>
-<p>Next we need to check for Stationarity and make the time series stationary if necessary <a href="https://www.machinelearningplus.com/time-series/vector-autoregression-examples-python/">Ref</a>. As shown in the command box below, we conducted Augmented Dickey–Fuller test for each column, and for simplicity, only the output of first column is shown (full results are available in the script P3-5-VAR.ipynb). The Augmented Dickey-Fuller Test results confirmned that each column is Stationary and as a consequence the dataset is suitable for VAR model.</p>
+<p>Next we need to check for Stationarity and make the time series stationary if necessary <a href="https://www.machinelearningplus.com/time-series/vector-autoregression-examples-python/">Ref</a>. As shown in the command box below, we conducted Augmented Dickey–Fuller test for each column, and for simplicity, only the output of first column is shown (full results are available in the script P3-5-VAR.ipynb). The Augmented Dickey-Fuller Test results confirmed that each column is Stationary and as a consequence the dataset is suitable for VAR model.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">adfuller_test</span>(series, signif<span style="color:#f92672">=</span><span style="color:#ae81ff">0.05</span>, name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>, verbose<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>):
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Perform ADFuller to test for Stationarity of given series and print report&#34;&#34;&#34;</span>
 </span></span><span style="display:flex;"><span>    r <span style="color:#f92672">=</span> adfuller(series, autolag<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;AIC&#39;</span>)
@@ -551,7 +551,7 @@ silhouette score above k=7. This is also in consistency with thea small elbow ne
 </span></span><span style="display:flex;"><span>    ax<span style="color:#f92672">.</span>tick_params(labelsize<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>)
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>tight_layout();
 </span></span></code></pre></div><p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-3-26.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-3-26.png" alt=""> </a></p>
-<p>Finally check for Serial Correlation of Residuals (Errors) using Durbin Watson Statistic <a href="https://www.statsmodels.org/dev/generated/statsmodels.stats.stattools.durbin_watson.html">Ref</a>. Here the serial correlation of residuals is used to check if there is any leftover pattern in the residuals (errors). The value of this statistic can vary between 0 and 4. The closer it is to the value 2, then there is no significant serial correlation. The closer to 0, there is a positive serial correlation, and the closer it is to 4 implies negative serial correlation. As shown in the figure below, for all taxi zones the Durbin Watson Statistic is very close to 2, so there is minimal leftover pattern in the resuduals.</p>
+<p>Finally check for Serial Correlation of Residuals (Errors) using Durbin Watson Statistic <a href="https://www.statsmodels.org/dev/generated/statsmodels.stats.stattools.durbin_watson.html">Ref</a>. Here the serial correlation of residuals is used to check if there is any leftover pattern in the residuals (errors). The value of this statistic can vary between 0 and 4. The closer it is to the value 2, then there is no significant serial correlation. The closer to 0, there is a positive serial correlation, and the closer it is to 4 implies negative serial correlation. As shown in the figure below, for all taxi zones the Durbin Watson Statistic is very close to 2, so there is minimal leftover pattern in the residuals.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>out <span style="color:#f92672">=</span> durbin_watson(model_fitted<span style="color:#f92672">.</span>resid)
 </span></span><span style="display:flex;"><span>dw <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat([pd<span style="color:#f92672">.</span>DataFrame(df<span style="color:#f92672">.</span>columns), pd<span style="color:#f92672">.</span>DataFrame(out)], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
 </span></span><span style="display:flex;"><span>dw<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;PULocationID&#39;</span>, <span style="color:#e6db74">&#39;durbin_watson&#39;</span>]
@@ -564,8 +564,8 @@ silhouette score above k=7. This is also in consistency with thea small elbow ne
 </span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#39;Durbin Watson Statistic&#39;</span>)
 </span></span></code></pre></div><p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-3-27.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-3-27.png" alt=""> </a></p>
 <p>           </p>
-<h3 id="54-recurrent-nneural-network-rnn">5.4. Recurrent Nneural Network (RNN)</h3>
-<p>Finally we will use the Recurrent Nneural Network (RNN) to predict the rideshare demands of 61 taxi zones simulaneously. To enable a side by side comparison with predictions from VAR model from the previous section, we will use the same test data range as before. On the other hand, since the RNN model does not require stationarity, we will usee all the previous data as training and evaluation set.</p>
+<h3 id="54-recurrent-neural-network-rnn">5.4. Recurrent Neural Network (RNN)</h3>
+<p>Finally we will use the Recurrent Neural Network (RNN) to predict the rideshare demands of 61 taxi zones simultaneously. To enable a side by side comparison with predictions from VAR model from the previous section, we will use the same test data range as before. On the other hand, since the RNN model does not require stationarity, we will usee all the previous data as training and evaluation set.</p>
 <p>As shown in the code block below, the model is quite simple, containing two RNN layers and a full connection layer. The data is standardized first, and we will use last 24 hours of rideshare demand to predict the demand of next hour for each taxi zone.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>train_mean <span style="color:#f92672">=</span> agg_df_sub_train<span style="color:#f92672">.</span>mean()
 </span></span><span style="display:flex;"><span>train_std <span style="color:#f92672">=</span> agg_df_sub_train<span style="color:#f92672">.</span>std()
@@ -656,7 +656,7 @@ silhouette score above k=7. This is also in consistency with thea small elbow ne
 <p>           
            </p>
 <h2 id="6-conclusions">6. Conclusions</h2>
-<p>In this post, we have studied the rideshare demands in New York City. First, we conducted EDA and discovered some very interesting patterns within the data. Then we built a clustering model to cluster data and to gain a deeper understanding of how ridesharing is being used. Finally, we developed four machine learning models to predict rideshare utilization, including Seasonal Autoregressive Integrated Moving Average (SARIMA), Gaussian Process (GP), Vector Autoregression (VAR), and Recurrent Nneural Network (RNN).</p>
+<p>In this post, we have studied the rideshare demands in New York City. First, we conducted EDA and discovered some very interesting patterns within the data. Then we built a clustering model to cluster data and to gain a deeper understanding of how ridesharing is being used. Finally, we developed four machine learning models to predict rideshare utilization, including Seasonal Autoregressive Integrated Moving Average (SARIMA), Gaussian Process (GP), Vector Autoregression (VAR), and Recurrent Neural Network (RNN).</p>
 <ul class="pa0">
   
    <li class="list">

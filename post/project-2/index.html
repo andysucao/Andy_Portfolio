@@ -34,7 +34,7 @@
 <meta itemprop="name" content="Project 2: Predicitng Customer Churn for a Mobile Phone Carrier">
 <meta itemprop="description" content="Develop machine learning models to predict customer churn using Logistic Regression, Decision Tree, Ensemble methods (Random Forest, Adaboost, GBDT), and Neural Network"><meta itemprop="datePublished" content="2023-08-20T06:01:00-04:00" />
 <meta itemprop="dateModified" content="2023-08-20T06:01:00-04:00" />
-<meta itemprop="wordCount" content="1475">
+<meta itemprop="wordCount" content="1474">
 <meta itemprop="keywords" content="Machine Learning,Logistic Regression," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Project 2: Predicitng Customer Churn for a Mobile Phone Carrier"/>
 <meta name="twitter:description" content="Develop machine learning models to predict customer churn using Logistic Regression, Decision Tree, Ensemble methods (Random Forest, Adaboost, GBDT), and Neural Network"/>
@@ -189,9 +189,9 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="1-project-overview">1. Project Overview</h2>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="1-overview">1. Overview</h2>
 <p>In this project, we will build a series of models to predict the probability of Customer Churn for a Mobile Phone Carrier.</p>
-<p>In the first part, we will conduct Exploratory Data Analysis (EDA). Here the Synthetic Minority Oversampling Technique (SMOTE) method is employed to address the imbalanced classification problem. Then we will develop customer churn prediction models based on (1) Logistic Regression, (2) Decision Tree, (3) Random Forest, (4) Adaboost, (5) Gradient Boosting Decision Trees (GBDT), and (6) Neural Network. With model hyperparameters optimized by <code>GridSearchCV</code> from <code>sklearn</code> package, the performance of each model is pretty good (measured by ROC-AUC, please see the table below).</p>
+<p>In the first part, we will conduct Exploratory Data Analysis (EDA). Here the Synthetic Minority Oversampling Technique (SMOTE) method is employed to address the imbalanced classification problem. Then we will develop customer churn prediction models based on (1) Logistic Regression, (2) Decision Tree, (3) Random Forest, (4) AdaBoost, (5) Gradient Boosting Decision Trees (GBDT), and (6) Neural Network. With model hyperparameters optimized by <code>GridSearchCV</code> from <code>sklearn</code> package, the performance of each model is pretty good (measured by ROC-AUC, please see the table below).</p>
 <hr>
 <table>
 <thead>
@@ -228,7 +228,7 @@
 </tbody>
 </table>
 <hr>
-<p>The Pytyhon Notebook containing the complete model development process and the data used in this project can be found at <a href="https://drive.google.com/drive/folders/1huLD3Pm9pZIhcqHSl4XCoRZgQIxQ1uPj?usp=sharing">Google Drive</a>.</p>
+<p>The Python Notebook containing the complete model development process and the data used in this project can be found at <a href="https://drive.google.com/drive/folders/1huLD3Pm9pZIhcqHSl4XCoRZgQIxQ1uPj?usp=sharing">Google Drive</a>.</p>
 <p>           
            </p>
 <h2 id="2-exploratory-data-analysis-eda">2. Exploratory Data Analysis (EDA)</h2>
@@ -325,7 +325,7 @@
 </table>
 <p>           </p>
 <h3 id="22-churn">2.2. Churn</h3>
-<p>The dependent variable <code>churn</code> is examined below. In the first part of the code block, we examined itd distribution and found its distribution unbalanced. Then we split the dataset into training set and test set, and apply the Synthetic Minority Oversampling Technique (SMOTE) to the training set. The plots below shows the distribution of chrun before (left) and after (right) applying SMOTE method. In the next section, we will use the rebalanced training set to develop model and the original test set to evaluate the model.</p>
+<p>The dependent variable <code>churn</code> is examined below. In the first part of the code block, we examined itd distribution and found its distribution unbalanced. Then we split the dataset into training set and test set, and apply the Synthetic Minority Oversampling Technique (SMOTE) to the training set. The plots below shows the distribution of churn before (left) and after (right) applying SMOTE method. In the next section, we will use the rebalanced training set to develop model and the original test set to evaluate the model.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Y - churn, 0 - False, 1 - True</span>
 </span></span><span style="display:flex;"><span>tel<span style="color:#f92672">.</span>churn<span style="color:#f92672">.</span>value_counts()<span style="color:#f92672">.</span>plot(kind <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;pie&#39;</span>,autopct<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%.1f%%</span><span style="color:#e6db74">&#39;</span>)
 </span></span><span style="display:flex;"><span>
@@ -348,7 +348,7 @@
 </span></span><span style="display:flex;"><span>y_kos<span style="color:#f92672">.</span>value_counts()<span style="color:#f92672">.</span>plot(kind <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;pie&#39;</span>,autopct<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%.1f%%</span><span style="color:#e6db74">&#39;</span>)
 </span></span></code></pre></div><p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-2-3.jpg"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-2-3.jpg" alt=""> </a></p>
 <h2 id="3-developing-customer-churn-prediction-model">3. Developing customer churn prediction model</h2>
-<p>This section is composed of four parts. In the first part, we will build model based on the Logistic Regression alrotighm. In the second part, we will build model using Decision Tree. Then in part three Ensemble methods (i.e., Random Forest, Adaboost, and GBDT) will be introduced. Finally in the fourth part, we will build a Neural Network-based model.</p>
+<p>This section is composed of four parts. In the first part, we will build model based on the Logistic Regression algorithm. In the second part, we will build model using Decision Tree. Then in part three Ensemble methods (i.e., Random Forest, AdaBoost, and GBDT) will be introduced. Finally in the fourth part, we will build a Neural Network-based model.</p>
 <p>           </p>
 <h3 id="31-logistic-regression">3.1. Logistic Regression</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>scaler <span style="color:#f92672">=</span> StandardScaler()
@@ -491,7 +491,7 @@
 </span></span><span style="display:flex;"><span>gbccv <span style="color:#f92672">=</span> GridSearchCV(estimator<span style="color:#f92672">=</span>gbc, param_grid<span style="color:#f92672">=</span>param_grid, scoring<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;roc_auc&#39;</span>, cv<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>,n_jobs<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>, verbose<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>)
 </span></span><span style="display:flex;"><span>gbccv<span style="color:#f92672">.</span>fit(X_kos, y_kos)
 </span></span></code></pre></div><p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-2-8.jpg"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-2-8.jpg" alt=""></a></p>
-<p>Three popular ensemble methods (i.e., Random Forest, Adaboost, GBDT) are also applied to develop customer churn prediction models. Part of the code are shown above, together with their ROC curves. As we expected, all three method have very good ROC performance, and their AUC values are 0.9277 (Random Forest), 0.9373 (Adaboost), 0.9260 (GBDT).</p>
+<p>Three popular ensemble methods (i.e., Random Forest, AdaBoost, GBDT) are also applied to develop customer churn prediction models. Part of the code are shown above, together with their ROC curves. As we expected, all three method have very good ROC performance, and their AUC values are 0.9277 (Random Forest), 0.9373 (AdaBoost), 0.9260 (GBDT).</p>
 <p>           </p>
 <h3 id="34-neural-network">3.4. Neural Network</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Standardize features</span>
@@ -512,7 +512,7 @@
 <p>           
            </p>
 <h2 id="4-conclusions">4. Conclusions</h2>
-<p>In this work, I have developed a series of models to predict customer churn for a mobile phone carrier. Among all the methods I tried, I would recommend Adaboost if model explainability is not required, because it is fast, robust, and very accurate. On the other hand, if &ldquo;black box&rdquo; model is not acceptable, then I would recommend Multivariate logistic regression with L1 regularization, because it is explainable and with careful hyperparameter tuning, very accurate prediction too.</p>
+<p>In this work, I have developed a series of models to predict customer churn for a mobile phone carrier. Among all the methods I tried, I would recommend AdaBoost if model interpretability is not required, because it is fast, robust, and very accurate. On the other hand, if &ldquo;black box&rdquo; model is not acceptable, then I would recommend Multivariate logistic regression with L1 regularization, because it is explainable and with careful hyperparameter tuning, very accurate prediction too.</p>
 <ul class="pa0">
   
    <li class="list">

@@ -8,12 +8,14 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 20 Aug 2023 06:04:00 -0400</lastBuildDate><atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/computer-vision/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Project 5: Anomaly Detection</title>
+      <title>Project 5: Using Autoencoder for Anomaly Detection and searching similar images</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-5/</link>
       <pubDate>Sun, 20 Aug 2023 06:04:00 -0400</pubDate>
       
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-5/</guid>
-      <description></description>
+      <description>1. Overview Anomaly detection is a technique used for identifying rare items, events or observations, which deviate significantly from the majority of the data and do not conform to a well defined notion of normal behavior wikipedia.
+Anomaly detection has very wide applications, such as Fraud detection in credit card transactions ref, Network Intrusion detection ref, and Cancer cell detection ref.
+A wide spectrum of techniques have been proposed for anomaly detection, some of the popular methods are: Density-based techniques (e.</description>
     </item>
     
     <item>
@@ -23,7 +25,7 @@
       
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-4/</guid>
       <description>1. Project Overview In this project, we will build a model for image classification and understand how it works.
-In the first part, we will develop a convolutional neural network (CNN) model for food image classificaton. We will also apply t-distributed Stochastic Neighbor Embedding (t-SNE) technique on the output of different layers to visualize learned visual representations of the CNN model.
+In the first part, we will develop a convolutional neural network (CNN) model for food image classification. We will also apply t-distributed Stochastic Neighbor Embedding (t-SNE) technique on the output of different layers to visualize learned visual representations of the CNN model.
 In order to understand how the model works, we will employ four popular Explainable AI approaches in the second part, including (1) Saliency map, (2) Smooth gradient, (3) Lime package, and (4) Integrated gradients.</description>
     </item>
     
