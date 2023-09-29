@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Project 6: NLP - Natural Language Inference (Bert) | Andy Cao</title>
+    <title>Project 6: Natural Language Inference with BERT and Explainable Artificial Intelligence | Andy Cao</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="generator" content="Hugo 0.116.1">
     
@@ -25,19 +25,19 @@
 
     
     
-    <meta property="og:title" content="Project 6: NLP - Natural Language Inference (Bert)" />
-<meta property="og:description" content="A tool that performs natural language processing" />
+    <meta property="og:title" content="Project 6: Natural Language Inference with BERT and Explainable Artificial Intelligence" />
+<meta property="og:description" content="Build a BERT-based model for Natural Language Inference. Understand how it works by visualizing attention mechanism and comparing output embedding using Euclidean distance and Cosine similarity." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://andysucao.github.io/Andy_Portfolio/post/project-6/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-08-20T06:05:00-04:00" />
 <meta property="article:modified_time" content="2023-08-20T06:05:00-04:00" />
-<meta itemprop="name" content="Project 6: NLP - Natural Language Inference (Bert)">
-<meta itemprop="description" content="A tool that performs natural language processing"><meta itemprop="datePublished" content="2023-08-20T06:05:00-04:00" />
+<meta itemprop="name" content="Project 6: Natural Language Inference with BERT and Explainable Artificial Intelligence">
+<meta itemprop="description" content="Build a BERT-based model for Natural Language Inference. Understand how it works by visualizing attention mechanism and comparing output embedding using Euclidean distance and Cosine similarity."><meta itemprop="datePublished" content="2023-08-20T06:05:00-04:00" />
 <meta itemprop="dateModified" content="2023-08-20T06:05:00-04:00" />
-<meta itemprop="wordCount" content="0">
-<meta itemprop="keywords" content="Natural Language Processing," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Project 6: NLP - Natural Language Inference (Bert)"/>
-<meta name="twitter:description" content="A tool that performs natural language processing"/>
+<meta itemprop="wordCount" content="3195">
+<meta itemprop="keywords" content="Natural Language Processing,Bidirectional Encoder Representations from Transformers (BERT),Explainable AI,Natural Language Inference," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Project 6: Natural Language Inference with BERT and Explainable Artificial Intelligence"/>
+<meta name="twitter:description" content="Build a BERT-based model for Natural Language Inference. Understand how it works by visualizing attention mechanism and comparing output embedding using Euclidean distance and Cosine similarity."/>
 
   </head>
 
@@ -49,7 +49,7 @@
 
   
   
-  <header class="cover bg-top" style="background-image: url('https://andysucao.github.io/Andy_Portfolio/images/project-1-1b.jpg');">
+  <header class="cover bg-top" style="background-image: url('https://andysucao.github.io/Andy_Portfolio/images/projects-6-1.jpg');">
     <div class="pb3-m pb6-l bg-black-60">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
@@ -129,10 +129,10 @@
 
       <div class="tc-l pv6 ph3 ph4-ns">
         
-          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Project 6: NLP - Natural Language Inference (Bert)</h1>
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Project 6: Natural Language Inference with BERT and Explainable Artificial Intelligence</h1>
           
             <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
-              A tool that performs natural language processing
+              Build a BERT-based model for Natural Language Inference. Understand how it works by visualizing attention mechanism and comparing output embedding using Euclidean distance and Cosine similarity.
             </h2>
           
         
@@ -166,13 +166,13 @@
 
     
     
-    <a href="https://twitter.com/share?url=https://andysucao.github.io/Andy_Portfolio/post/project-6/&amp;text=Project%206:%20NLP%20-%20Natural%20Language%20Inference%20%28Bert%29" class="twitter no-underline" aria-label="share on Twitter">
+    <a href="https://twitter.com/share?url=https://andysucao.github.io/Andy_Portfolio/post/project-6/&amp;text=Project%206:%20Natural%20Language%20Inference%20with%20BERT%20and%20Explainable%20Artificial%20Intelligence" class="twitter no-underline" aria-label="share on Twitter">
       <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
 
     </a>
 
     
-    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://andysucao.github.io/Andy_Portfolio/post/project-6/&amp;title=Project%206:%20NLP%20-%20Natural%20Language%20Inference%20%28Bert%29" class="linkedin no-underline" aria-label="share on LinkedIn">
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://andysucao.github.io/Andy_Portfolio/post/project-6/&amp;title=Project%206:%20Natural%20Language%20Inference%20with%20BERT%20and%20Explainable%20Artificial%20Intelligence" class="linkedin no-underline" aria-label="share on LinkedIn">
       <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
 </svg>
@@ -181,7 +181,7 @@
   </div>
 
 
-      <h1 class="f1 athelas mt3 mb1">Project 6: NLP - Natural Language Inference (Bert)</h1>
+      <h1 class="f1 athelas mt3 mb1">Project 6: Natural Language Inference with BERT and Explainable Artificial Intelligence</h1>
       
       
       <time class="f6 mv4 dib tracked" datetime="2023-08-20T06:05:00-04:00">August 20, 2023</time>
@@ -189,10 +189,515 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><ul class="pa0">
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="1-overview">1. Overview</h2>
+<p>In this project, we will build a Bidirectional Encoder Representations from Transformers (BERT) based model for Natural Language Inference. The performance of the model will be evaluated on the Stanford Natural Language Inference <a href="https://nlp.stanford.edu/projects/snli/">(SNLI)</a> Corpus. To further understand how it works, we will visualize attention mechanism and compare output embedding of BERT using Euclidean distance and Cosine similarity.</p>
+<p>The Python Notebook containing the complete model development process and the data used in this project can be found at <a href="https://drive.google.com/drive/folders/1_-lKWYAFBRv2WKr3pAXb7LuBD0QTqeoV?usp=sharing">Google Drive</a>.</p>
+<p>           
+           </p>
+<h2 id="2-bidirectional-encoder-representations-from-transformers-bert">2. Bidirectional Encoder Representations from Transformers (BERT)</h2>
+<p>Bidirectional Encoder Representations from Transformers (BERT) <a href="https://arxiv.org/pdf/1810.04805.pdf">arxiv</a> is a language model developed by Google, based on the Encoder module of the Transformer model <a href="https://arxiv.org/pdf/1706.03762.pdf">arxiv</a> (see circled part of the figure below).</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-6-2.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-6-2.png" alt=""> </a></p>
+<p>BERT has two variants (i.e., BERT_base and BERT_large), and their model architectures are summarized in the table below.</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Model setting</th>
+<th style="text-align:left">BERT_base          </th>
+<th style="text-align:left">BERT_large</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Number of layers</td>
+<td style="text-align:left">12</td>
+<td style="text-align:left">24</td>
+</tr>
+<tr>
+<td style="text-align:left">Hidden size</td>
+<td style="text-align:left">768</td>
+<td style="text-align:left">1024</td>
+</tr>
+<tr>
+<td style="text-align:left">Number of self-attention heads          </td>
+<td style="text-align:left">12</td>
+<td style="text-align:left">16</td>
+</tr>
+<tr>
+<td style="text-align:left">Total Parameters</td>
+<td style="text-align:left">110M</td>
+<td style="text-align:left">340M</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>The BERT model is then pre-trained by two unsupervised tasks. Task 1 is Masked Language Model (Cloze task), which is predicting the masked word. Task 2 is Next Sentence Prediction (NSP), which is to predict whether sentence B is the actual next sentence that follow sentence A. The two figures below demonstrated these tasks schematically.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-6-3.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-6-3.png" alt=""> </a></p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-6-4.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-6-4.png" alt=""> </a></p>
+<p>After pre-training, the BERT model can then be fine-tuned for various downstream tasks, as shown in the figure below <a href="https://www.youtube.com/watch?v=UYPa347-DdE&amp;ab_channel=Hung-yiLee">source</a>.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-6-5.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-6-5.png" alt=""> </a></p>
+<p>A range of BERT models are available on <a href="https://huggingface.co/docs/transformers/model_doc/bert">huggingface</a>, such as:</p>
+<ul>
+<li>bertModel</li>
+<li>bertTokenizer</li>
+<li>bertForMaskedLM</li>
+<li>bertForNextSentencePrediction</li>
+<li>bertForPreTraining</li>
+<li>bertForSequenceClassification</li>
+<li>bertForTokenClassification</li>
+<li>bertForQuestionAnswering</li>
+<li>bertForMultipleChoice</li>
+</ul>
+<p>In this project, we will start with the baseline BERT model (i.e., <code>bertModel</code>) and build a Natural Language Inference model base on it manually. Because in this way, we can have a much deeper understanding of how BERT model actually works. In the next project (i.e., Question Answering), we will use a different approach and start from the <code>bertForQuestionAnswering</code> model instead.</p>
+<p>           
+           </p>
+<h2 id="3-natural-language-inference-nli">3. Natural Language Inference (NLI)</h2>
+<p>Natural Language Processing (NLP) is a broad topic. According to Professor Hung-yi Lee of National Taiwan University (NTU) <a href="https://speech.ee.ntu.edu.tw/~hylee/index.php">website</a>, a matrix can be developed by considering its input type (one sentence or multiple sentences) and output type (one class, class for each token, copy from input, or general sequence), as shown in the table below <a href="http://speech.ee.ntu.edu.tw/~tlkagk/courses/DLHLP20/TaskShort%20(v9).pdf">source</a>.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-6-6.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-6-6.png" alt=""> </a></p>
+<p>As shown in the figure below, for the Natural Language Inference (NLI) task that we are working on, it has two input sentences: one is premise, and the other is hypothesis Both sentences will be considered by BERT simultaneously. A task-specific layer will be added to the downstream of BERT for its first token (i.e., [CLS]), which will output the predicted relationship of these two sentences: entailment, contradiction, or neutral.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-6-7.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-6-7.png" alt=""> </a></p>
+<p>           
+           </p>
+<h2 id="4-model-development">4. Model development</h2>
+<h3 id="41-data-pre-processing">4.1. Data Pre-Processing</h3>
+<p>The Natural Language Inference (NLI) dataset we use is the Stanford Natural Language Inference (SNLI) Corpus. The SNLI corpus has 550,152 records in training set, 10,000 records in evaluation set and another 10,000 records in test set. The head of training set is shown below. Among all the columns, <code>gold_label</code>, <code>sentence1</code>, and <code>sentence2</code> will be used, as they contain the inference results and the two sentences.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-6-8.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-6-8.png" alt=""> </a></p>
+<p>First we clean up the dataset by dropping records with incorrect <code>gold_label</code>. Only code for training set are shown below for brevity, similar procedures are also applied to the dev set and test set.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># removing the entries from all train, dev and test datasets with label &#39;-&#39;</span>
+</span></span><span style="display:flex;"><span>df_train <span style="color:#f92672">=</span> df_train[df_train[<span style="color:#e6db74">&#39;gold_label&#39;</span>] <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;-&#39;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># dropping the rows from the data with NaN values</span>
+</span></span><span style="display:flex;"><span>df_train <span style="color:#f92672">=</span> df_train<span style="color:#f92672">.</span>dropna(subset <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;sentence2&#39;</span>])
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># analyzing the data</span>
+</span></span><span style="display:flex;"><span>print(df_train<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;gold_label&#39;</span>)<span style="color:#f92672">.</span>count())
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#                sentence1  sentence2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># gold_label                         </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># contradiction     183185     183185</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># entailment        183414     183414</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># neutral           182762     182762</span>
+</span></span></code></pre></div><p>After the basic clean up, we need to further prepare the dataset so that it becomes compatible with BERT. The picture <a href="https://leemeng.tw/attack_on_bert_transfer_learning_in_nlp.html">source</a> below shows the required input for BERT. In particular, the Token Embeddings are the tokenized input sentences by wordpiece; the Segment Embeddings are used to identify whether the token is from the first sentence or the second sentence; and Position Embeddings are used to denote the position of each token.</p>
+<p>In practice, when we use Pytorch BERT, we need to generate three tensors for the raw text data: <code>tokens_tensor</code> contains the id of each token; <code>segments_tensor</code> denotes the boundary of two sentences (0 for first sentence and 1 for second sentence); <code>masks_tensor</code> identifies the range of self-attention, as padding will be marked as 0 and no attention is needed in these locations.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-6-9.jpeg"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-6-9.jpeg" alt=""> </a></p>
+<p>First we will get the <code>bert-base-uncased</code> tokenizer and set the maximum sentence length to 128.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># using the same tokenizer used in pre-training</span>
+</span></span><span style="display:flex;"><span>tokenizer <span style="color:#f92672">=</span> BertTokenizer<span style="color:#f92672">.</span>from_pretrained(<span style="color:#e6db74">&#34;bert-base-uncased&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># defining the maximum length of each sentence</span>
+</span></span><span style="display:flex;"><span>max_sentence_length <span style="color:#f92672">=</span> <span style="color:#ae81ff">128</span>
+</span></span></code></pre></div><p>Then we will define some helper functions that we will use in the following steps.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Tokenize Data by BertTokenizer</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tokenize_sentences</span>(sentence):
+</span></span><span style="display:flex;"><span>  tokens <span style="color:#f92672">=</span> tokenizer<span style="color:#f92672">.</span>tokenize(sentence)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> tokens
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Reduce the size of sentence to max_input_length</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">reduce_sentence_length</span>(sentence):
+</span></span><span style="display:flex;"><span>  tokens <span style="color:#f92672">=</span> sentence<span style="color:#f92672">.</span>strip()<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>  tokens <span style="color:#f92672">=</span> tokens[:max_input_length]
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> tokens
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Trim the sentence to max_sentence_length</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">trim_sentence</span>(sentence):
+</span></span><span style="display:flex;"><span>  sentence <span style="color:#f92672">=</span> sentence<span style="color:#f92672">.</span>split()
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> len(sentence) <span style="color:#f92672">&gt;=</span> max_sentence_length:
+</span></span><span style="display:flex;"><span>    sentence <span style="color:#f92672">=</span> sentence[:max_sentence_length]
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">.</span>join(sentence)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get token type id of sentence 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">token_type_ids_sent_01</span>(sentence):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> [<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> len(sentence)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">except</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get token type id of sentence 2</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">token_type_ids_sent_02</span>(sentence):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> [<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> len(sentence)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">except</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get attention mask of given sentence</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">attention_mask_sentence</span>(sentence):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> [<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> len(sentence)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">except</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Convert the attention_mask and token_type ids to int</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">convert_to_int</span>(ids):
+</span></span><span style="display:flex;"><span>  ids <span style="color:#f92672">=</span> [int(d) <span style="color:#66d9ef">for</span> d <span style="color:#f92672">in</span> ids]
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> ids
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Combine the sequences from lists</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">combine_sequence</span>(sequence):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">.</span>join(sequence)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Combine the masks</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">combine_mask</span>(mask):
+</span></span><span style="display:flex;"><span>  mask <span style="color:#f92672">=</span> [str(m) <span style="color:#66d9ef">for</span> m <span style="color:#f92672">in</span> mask]
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">.</span>join(mask)
+</span></span></code></pre></div><p>Next we will (1) trim the sentences to the maximum length, (2) add the [cls] and [sep] tokens, (3) apply the BertTokenizer to this newly generated sentences, (4) get the token type ids for the sentences, (5) obtain the sequence from the tokenized sentences, (6) generate attention mask, (7) combine the token type of both sentences, and finally (8) extract the required columns.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># trimming the sentences to the maximum length</span>
+</span></span><span style="display:flex;"><span>df_train[<span style="color:#e6db74">&#39;sentence1&#39;</span>] <span style="color:#f92672">=</span> df_train[<span style="color:#e6db74">&#39;sentence1&#39;</span>]<span style="color:#f92672">.</span>apply(trim_sentence)
+</span></span><span style="display:flex;"><span>df_train[<span style="color:#e6db74">&#39;sentence2&#39;</span>] <span style="color:#f92672">=</span> df_train[<span style="color:#e6db74">&#39;sentence2&#39;</span>]<span style="color:#f92672">.</span>apply(trim_sentence)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># adding the [cls] and [sep] tokens</span>
+</span></span><span style="display:flex;"><span>df_train[<span style="color:#e6db74">&#39;t_sentence1&#39;</span>] <span style="color:#f92672">=</span> cls_token <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> df_train[<span style="color:#e6db74">&#39;sentence1&#39;</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> sep_token <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span>
+</span></span><span style="display:flex;"><span>df_train[<span style="color:#e6db74">&#39;t_sentence2&#39;</span>] <span style="color:#f92672">=</span> df_train[<span style="color:#e6db74">&#39;sentence2&#39;</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> sep_token
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># applying the BertTokenizer to the newly generated sentences</span>
+</span></span><span style="display:flex;"><span>df_train[<span style="color:#e6db74">&#39;b_sentence1&#39;</span>] <span style="color:#f92672">=</span> df_train[<span style="color:#e6db74">&#39;t_sentence1&#39;</span>]<span style="color:#f92672">.</span>apply(tokenize_sentences)
+</span></span><span style="display:flex;"><span>df_train[<span style="color:#e6db74">&#39;b_sentence2&#39;</span>] <span style="color:#f92672">=</span> df_train[<span style="color:#e6db74">&#39;t_sentence2&#39;</span>]<span style="color:#f92672">.</span>apply(tokenize_sentences)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># getting the token type ids for the sentences</span>
+</span></span><span style="display:flex;"><span>df_train[<span style="color:#e6db74">&#39;sentence1_token_type&#39;</span>] <span style="color:#f92672">=</span> df_train[<span style="color:#e6db74">&#39;b_sentence1&#39;</span>]<span style="color:#f92672">.</span>apply(token_type_ids_sent_01)
+</span></span><span style="display:flex;"><span>df_train[<span style="color:#e6db74">&#39;sentence2_token_type&#39;</span>] <span style="color:#f92672">=</span> df_train[<span style="color:#e6db74">&#39;b_sentence2&#39;</span>]<span style="color:#f92672">.</span>apply(token_type_ids_sent_02)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># obtain the sequence from the tokenized sentences</span>
+</span></span><span style="display:flex;"><span>df_train[<span style="color:#e6db74">&#39;sequence&#39;</span>] <span style="color:#f92672">=</span> df_train[<span style="color:#e6db74">&#39;b_sentence1&#39;</span>] <span style="color:#f92672">+</span> df_train[<span style="color:#e6db74">&#39;b_sentence2&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># generating attention mask</span>
+</span></span><span style="display:flex;"><span>df_train[<span style="color:#e6db74">&#39;attention_mask&#39;</span>] <span style="color:#f92672">=</span> df_train[<span style="color:#e6db74">&#39;sequence&#39;</span>]<span style="color:#f92672">.</span>apply(attention_mask_sentence)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># combining the token type of both sentences</span>
+</span></span><span style="display:flex;"><span>df_train[<span style="color:#e6db74">&#39;token_type&#39;</span>] <span style="color:#f92672">=</span> df_train[<span style="color:#e6db74">&#39;sentence1_token_type&#39;</span>] <span style="color:#f92672">+</span> df_train[<span style="color:#e6db74">&#39;sentence2_token_type&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Converting the inputs to sequential for torchtext Field</span>
+</span></span><span style="display:flex;"><span>df_train[<span style="color:#e6db74">&#39;sequence&#39;</span>] <span style="color:#f92672">=</span> df_train[<span style="color:#e6db74">&#39;sequence&#39;</span>]<span style="color:#f92672">.</span>apply(combine_sequence)
+</span></span><span style="display:flex;"><span>df_train[<span style="color:#e6db74">&#39;attention_mask&#39;</span>] <span style="color:#f92672">=</span> df_train[<span style="color:#e6db74">&#39;attention_mask&#39;</span>]<span style="color:#f92672">.</span>apply(combine_mask)
+</span></span><span style="display:flex;"><span>df_train[<span style="color:#e6db74">&#39;token_type&#39;</span>] <span style="color:#f92672">=</span> df_train[<span style="color:#e6db74">&#39;token_type&#39;</span>]<span style="color:#f92672">.</span>apply(combine_mask)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># extracting the required columns</span>
+</span></span><span style="display:flex;"><span>df_train <span style="color:#f92672">=</span> df_train[[<span style="color:#e6db74">&#39;gold_label&#39;</span>, <span style="color:#e6db74">&#39;sequence&#39;</span>, <span style="color:#e6db74">&#39;attention_mask&#39;</span>, <span style="color:#e6db74">&#39;token_type&#39;</span>]]
+</span></span></code></pre></div><p>After these steps, the dataset will look like this (see figure below), and we finished 80% of data preprocessing.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-6-10.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-6-10.png" alt=""> </a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># field for attention mask</span>
+</span></span><span style="display:flex;"><span>ATTENTION <span style="color:#f92672">=</span> torchtext<span style="color:#f92672">.</span>data<span style="color:#f92672">.</span>Field(batch_first <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>, use_vocab <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>, tokenize <span style="color:#f92672">=</span> reduce_sentence_length, preprocessing <span style="color:#f92672">=</span> convert_to_int, pad_token <span style="color:#f92672">=</span> pad_token_idx)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># field for text</span>
+</span></span><span style="display:flex;"><span>TEXT <span style="color:#f92672">=</span> torchtext<span style="color:#f92672">.</span>data<span style="color:#f92672">.</span>Field(batch_first <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>, use_vocab <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>, tokenize <span style="color:#f92672">=</span> reduce_sentence_length, preprocessing <span style="color:#f92672">=</span> tokenizer<span style="color:#f92672">.</span>convert_tokens_to_ids, pad_token <span style="color:#f92672">=</span> pad_token_idx, unk_token <span style="color:#f92672">=</span> unk_token_idx)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># text field for token type ids</span>
+</span></span><span style="display:flex;"><span>TTYPE <span style="color:#f92672">=</span> torchtext<span style="color:#f92672">.</span>data<span style="color:#f92672">.</span>Field(batch_first <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>, use_vocab <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>, tokenize <span style="color:#f92672">=</span> reduce_sentence_length, preprocessing <span style="color:#f92672">=</span> convert_to_int, pad_token <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># label field for label</span>
+</span></span><span style="display:flex;"><span>LABEL <span style="color:#f92672">=</span> torchtext<span style="color:#f92672">.</span>data<span style="color:#f92672">.</span>LabelField()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fields <span style="color:#f92672">=</span> [(<span style="color:#e6db74">&#39;label&#39;</span>, LABEL), (<span style="color:#e6db74">&#39;sequence&#39;</span>, TEXT), (<span style="color:#e6db74">&#39;attention_mask&#39;</span>, ATTENTION), (<span style="color:#e6db74">&#39;token_type&#39;</span>, TTYPE)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>train_data, valid_data, test_data <span style="color:#f92672">=</span> torchtext<span style="color:#f92672">.</span>data<span style="color:#f92672">.</span>TabularDataset<span style="color:#f92672">.</span>splits(path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;snli_1.0_prep&#39;</span>, train <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;snli_1.0_train_prep.csv&#39;</span>, validation <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;snli_1.0_dev_prep.csv&#39;</span>, test <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;snli_1.0_test_prep.csv&#39;</span>, format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;csv&#39;</span>, fields <span style="color:#f92672">=</span> fields, skip_header <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div><p>Then, with the help of the code block below, we will finish the data preprocessing and get the input data ready, as shown in the two figures below.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-6-11.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-6-11.png" alt=""> </a></p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-6-12.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-6-12.png" alt=""> </a></p>
+<p>           </p>
+<h3 id="42-model-training-and-testing">4.2. Model Training and Testing</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Model Training</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Using the pre-trained Bert_Model</span>
+</span></span><span style="display:flex;"><span>bert_model <span style="color:#f92672">=</span> BertModel<span style="color:#f92672">.</span>from_pretrained(<span style="color:#e6db74">&#39;bert-base-uncased&#39;</span>)
+</span></span></code></pre></div><p>We start from the BERT base model as we discussed earlier. Then we will check the model configuration by <code>model.config</code> and we will get <code>'hidden_size': 768,</code> as expected. Then as shown in the code block below, we add a task specific linear layer on top of the BERT base model. Since the NLI task has 3 outcomes (entailment, contradiction, neutral), the configuration of the top linear layer is 768 by 3.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BERTNLIModel</span>(nn<span style="color:#f92672">.</span>Module):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, bert_model, output_dim,):
+</span></span><span style="display:flex;"><span>        super()<span style="color:#f92672">.</span>__init__()
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>bert <span style="color:#f92672">=</span> bert_model
+</span></span><span style="display:flex;"><span>        embedding_dim <span style="color:#f92672">=</span> bert_model<span style="color:#f92672">.</span>config<span style="color:#f92672">.</span>to_dict()[<span style="color:#e6db74">&#39;hidden_size&#39;</span>]
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>out <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Linear(embedding_dim, output_dim)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">forward</span>(self, sequence, attn_mask, token_type):
+</span></span><span style="display:flex;"><span>        embedded <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>bert(input_ids <span style="color:#f92672">=</span> sequence, attention_mask <span style="color:#f92672">=</span> attn_mask, token_type_ids <span style="color:#f92672">=</span> token_type)[<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>        output <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>out(embedded)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> output
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>OUTPUT_DIM <span style="color:#f92672">=</span> len(LABEL<span style="color:#f92672">.</span>vocab)
+</span></span><span style="display:flex;"><span>model <span style="color:#f92672">=</span> BERTNLIModel(bert_model, OUTPUT_DIM,)<span style="color:#f92672">.</span>to(device)
+</span></span></code></pre></div><p>Then we create the training portion and testing potion of the model, define the optimizer, and train the model as shown below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Model Training</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">train</span>(model, iterator, optimizer, criterion, scheduler):
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Start Training ...&#34;</span>)
+</span></span><span style="display:flex;"><span>    max_grad_norm <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    logging_step <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>    epoch_loss <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    epoch_acc <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    model<span style="color:#f92672">.</span>train()
+</span></span><span style="display:flex;"><span>    step <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    train_loss <span style="color:#f92672">=</span> train_acc <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># for batch in iterator:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> batch <span style="color:#f92672">in</span> tqdm(iterator):
+</span></span><span style="display:flex;"><span>        optimizer<span style="color:#f92672">.</span>zero_grad() <span style="color:#75715e"># clear gradients first</span>
+</span></span><span style="display:flex;"><span>        torch<span style="color:#f92672">.</span>cuda<span style="color:#f92672">.</span>empty_cache() <span style="color:#75715e"># releases all unoccupied cached memory</span>
+</span></span><span style="display:flex;"><span>        sequence <span style="color:#f92672">=</span> batch<span style="color:#f92672">.</span>sequence
+</span></span><span style="display:flex;"><span>        attn_mask <span style="color:#f92672">=</span> batch<span style="color:#f92672">.</span>attention_mask
+</span></span><span style="display:flex;"><span>        token_type <span style="color:#f92672">=</span> batch<span style="color:#f92672">.</span>token_type
+</span></span><span style="display:flex;"><span>        label <span style="color:#f92672">=</span> batch<span style="color:#f92672">.</span>label
+</span></span><span style="display:flex;"><span>        predictions <span style="color:#f92672">=</span> model(sequence, attn_mask, token_type)
+</span></span><span style="display:flex;"><span>        loss <span style="color:#f92672">=</span> criterion(predictions, label)
+</span></span><span style="display:flex;"><span>        acc <span style="color:#f92672">=</span> accuracy(predictions, label)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> fp16:
+</span></span><span style="display:flex;"><span>            accelerator<span style="color:#f92672">.</span>backward(loss)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            loss<span style="color:#f92672">.</span>backward()
+</span></span><span style="display:flex;"><span>        optimizer<span style="color:#f92672">.</span>step()
+</span></span><span style="display:flex;"><span>        scheduler<span style="color:#f92672">.</span>step()
+</span></span><span style="display:flex;"><span>        epoch_loss <span style="color:#f92672">+=</span> loss<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>        epoch_acc <span style="color:#f92672">+=</span> acc<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        step <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        train_acc <span style="color:#f92672">=</span> train_acc <span style="color:#f92672">+</span> acc<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>        train_loss <span style="color:#f92672">=</span> train_loss <span style="color:#f92672">+</span> loss<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> step <span style="color:#f92672">%</span> logging_step <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;learning_rate: &#34;</span>, optimizer<span style="color:#f92672">.</span>param_groups[<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#34;lr&#34;</span>])
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Epoch </span><span style="color:#e6db74">{</span>epoch <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> | Step </span><span style="color:#e6db74">{</span>step<span style="color:#e6db74">}</span><span style="color:#e6db74"> | loss = </span><span style="color:#e6db74">{</span>train_loss <span style="color:#f92672">/</span> logging_step<span style="color:#e6db74">:</span><span style="color:#e6db74">.3f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">, acc = </span><span style="color:#e6db74">{</span>train_acc <span style="color:#f92672">/</span> logging_step<span style="color:#e6db74">:</span><span style="color:#e6db74">.3f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>            train_loss <span style="color:#f92672">=</span> train_acc <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> epoch_loss <span style="color:#f92672">/</span> len(iterator), epoch_acc <span style="color:#f92672">/</span> len(iterator)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Model Testing</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">evaluate</span>(model, iterator, criterion):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#print(iterator)</span>
+</span></span><span style="display:flex;"><span>    epoch_loss <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    epoch_acc <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    model<span style="color:#f92672">.</span>eval()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> torch<span style="color:#f92672">.</span>no_grad():
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># for batch in iterator:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> batch <span style="color:#f92672">in</span> tqdm(iterator):
+</span></span><span style="display:flex;"><span>            sequence <span style="color:#f92672">=</span> batch<span style="color:#f92672">.</span>sequence
+</span></span><span style="display:flex;"><span>            attn_mask <span style="color:#f92672">=</span> batch<span style="color:#f92672">.</span>attention_mask
+</span></span><span style="display:flex;"><span>            token_type <span style="color:#f92672">=</span> batch<span style="color:#f92672">.</span>token_type
+</span></span><span style="display:flex;"><span>            labels <span style="color:#f92672">=</span> batch<span style="color:#f92672">.</span>label
+</span></span><span style="display:flex;"><span>            predictions <span style="color:#f92672">=</span> model(sequence, attn_mask, token_type)
+</span></span><span style="display:flex;"><span>            loss <span style="color:#f92672">=</span> criterion(predictions, labels)
+</span></span><span style="display:flex;"><span>            acc <span style="color:#f92672">=</span> accuracy(predictions, labels)
+</span></span><span style="display:flex;"><span>            epoch_loss <span style="color:#f92672">+=</span> loss<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>            epoch_acc <span style="color:#f92672">+=</span> acc<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> epoch_loss <span style="color:#f92672">/</span> len(iterator), epoch_acc <span style="color:#f92672">/</span> len(iterator)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Defining the loss function and optimizer for our model</span>
+</span></span><span style="display:flex;"><span>optimizer <span style="color:#f92672">=</span> AdamW(model<span style="color:#f92672">.</span>parameters(),lr<span style="color:#f92672">=</span><span style="color:#ae81ff">2e-5</span>,eps<span style="color:#f92672">=</span><span style="color:#ae81ff">1e-6</span>,correct_bias<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_scheduler</span>(optimizer, warmup_steps):
+</span></span><span style="display:flex;"><span>    scheduler <span style="color:#f92672">=</span> transformers<span style="color:#f92672">.</span>get_constant_schedule_with_warmup(optimizer, num_warmup_steps<span style="color:#f92672">=</span>warmup_steps)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> scheduler
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Prepare model</span>
+</span></span><span style="display:flex;"><span>model, optimizer, train_iterator <span style="color:#f92672">=</span> accelerator<span style="color:#f92672">.</span>prepare(model, optimizer, train_iterator)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># model.load_state_dict(torch.load(&#39;P6-NLI.pt&#39;))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>N_EPOCHS <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>warmup_percent <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.2</span>
+</span></span><span style="display:flex;"><span>total_steps <span style="color:#f92672">=</span> math<span style="color:#f92672">.</span>ceil(N_EPOCHS <span style="color:#f92672">*</span> train_data_len <span style="color:#f92672">*</span> <span style="color:#ae81ff">1.</span><span style="color:#f92672">/</span>BATCH_SIZE)
+</span></span><span style="display:flex;"><span>warmup_steps <span style="color:#f92672">=</span> int(total_steps<span style="color:#f92672">*</span>warmup_percent)
+</span></span><span style="display:flex;"><span>scheduler <span style="color:#f92672">=</span> get_scheduler(optimizer, warmup_steps)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>best_valid_loss <span style="color:#f92672">=</span> float(<span style="color:#e6db74">&#39;inf&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> epoch <span style="color:#f92672">in</span> range(N_EPOCHS):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    train_loss, train_acc <span style="color:#f92672">=</span> train(model, train_iterator, optimizer, criterion, scheduler)
+</span></span><span style="display:flex;"><span>    valid_loss, valid_acc <span style="color:#f92672">=</span> evaluate(model, valid_iterator, criterion)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> valid_loss <span style="color:#f92672">&lt;</span> best_valid_loss:
+</span></span><span style="display:flex;"><span>        best_valid_loss <span style="color:#f92672">=</span> valid_loss
+</span></span><span style="display:flex;"><span>        torch<span style="color:#f92672">.</span>save(model<span style="color:#f92672">.</span>state_dict(), <span style="color:#e6db74">&#39;P6-NLI-best.pt&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">Train Loss: </span><span style="color:#e6db74">{</span>train_loss<span style="color:#e6db74">:</span><span style="color:#e6db74">.3f</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> | Train Acc: </span><span style="color:#e6db74">{</span>train_acc<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span><span style="color:#e6db74">:</span><span style="color:#e6db74">.2f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">%&#39;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74"> Val. Loss: </span><span style="color:#e6db74">{</span>valid_loss<span style="color:#e6db74">:</span><span style="color:#e6db74">.3f</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> |  Val. Acc: </span><span style="color:#e6db74">{</span>valid_acc<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span><span style="color:#e6db74">:</span><span style="color:#e6db74">.2f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">%&#39;</span>)
+</span></span></code></pre></div><p>After training the model, we then evaluate the model&rsquo;s performance on the test set, and we get pretty good accuracy of 87.83%.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>load_state_dict(torch<span style="color:#f92672">.</span>load(<span style="color:#e6db74">&#39;P6-NLI.pt&#39;</span>))
+</span></span><span style="display:flex;"><span>test_loss, test_acc <span style="color:#f92672">=</span> evaluate(model, test_iterator, criterion)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Test Loss: </span><span style="color:#e6db74">{</span>test_loss<span style="color:#e6db74">:</span><span style="color:#e6db74">.3f</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> |  Test Acc: </span><span style="color:#e6db74">{</span>test_acc<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span><span style="color:#e6db74">:</span><span style="color:#e6db74">.2f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">%&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Test Loss: 0.325 |  Test Acc: 87.83%</span>
+</span></span></code></pre></div><p>           </p>
+<h3 id="43-results-on-custom-inputs">4.3. Results on custom inputs</h3>
+<p>One particle interesting thing to try is to provide two sentences by ourself and ask the NLI model we just built to predict the outcome on the fly. To achieve that goal, we need to add this block of code to our program.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># function to get the results on custom inputs</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">predict_inference</span>(premise, hypothesis, model, device):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># appending the &#39;cls&#39; and &#39;sep&#39; tokens</span>
+</span></span><span style="display:flex;"><span>    premise <span style="color:#f92672">=</span> cls_token <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> premise <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> sep_token
+</span></span><span style="display:flex;"><span>    hypothesis <span style="color:#f92672">=</span> hypothesis <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> sep_token
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># tokenize the premise and hypothesis using bert tokenizer</span>
+</span></span><span style="display:flex;"><span>    tokenize_premise <span style="color:#f92672">=</span> tokenize_sentences(premise)
+</span></span><span style="display:flex;"><span>    tokenize_hypothesis <span style="color:#f92672">=</span> tokenize_sentences(hypothesis)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># generate the token type ids of both premise and hypothesis</span>
+</span></span><span style="display:flex;"><span>    premise_token_type <span style="color:#f92672">=</span> token_type_ids_sent_01(tokenize_premise)
+</span></span><span style="display:flex;"><span>    hypothesis_token_type <span style="color:#f92672">=</span> token_type_ids_sent_02(tokenize_hypothesis)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># combining the tokenized premise and hypothesis to generate the sequence</span>
+</span></span><span style="display:flex;"><span>    indexes <span style="color:#f92672">=</span> tokenize_premise <span style="color:#f92672">+</span> tokenize_hypothesis
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># converting the sequence of tokens into token ids</span>
+</span></span><span style="display:flex;"><span>    indexes <span style="color:#f92672">=</span> tokenizer<span style="color:#f92672">.</span>convert_tokens_to_ids(indexes)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># combining the premise and hypothesis tokens ids</span>
+</span></span><span style="display:flex;"><span>    indexes_type <span style="color:#f92672">=</span> premise_token_type <span style="color:#f92672">+</span> hypothesis_token_type
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># generating the attention mask of the ids</span>
+</span></span><span style="display:flex;"><span>    attention_mask <span style="color:#f92672">=</span> token_type_ids_sent_02(indexes)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># creating the pytorch tensors of indexes, indexes_type, attention_mask</span>
+</span></span><span style="display:flex;"><span>    indexes <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>LongTensor(indexes)<span style="color:#f92672">.</span>unsqueeze(<span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>to(device)
+</span></span><span style="display:flex;"><span>    indexes_type <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>LongTensor(indexes_type)<span style="color:#f92672">.</span>unsqueeze(<span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>to(device)
+</span></span><span style="display:flex;"><span>    attention_mask <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>LongTensor(attention_mask)<span style="color:#f92672">.</span>unsqueeze(<span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>to(device)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># predicting to get the judgements</span>
+</span></span><span style="display:flex;"><span>    prediction <span style="color:#f92672">=</span> model(indexes, attention_mask, indexes_type)
+</span></span><span style="display:flex;"><span>    prediction <span style="color:#f92672">=</span> prediction<span style="color:#f92672">.</span>argmax(dim<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> LABEL<span style="color:#f92672">.</span>vocab<span style="color:#f92672">.</span>itos[prediction]
+</span></span></code></pre></div><p>The following three blocks shows some representative results, and from them we can see that the model we build can indeed provide reasonable predictions as we expect.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>premise <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;A black race car starts up in front of a crowd of people.&#39;</span>
+</span></span><span style="display:flex;"><span>hypothesis <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;A man is driving down a lonely road.&#39;</span>
+</span></span><span style="display:flex;"><span>predict_inference(premise, hypothesis, model, device)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># output</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;contradiction&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>premise <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;A soccer game with multiple males playing.&#39;</span>
+</span></span><span style="display:flex;"><span>hypothesis <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Some men are playing a sport.&#39;</span>
+</span></span><span style="display:flex;"><span>predict_inference(premise, hypothesis, model, device)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># output</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;entailment&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>premise <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;A man playing an electric guitar on stage.&#39;</span>
+</span></span><span style="display:flex;"><span>hypothesis <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;A man is performing for cash&#39;</span>
+</span></span><span style="display:flex;"><span>predict_inference(premise, hypothesis, model, device)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># output</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;neutral&#39;</span>
+</span></span></code></pre></div><p>           
+           </p>
+<h2 id="5-understanding-bert-model-with-explainable-ai-techniques">5. Understanding BERT model with Explainable AI techniques</h2>
+<h3 id="51-attention-mechanism">5.1. Attention mechanism</h3>
+<p>One of the key features in BERT is its multi-head attention mechanism, as shown in the figure below <a href="https://arxiv.org/pdf/1706.03762.pdf">source</a>.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-6-13.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-6-13.png" alt=""> </a></p>
+<p>To see how does attention mechanism actually work in our trained NLI model, we can utilize the <code>BertViz</code> module. The installation of <code>BertViz</code> module is shown below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Install BertViz</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ref: https://colab.research.google.com/drive/1g2nhY9vZG-PLC3w3dcHGqwsHBAXnD9EY</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> sys
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>test <span style="color:#f92672">-</span>d bertviz_repo <span style="color:#f92672">||</span> git clone https:<span style="color:#f92672">//</span>github<span style="color:#f92672">.</span>com<span style="color:#f92672">/</span>jessevig<span style="color:#f92672">/</span>bertviz bertviz_repo
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> <span style="color:#e6db74">&#39;bertviz_repo&#39;</span> <span style="color:#f92672">in</span> sys<span style="color:#f92672">.</span>path:
+</span></span><span style="display:flex;"><span>  sys<span style="color:#f92672">.</span>path <span style="color:#f92672">+=</span> [<span style="color:#e6db74">&#39;bertviz_repo&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Import packages</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> transformers <span style="color:#f92672">import</span> BertTokenizer, BertModel
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> bertviz <span style="color:#f92672">import</span> head_view
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Display visualzation helper within jupyter notebook</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">call_html</span>():
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">import</span> IPython
+</span></span><span style="display:flex;"><span>  display(IPython<span style="color:#f92672">.</span>core<span style="color:#f92672">.</span>display<span style="color:#f92672">.</span>HTML(<span style="color:#e6db74">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;script src=&#34;/static/components/requirejs/require.js&#34;&gt;&lt;/script&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;script&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          requirejs.config({
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            paths: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              base: &#39;/static/base&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &#34;d3&#34;: &#34;https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.8/d3.min&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              jquery: &#39;//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            },
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          });
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;/script&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#39;&#39;&#39;</span>))
+</span></span></code></pre></div><p>Then we can provide two sentences and get the attention of each head on each layer.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># two sentences</span>
+</span></span><span style="display:flex;"><span>sentence_a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;A black race car starts up in front of a crowd of people.&#39;</span>
+</span></span><span style="display:flex;"><span>sentence_b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;A man is driving down a lonely road.&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Display BERT attention</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Removing `state_dict` will get attention results of original BERT</span>
+</span></span><span style="display:flex;"><span>model_version <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;bert-base-uncased&#39;</span>
+</span></span><span style="display:flex;"><span>finetuned_model  <span style="color:#f92672">=</span> BertModel<span style="color:#f92672">.</span>from_pretrained(model_version, output_attentions<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, state_dict<span style="color:#f92672">=</span>model<span style="color:#f92672">.</span>state_dict())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Put tokens into BERT to get attention</span>
+</span></span><span style="display:flex;"><span>inputs <span style="color:#f92672">=</span> tokenizer<span style="color:#f92672">.</span>encode_plus(sentence_a, sentence_b, return_tensors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;pt&#39;</span>, add_special_tokens<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>token_type_ids <span style="color:#f92672">=</span> inputs[<span style="color:#e6db74">&#39;token_type_ids&#39;</span>]
+</span></span><span style="display:flex;"><span>input_ids <span style="color:#f92672">=</span> inputs[<span style="color:#e6db74">&#39;input_ids&#39;</span>]
+</span></span><span style="display:flex;"><span>attention <span style="color:#f92672">=</span> finetuned_model(input_ids, token_type_ids<span style="color:#f92672">=</span>token_type_ids)[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>input_id_list <span style="color:#f92672">=</span> input_ids[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>tolist() <span style="color:#75715e"># Batch index 0</span>
+</span></span><span style="display:flex;"><span>tokens <span style="color:#f92672">=</span> tokenizer<span style="color:#f92672">.</span>convert_ids_to_tokens(input_id_list)
+</span></span><span style="display:flex;"><span>call_html()
+</span></span><span style="display:flex;"><span>head_view(attention, tokens)
+</span></span></code></pre></div><p>The attention of heads in layer 9 is shown below. As can be seen from the figure, the attention of <code>lonely</code> is heavily concentrated on <code>a crowd of people</code> and <code>driving down a lonely road</code>, which suggests that our BERT based NLI model detected the contradiction between these two sentences.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-6-14.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-6-14.png" alt=""> </a></p>
+<p>           </p>
+<h3 id="52-contextualized-word-embeddings">5.2. Contextualized word embeddings</h3>
+<p>Another very important feature of BERT is its contextualized word embeddings. To see how it works, we deliberately select 10 sentences with word <code>duck</code>:</p>
+<ol>
+<li>Geese duck and teal are abundant</li>
+<li>Hen and duck house</li>
+<li>We enjoyed the subtle flavors of the duck</li>
+<li>Apart from the duck and her two ducklings there is also a kangaroo and then a blue footed booby</li>
+<li>Add the duck fat and bacon lardons and fry until golden brown</li>
+<li>Do not duck your head down keep your shoulders hunched up and slowly stand up straight</li>
+<li>I just need a place to duck out of the rain for a bit</li>
+<li>The ceiling was so low I had to duck my head</li>
+<li>If you hear gunfire duck and hide away from the windows</li>
+<li>He slid up right behind her before she could duck into a shop</li>
+</ol>
+<p>According to the <a href="https://dictionary.cambridge.org/us/dictionary/english/duck">Cambridge dictionary</a>, <code>duck</code> as a noun refers to a bird that lives by water and has webbed feet, or the meat of this bird; <code>duck</code>, as a verb, means to move your head or the top part of your body quickly down, especially to avoid being hit, or to move quickly to a place, especially in order not to be seen. Sentences 1&ndash;5 has the first meaning of <code>duck</code>, and sentences 6&ndash;10 has the second meaning of <code>duck</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Index of word selected for embedding comparison. E.g. For sentence &#34;Geese duck and teal are abundant&#34;, if index is 0, &#34;Geese&#34; is selected</span>
+</span></span><span style="display:flex;"><span>select_word_index <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">9</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">euclidean_distance</span>(a, b):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Compute euclidean distance (L2 norm) between two numpy vectors a and b</span>
+</span></span><span style="display:flex;"><span>    dist <span style="color:#f92672">=</span> norm(a<span style="color:#f92672">-</span>b)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> dist
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cosine_similarity</span>(a, b):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Compute cosine similarity between two numpy vectors a and b</span>
+</span></span><span style="display:flex;"><span>    cos_sim <span style="color:#f92672">=</span> dot(a, b)<span style="color:#f92672">/</span>(norm(a)<span style="color:#f92672">*</span>norm(b))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> cos_sim
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_select_embedding</span>(output, tokenized_sentence, select_word_index):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># The layer to visualize, choose from 0 to 12</span>
+</span></span><span style="display:flex;"><span>    LAYER <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Get selected layer&#39;s hidden state</span>
+</span></span><span style="display:flex;"><span>    hidden_state <span style="color:#f92672">=</span> output<span style="color:#f92672">.</span>hidden_states[LAYER][<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Convert select_word_index in sentence to select_token_index in tokenized sentence</span>
+</span></span><span style="display:flex;"><span>    select_token_index <span style="color:#f92672">=</span> tokenized_sentence<span style="color:#f92672">.</span>word_to_tokens(select_word_index)<span style="color:#f92672">.</span>start
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Return embedding of selected word</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> hidden_state[select_token_index]<span style="color:#f92672">.</span>numpy()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Metric for comparison. Choose from euclidean_distance, cosine_similarity</span>
+</span></span><span style="display:flex;"><span>METRIC <span style="color:#f92672">=</span> euclidean_distance
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># METRIC = cosine_similarity</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Tokenize and encode sentences into model&#39;s input format</span>
+</span></span><span style="display:flex;"><span>tokenized_sentences <span style="color:#f92672">=</span> [tokenizer(sentence, return_tensors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;pt&#39;</span>) <span style="color:#66d9ef">for</span> sentence <span style="color:#f92672">in</span> sentences]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Input encoded sentences into model and get outputs</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> torch<span style="color:#f92672">.</span>no_grad():
+</span></span><span style="display:flex;"><span>    outputs <span style="color:#f92672">=</span> [model(<span style="color:#f92672">**</span>tokenized_sentence) <span style="color:#66d9ef">for</span> tokenized_sentence <span style="color:#f92672">in</span> tokenized_sentences]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get embedding of selected word(s) in sentences. &#34;embeddings&#34; has shape (len(sentences), 768), where 768 is the dimension of BERT&#39;s hidden state</span>
+</span></span><span style="display:flex;"><span>embeddings <span style="color:#f92672">=</span> [get_select_embedding(outputs[i], tokenized_sentences[i], select_word_index[i]) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(outputs))]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Pairwse comparsion of sentences&#39; embeddings using the metirc defined. &#34;similarity_matrix&#34; has shape [len(sentences), len(sentences)]</span>
+</span></span><span style="display:flex;"><span>similarity_matrix <span style="color:#f92672">=</span> pairwise_distances(embeddings, metric<span style="color:#f92672">=</span>METRIC)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##### Plot the similarity matrix #####</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>rcParams[<span style="color:#e6db74">&#39;figure.figsize&#39;</span>] <span style="color:#f92672">=</span> [<span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">10</span>] <span style="color:#75715e"># Change figure size of the plot</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># plt.imshow(similarity_matrix, cmap=&#34;jet&#34;, vmin=0, vmax=15) # Display an image in the plot</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>imshow(similarity_matrix, vmin<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>, vmax<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span>) <span style="color:#75715e"># Display an image in the plot</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># plt.imshow(similarity_matrix) # Display an image in the plot</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>colorbar() <span style="color:#75715e"># Add colorbar to the plot</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>yticks(ticks<span style="color:#f92672">=</span>range(len(sentences)), labels<span style="color:#f92672">=</span>sentences) <span style="color:#75715e"># Set tick locations and labels (sentences) of y-axis</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Comparison of BERT Word Embeddings&#39;</span>) <span style="color:#75715e"># Add title to the plot</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i,j), label <span style="color:#f92672">in</span> np<span style="color:#f92672">.</span>ndenumerate(similarity_matrix): <span style="color:#75715e"># np.ndenumerate is 2D version of enumerate</span>
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>text(i, j, <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{:.2f}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(label), ha<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;center&#39;</span>, va<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;center&#39;</span>) <span style="color:#75715e"># Add values in similarity_matrix to the corresponding position in the plot</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show() <span style="color:#75715e"># Show the plot</span>
+</span></span></code></pre></div><p>With the code block above, we compute the Euclidean Distance and Cosine Similarity of word <code>duck</code> for each sentence and shown in the two figures below. From the first figure, we can see that the first 5 sentences with duck as a noun has much smaller Euclidean Distance, similarly the other 5 sentences with duck as verb has smaller Euclidean Distance as well. The Euclidean Distances of sentences 1&ndash;5 and sentences 6&ndash;10 are much larger, as shown in the off diagonal parts clearly.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-6-15.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-6-15.png" alt=""> </a></p>
+<p>Similar trend can also be observed in the Cosine Similarity results shown below. Here, the first 5 sentences and the other 5 sentences have much larger Cosine Similarity among themselves, and the Cosine Similarity among them are much smaller. These results indicate that word embeddings in BERT are indeed contextualized and that different meanings of the same word can be distinguished successfully.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-6-16.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-6-16.png" alt=""> </a></p>
+<p>           
+           </p>
+<h2 id="6-conclusions">6. Conclusions</h2>
+<p>In this project, we built a BERT based Natural Language Inference model, and the model was fine-tuned on the Stanford Natural Language Inference (SNLI) Corpus with test accuracy equals to 87.83%. Then we visualized some key characteristics of the BERT model with Explainable AI techniques, including attention mechanism and contextualized word embeddings. Furthermore, we have also augmented the program so that it can provide predictions on custom inputs on-the-fly, and very good results are obtained as well.</p>
+<h2 id="references">References:</h2>
+<p>Source of hero image: <a href="https://medium.com/dissecting-bert/dissecting-bert-part2-335ff2ed9c73">https://medium.com/dissecting-bert/dissecting-bert-part2-335ff2ed9c73</a></p>
+<ul class="pa0">
   
    <li class="list">
      <a href="https://andysucao.github.io/Andy_Portfolio/tags/natural-language-processing" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Natural Language Processing</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://andysucao.github.io/Andy_Portfolio/tags/bidirectional-encoder-representations-from-transformers-bert" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Bidirectional Encoder Representations from Transformers (BERT)</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://andysucao.github.io/Andy_Portfolio/tags/explainable-ai" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Explainable AI</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://andysucao.github.io/Andy_Portfolio/tags/natural-language-inference" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Natural Language Inference</a>
    </li>
   
 </ul>
@@ -206,6 +711,17 @@
 
 
 
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="https://andysucao.github.io/Andy_Portfolio/post/project-4/">Project 4: Image Classification and Explainable Artificial Intelligence</a>
+        </li>
+	    
+    </ul>
+</div>
 
 </aside>
 

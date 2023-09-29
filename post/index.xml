@@ -17,21 +17,22 @@
     </item>
     
     <item>
-      <title>Project 7: NLP - Question Answering</title>
+      <title>Project 7: Question Answering with a Fine-Tuned BERT</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-7/</link>
       <pubDate>Sun, 20 Aug 2023 06:06:00 -0400</pubDate>
       
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-7/</guid>
-      <description></description>
+      <description>References: Source of hero image: https://towardsml.wordpress.com/2019/09/17/bert-explained-a-complete-guide-with-theory-and-tutorial/</description>
     </item>
     
     <item>
-      <title>Project 6: NLP - Natural Language Inference (Bert)</title>
+      <title>Project 6: Natural Language Inference with BERT and Explainable Artificial Intelligence</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-6/</link>
       <pubDate>Sun, 20 Aug 2023 06:05:00 -0400</pubDate>
       
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-6/</guid>
-      <description></description>
+      <description>1. Overview In this project, we will build a Bidirectional Encoder Representations from Transformers (BERT) based model for Natural Language Inference. The performance of the model will be evaluated on the Stanford Natural Language Inference (SNLI) Corpus. To further understand how it works, we will visualize attention mechanism and compare output embedding of BERT using Euclidean distance and Cosine similarity.
+The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.</description>
     </item>
     
     <item>
