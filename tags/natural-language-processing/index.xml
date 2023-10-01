@@ -22,7 +22,9 @@
       <pubDate>Sun, 20 Aug 2023 06:06:00 -0400</pubDate>
       
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-7/</guid>
-      <description>References: Source of hero image: https://towardsml.wordpress.com/2019/09/17/bert-explained-a-complete-guide-with-theory-and-tutorial/</description>
+      <description>1. Overview In this project, we will build a Bidirectional Encoder Representations from Transformers (BERT) based model for a different Natural Language Processing task &amp;ndash; Question Answering. The model will be fine-tuned on the Conversational Question Answering Challenge (CoQA) dataset from Stanford University.
+The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.
+2. Question Answering (QA) Question Answering, particularly Extraction-based Question Answering, is another type of Natural Language Processing task.</description>
     </item>
     
     <item>

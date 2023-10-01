@@ -6,7 +6,18 @@
     <description>Recent content in Bidirectional Encoder Representations from Transformers (BERT) on Andy Cao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Aug 2023 06:05:00 -0400</lastBuildDate><atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/bidirectional-encoder-representations-from-transformers-bert/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Aug 2023 06:06:00 -0400</lastBuildDate><atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/bidirectional-encoder-representations-from-transformers-bert/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project 7: Question Answering with a Fine-Tuned BERT</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-7/</link>
+      <pubDate>Sun, 20 Aug 2023 06:06:00 -0400</pubDate>
+      
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-7/</guid>
+      <description>1. Overview In this project, we will build a Bidirectional Encoder Representations from Transformers (BERT) based model for a different Natural Language Processing task &amp;ndash; Question Answering. The model will be fine-tuned on the Conversational Question Answering Challenge (CoQA) dataset from Stanford University.
+The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.
+2. Question Answering (QA) Question Answering, particularly Extraction-based Question Answering, is another type of Natural Language Processing task.</description>
+    </item>
+    
     <item>
       <title>Project 6: Natural Language Inference with BERT and Explainable Artificial Intelligence</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-6/</link>

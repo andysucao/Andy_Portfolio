@@ -26,18 +26,18 @@
     
     
     <meta property="og:title" content="Project 7: Question Answering with a Fine-Tuned BERT" />
-<meta property="og:description" content="A tool that performs natural language processing" />
+<meta property="og:description" content="Build a BERT-based model for Question Answering." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://andysucao.github.io/Andy_Portfolio/post/project-7/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-08-20T06:06:00-04:00" />
 <meta property="article:modified_time" content="2023-08-20T06:06:00-04:00" />
 <meta itemprop="name" content="Project 7: Question Answering with a Fine-Tuned BERT">
-<meta itemprop="description" content="A tool that performs natural language processing"><meta itemprop="datePublished" content="2023-08-20T06:06:00-04:00" />
+<meta itemprop="description" content="Build a BERT-based model for Question Answering."><meta itemprop="datePublished" content="2023-08-20T06:06:00-04:00" />
 <meta itemprop="dateModified" content="2023-08-20T06:06:00-04:00" />
-<meta itemprop="wordCount" content="6">
-<meta itemprop="keywords" content="Natural Language Processing," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="wordCount" content="3146">
+<meta itemprop="keywords" content="Natural Language Processing,Bidirectional Encoder Representations from Transformers (BERT),Question Answering," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Project 7: Question Answering with a Fine-Tuned BERT"/>
-<meta name="twitter:description" content="A tool that performs natural language processing"/>
+<meta name="twitter:description" content="Build a BERT-based model for Question Answering."/>
 
   </head>
 
@@ -132,7 +132,7 @@
           <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Project 7: Question Answering with a Fine-Tuned BERT</h1>
           
             <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
-              A tool that performs natural language processing
+              Build a BERT-based model for Question Answering.
             </h2>
           
         
@@ -189,12 +189,462 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="references">References:</h2>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="1-overview">1. Overview</h2>
+<p>In this project, we will build a Bidirectional Encoder Representations from Transformers (BERT) based model for a different Natural Language Processing task &ndash; Question Answering. The model will be fine-tuned on the Conversational Question Answering Challenge (<a href="https://stanfordnlp.github.io/coqa/">CoQA</a>) dataset from Stanford University.</p>
+<p>The Python Notebook containing the complete model development process and the data used in this project can be found at <a href="https://drive.google.com/drive/folders/1CaYRHPOJ6iGFAN6W1z9lneOsrdtz7XAB?usp=sharing">Google Drive</a>.</p>
+<p>           
+           </p>
+<h2 id="2-question-answering-qa">2. Question Answering (QA)</h2>
+<p>Question Answering, particularly Extraction-based Question Answering, is another type of Natural Language Processing task. As shown in the figure (<a href="http://speech.ee.ntu.edu.tw/~tlkagk/courses/DLHLP20/TaskShort%20(v9).pdf">source</a>) below, its input has multiple sequences and its output is copied from input.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-7-2.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-7-2.png" alt=""> </a></p>
+<p>An example of QA from Professor Hung-yi Lee of National Taiwan University (NTU) <a href="https://speech.ee.ntu.edu.tw/~hylee/ml/ml2021-course-data/bert_v8.pdf">website</a> is shown below. In particular, to solve the QA problem, the QA model will take both the Document, D = {d1, d2, &hellip;, dN} and the Query, Q = {q1, q2, &hellip;, qM}, as its input. After processing the data, the QA model will then output two integers: one corresponds to the location in D where the answer starts (s), and the other corresponds to the location in D where the answer ends (e). The answer will be A = {ds, &hellip;, de}.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-7-3.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-7-3.png" alt=""> </a></p>
+<p>How does BERT-based QA model solve this problem? Generally, a BERT-based QA model will add a task specific layer to the output of BERT pre-trained model. In the two figures <a href="https://speech.ee.ntu.edu.tw/~hylee/ml/ml2021-course-data/bert_v8.pdf">source</a> below, two random initialized vectors are added, where the red vector is to detect the answer start location, and the blue vector is to determine the answer end location. To determine the location where answer starts, the red vector will take inner product with each output vector of BERT corresponds to the document D, and then take a softmax to find the location of the start of the answer, s</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-7-4.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-7-4.png" alt=""> </a></p>
+<p>Similarly, to determine the location where answer ends, the blue vector will take inner product with each output vector of BERT corresponds to the document D, and then take a softmax to find the location of the end of the answer, e. After both s and e are determined, the final answer will be A = {ds, &hellip;, de}.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-7-5.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-7-5.png" alt=""> </a></p>
+<p>           
+           </p>
+<h2 id="3-model-development">3. Model development</h2>
+<h3 id="31-data-pre-processing">3.1. Data Pre-Processing</h3>
+<p>The dataset we use in this project is the Conversational Question Answering Challenge (<a href="https://stanfordnlp.github.io/coqa/">CoQA</a>) dataset from Stanford University. This dataset has 7199 records in the train_dev set and 500 records in the test set. The text box below shows the first record from the train_dev set. Here, we can see that each record is saved as a dictionary with 7 keys: source, id, filename, story, questions, answers, and name. Among these keys, story, questions, and answers are important to us, because they corresponds to the Document, Question, and ground truth Answer for our QA model.</p>
+<p>Two important points here: (1) each story may be used for multiple questions and answers. Here for brevity we only displayed 3 questions and 3 answers but in the actual data set this story are used by 20 questions and 20 answers. (2) There might be minor imperfection in the dataset. For example, for the second question &lsquo;what is the library for?&rsquo;, the answer provided is &lsquo;<strong>he</strong> Vatican Library is a research library&rsquo;, which should be &lsquo;<strong>The</strong> Vatican Library is a research library&rsquo;. If we take a close look at the Document we can find the root cause of this interesting answer is the raw text: &lsquo;<strong>\n\nThe</strong> Vatican Library is a research library for history, law, philosophy, science and theology.&rsquo; So &lsquo;\n&rsquo;, which is used to add a new line, causes this issue.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>  {<span style="color:#e6db74">&#39;source&#39;</span>: <span style="color:#e6db74">&#39;wikipedia&#39;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;id&#39;</span>: <span style="color:#e6db74">&#39;3zotghdk5ibi9cex97fepx7jetpso7&#39;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;filename&#39;</span>: <span style="color:#e6db74">&#39;Vatican_Library.txt&#39;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;story&#39;</span>: <span style="color:#e6db74">&#39;The Vatican Apostolic Library (), more commonly called the Vatican Library or simply the Vat, is the library of the Holy See, located in Vatican City. Formally established in 1475, although it is much older, it is one of the oldest libraries in the world and contains one of the most significant collections of historical texts. It has 75,000 codices from throughout history, as well as 1.1 million printed books, which include some 8,500 incunabula. </span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">The Vatican Library is a research library for history, law, philosophy, science and theology. The Vatican Library is open to anyone who can document their qualifications and research needs. Photocopies for private study of pages from books published between 1801 and 1990 can be requested in person or by mail. </span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">In March 2014, the Vatican Library began an initial four-year project of digitising its collection of manuscripts, to be made available online. </span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">The Vatican Secret Archives were separated from the library at the beginning of the 17th century; they contain another 150,000 items. </span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">Scholars have traditionally divided the history of the library into five periods, Pre-Lateran, Lateran, Avignon, Pre-Vatican and Vatican. </span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">The Pre-Lateran period, comprising the initial days of the library, dated from the earliest days of the Church. Only a handful of volumes survive from this period, though some are very significant.&#39;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;questions&#39;</span>: [{<span style="color:#e6db74">&#39;input_text&#39;</span>: <span style="color:#e6db74">&#39;When was the Vat formally opened?&#39;</span>, <span style="color:#e6db74">&#39;turn_id&#39;</span>: <span style="color:#ae81ff">1</span>},
+</span></span><span style="display:flex;"><span>  {<span style="color:#e6db74">&#39;input_text&#39;</span>: <span style="color:#e6db74">&#39;what is the library for?&#39;</span>, <span style="color:#e6db74">&#39;turn_id&#39;</span>: <span style="color:#ae81ff">2</span>},
+</span></span><span style="display:flex;"><span>  {<span style="color:#e6db74">&#39;input_text&#39;</span>: <span style="color:#e6db74">&#39;for what subjects?&#39;</span>, <span style="color:#e6db74">&#39;turn_id&#39;</span>: <span style="color:#ae81ff">3</span>},
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">...</span>],
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;answers&#39;</span>: [{<span style="color:#e6db74">&#39;span_start&#39;</span>: <span style="color:#ae81ff">151</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;span_end&#39;</span>: <span style="color:#ae81ff">179</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;span_text&#39;</span>: <span style="color:#e6db74">&#39;Formally established in 1475&#39;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;input_text&#39;</span>: <span style="color:#e6db74">&#39;It was formally established in 1475&#39;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;turn_id&#39;</span>: <span style="color:#ae81ff">1</span>},
+</span></span><span style="display:flex;"><span>  {<span style="color:#e6db74">&#39;span_start&#39;</span>: <span style="color:#ae81ff">454</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;span_end&#39;</span>: <span style="color:#ae81ff">494</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;span_text&#39;</span>: <span style="color:#e6db74">&#39;he Vatican Library is a research library&#39;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;input_text&#39;</span>: <span style="color:#e6db74">&#39;research&#39;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;turn_id&#39;</span>: <span style="color:#ae81ff">2</span>},
+</span></span><span style="display:flex;"><span>  {<span style="color:#e6db74">&#39;span_start&#39;</span>: <span style="color:#ae81ff">457</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;span_end&#39;</span>: <span style="color:#ae81ff">511</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;span_text&#39;</span>: <span style="color:#e6db74">&#39;Vatican Library is a research library for history, law&#39;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;input_text&#39;</span>: <span style="color:#e6db74">&#39;history, and law&#39;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;turn_id&#39;</span>: <span style="color:#ae81ff">3</span>},
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">...</span>],
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;Vatican_Library.txt&#39;</span>}
+</span></span></code></pre></div><p>Next we will extract the <code>text</code>, <code>question</code>, <code>answer</code>, <code>answer_start</code>, <code>answer_end</code> from the raw dataset, as shown in the code block below. Also we will clean up the data set by removing null records. Finally, we get 107,286 records in training set and 7,918 records in test set, and the first 5 rows of the processed train_dev data set are shown below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#required columns in our dataframe</span>
+</span></span><span style="display:flex;"><span>cols <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;text&#34;</span>,<span style="color:#e6db74">&#34;question&#34;</span>,<span style="color:#e6db74">&#34;answer&#34;</span>,<span style="color:#e6db74">&#34;answer_start&#34;</span>,<span style="color:#e6db74">&#34;answer_end&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#list of lists to create our dataframe</span>
+</span></span><span style="display:flex;"><span>comp_list <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> index, row <span style="color:#f92672">in</span> coqa_train_dev<span style="color:#f92672">.</span>iterrows():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(row[<span style="color:#e6db74">&#34;data&#34;</span>][<span style="color:#e6db74">&#34;questions&#34;</span>])):
+</span></span><span style="display:flex;"><span>        temp_list <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        temp_list<span style="color:#f92672">.</span>append(row[<span style="color:#e6db74">&#34;data&#34;</span>][<span style="color:#e6db74">&#34;story&#34;</span>])
+</span></span><span style="display:flex;"><span>        temp_list<span style="color:#f92672">.</span>append(row[<span style="color:#e6db74">&#34;data&#34;</span>][<span style="color:#e6db74">&#34;questions&#34;</span>][i][<span style="color:#e6db74">&#34;input_text&#34;</span>])
+</span></span><span style="display:flex;"><span>        temp_list<span style="color:#f92672">.</span>append(row[<span style="color:#e6db74">&#34;data&#34;</span>][<span style="color:#e6db74">&#34;answers&#34;</span>][i][<span style="color:#e6db74">&#34;span_text&#34;</span>])
+</span></span><span style="display:flex;"><span>        temp_list<span style="color:#f92672">.</span>append(row[<span style="color:#e6db74">&#34;data&#34;</span>][<span style="color:#e6db74">&#34;answers&#34;</span>][i][<span style="color:#e6db74">&#34;span_start&#34;</span>])
+</span></span><span style="display:flex;"><span>        temp_list<span style="color:#f92672">.</span>append(row[<span style="color:#e6db74">&#34;data&#34;</span>][<span style="color:#e6db74">&#34;answers&#34;</span>][i][<span style="color:#e6db74">&#34;span_end&#34;</span>])
+</span></span><span style="display:flex;"><span>        comp_list<span style="color:#f92672">.</span>append(temp_list)
+</span></span><span style="display:flex;"><span>new_df_train_dev <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(comp_list, columns<span style="color:#f92672">=</span>cols)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#saving the dataframe to csv file for further loading</span>
+</span></span><span style="display:flex;"><span>new_df_train_dev<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#34;CoQA_data_train_dev.csv&#34;</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span></code></pre></div><p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-7-6.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-7-6.png" alt=""> </a></p>
+<p>In order to make the input data compatible with BERT, we need to tokenize the data using the code block below. One particular trick we find helpful is <code>doc_stride</code>, which means the distance between the start position of two consecutive windows. For example, in the figure above, the answer_start of last row is 769 and the answer_end is 879, which means the length of the document is larger than 512, which is the maximum length for BERT. <code>doc_stride</code> will split the document into several shorter segments and can successfully fix this issue.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">QA_Dataset</span>(Dataset):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, split, data_sets):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>split <span style="color:#f92672">=</span> split
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>data_sets <span style="color:#f92672">=</span> data_sets
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>max_seq_len <span style="color:#f92672">=</span> <span style="color:#ae81ff">512</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>max_question_len <span style="color:#f92672">=</span> <span style="color:#ae81ff">509</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>num_doc_stride <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __len__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> len(self<span style="color:#f92672">.</span>data_sets)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __getitem__(self, idx):
+</span></span><span style="display:flex;"><span>        question <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>data_sets[<span style="color:#e6db74">&#34;question&#34;</span>][idx]
+</span></span><span style="display:flex;"><span>        tokenized_question <span style="color:#f92672">=</span> tokenizer(question, add_special_tokens<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>        tokenized_question_input_ids <span style="color:#f92672">=</span> tokenized_question[<span style="color:#e6db74">&#39;input_ids&#39;</span>]
+</span></span><span style="display:flex;"><span>        actual_question_len <span style="color:#f92672">=</span> len(tokenized_question_input_ids)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        paragraph <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>data_sets[<span style="color:#e6db74">&#34;text&#34;</span>][idx]
+</span></span><span style="display:flex;"><span>        tokenized_paragraph <span style="color:#f92672">=</span> tokenizer(paragraph, add_special_tokens<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, return_offsets_mapping<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>        tokenized_paragraph_input_ids <span style="color:#f92672">=</span> tokenized_paragraph[<span style="color:#e6db74">&#39;input_ids&#39;</span>]
+</span></span><span style="display:flex;"><span>        full_paragraph_len <span style="color:#f92672">=</span> len(tokenized_paragraph_input_ids)
+</span></span><span style="display:flex;"><span>        max_paragraph_len_1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">512</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">-</span> actual_question_len
+</span></span><span style="display:flex;"><span>        max_paragraph_len <span style="color:#f92672">=</span> min(full_paragraph_len, max_paragraph_len_1)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        doc_stride <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        answers <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>data_sets[<span style="color:#e6db74">&#34;answer&#34;</span>][idx]
+</span></span><span style="display:flex;"><span>        start_char <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>data_sets[<span style="color:#e6db74">&#34;answer_start&#34;</span>][idx]
+</span></span><span style="display:flex;"><span>        end_char <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>data_sets[<span style="color:#e6db74">&#34;answer_end&#34;</span>][idx]
+</span></span><span style="display:flex;"><span>        offsets <span style="color:#f92672">=</span> tokenized_paragraph[<span style="color:#e6db74">&#34;offset_mapping&#34;</span>]
+</span></span><span style="display:flex;"><span>        len_offsets <span style="color:#f92672">=</span> len(offsets)
+</span></span><span style="display:flex;"><span>        token_start_index <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        answer_start_token_0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        token_end_index <span style="color:#f92672">=</span> len(offsets) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        answer_end_token_0 <span style="color:#f92672">=</span> len(offsets) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        num_doc_stride <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>num_doc_stride
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> k1 <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len_offsets, <span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> start_char <span style="color:#f92672">&gt;=</span> offsets[k1][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">and</span> start_char <span style="color:#f92672">&lt;=</span> offsets[k1][<span style="color:#ae81ff">1</span>]:
+</span></span><span style="display:flex;"><span>                answer_start_token_0 <span style="color:#f92672">=</span> k1
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> k1 <span style="color:#f92672">&lt;=</span> len_offsets<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">and</span> start_char <span style="color:#f92672">==</span> offsets[k1][<span style="color:#ae81ff">1</span>]:
+</span></span><span style="display:flex;"><span>                    answer_start_token_0 <span style="color:#f92672">=</span> k1 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> k1 <span style="color:#f92672">&lt;=</span> len_offsets<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">and</span> start_char <span style="color:#f92672">&gt;=</span> offsets[k1][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">and</span> start_char <span style="color:#f92672">&lt;=</span> offsets[k1<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]:
+</span></span><span style="display:flex;"><span>                answer_start_token_0 <span style="color:#f92672">=</span> k1 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> k2 <span style="color:#f92672">in</span> range(len_offsets<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> end_char <span style="color:#f92672">&gt;=</span> offsets[k2][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">and</span> end_char <span style="color:#f92672">&lt;=</span> offsets[k2][<span style="color:#ae81ff">1</span>]:
+</span></span><span style="display:flex;"><span>                answer_end_token_0 <span style="color:#f92672">=</span> k2
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> k2 <span style="color:#f92672">&lt;=</span> len_offsets<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">and</span> end_char <span style="color:#f92672">==</span> offsets[k2][<span style="color:#ae81ff">1</span>]:
+</span></span><span style="display:flex;"><span>                    answer_end_token_0 <span style="color:#f92672">=</span> k2 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> k2 <span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">and</span> end_char <span style="color:#f92672">&gt;=</span> offsets[k2<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">and</span> end_char <span style="color:#f92672">&lt;=</span> offsets[k2][<span style="color:#ae81ff">0</span>]:
+</span></span><span style="display:flex;"><span>                answer_end_token_0 <span style="color:#f92672">=</span> k2
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> answer_start_token_0 <span style="color:#f92672">==</span> answer_end_token_0:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> answer_end_token_0 <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                answer_end_token_0 <span style="color:#f92672">=</span> answer_end_token_0 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">elif</span> answer_start_token_0 <span style="color:#f92672">==</span> len_offsets<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>                answer_start_token_0 <span style="color:#f92672">=</span> answer_start_token_0 <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                answer_end_token_0 <span style="color:#f92672">=</span> answer_end_token_0 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>split <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;train&#34;</span>:
+</span></span><span style="display:flex;"><span>            mid <span style="color:#f92672">=</span> (answer_start_token_0 <span style="color:#f92672">+</span> answer_end_token_0) <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>            rand_len <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>uniform(low<span style="color:#f92672">=</span><span style="color:#ae81ff">0.1</span>, high<span style="color:#f92672">=</span><span style="color:#ae81ff">0.9</span>)
+</span></span><span style="display:flex;"><span>            paragraph_start_0 <span style="color:#f92672">=</span> mid <span style="color:#f92672">-</span> max_paragraph_len <span style="color:#f92672">*</span> rand_len
+</span></span><span style="display:flex;"><span>            paragraph_start_0 <span style="color:#f92672">=</span> (np<span style="color:#f92672">.</span>rint(paragraph_start_0))<span style="color:#f92672">.</span>astype(int)
+</span></span><span style="display:flex;"><span>            min1 <span style="color:#f92672">=</span> paragraph_start_0
+</span></span><span style="display:flex;"><span>            min2 <span style="color:#f92672">=</span> full_paragraph_len <span style="color:#f92672">-</span> max_paragraph_len
+</span></span><span style="display:flex;"><span>            min3 <span style="color:#f92672">=</span> answer_start_token_0
+</span></span><span style="display:flex;"><span>            paragraph_start <span style="color:#f92672">=</span> max(<span style="color:#ae81ff">0</span>, min(min1, min2, min3))
+</span></span><span style="display:flex;"><span>            paragraph_end <span style="color:#f92672">=</span> paragraph_start <span style="color:#f92672">+</span> max_paragraph_len
+</span></span><span style="display:flex;"><span>            input_ids_question <span style="color:#f92672">=</span> [<span style="color:#ae81ff">101</span>] <span style="color:#f92672">+</span> tokenized_question<span style="color:#f92672">.</span>input_ids[:self<span style="color:#f92672">.</span>max_question_len] <span style="color:#f92672">+</span> [<span style="color:#ae81ff">102</span>]
+</span></span><span style="display:flex;"><span>            input_ids_paragraph <span style="color:#f92672">=</span> tokenized_paragraph<span style="color:#f92672">.</span>input_ids[paragraph_start : paragraph_end] <span style="color:#f92672">+</span> [<span style="color:#ae81ff">102</span>]
+</span></span><span style="display:flex;"><span>            answer_start_token <span style="color:#f92672">=</span> answer_start_token_0 <span style="color:#f92672">-</span> paragraph_start <span style="color:#f92672">+</span> len(input_ids_question)
+</span></span><span style="display:flex;"><span>            answer_end_token   <span style="color:#f92672">=</span> answer_end_token_0   <span style="color:#f92672">-</span> paragraph_start <span style="color:#f92672">+</span> len(input_ids_question)
+</span></span><span style="display:flex;"><span>            input_ids, token_type_ids, attention_mask <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>padding(input_ids_question, input_ids_paragraph)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> torch<span style="color:#f92672">.</span>tensor(input_ids), torch<span style="color:#f92672">.</span>tensor(token_type_ids), torch<span style="color:#f92672">.</span>tensor(attention_mask), answer_start_token, answer_end_token
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Validation/Testing</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            answer1 <span style="color:#f92672">=</span> tokenized_paragraph_input_ids[answer_start_token_0 : answer_end_token_0]
+</span></span><span style="display:flex;"><span>            answer2 <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>tensor(answer1)
+</span></span><span style="display:flex;"><span>            input_ids_list, token_type_ids_list, attention_mask_list <span style="color:#f92672">=</span> [], [], []
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> full_paragraph_len <span style="color:#f92672">&lt;=</span> max_paragraph_len:
+</span></span><span style="display:flex;"><span>                input_ids_question <span style="color:#f92672">=</span> [<span style="color:#ae81ff">101</span>] <span style="color:#f92672">+</span> tokenized_question<span style="color:#f92672">.</span>input_ids[: self<span style="color:#f92672">.</span>max_question_len] <span style="color:#f92672">+</span> [<span style="color:#ae81ff">102</span>]
+</span></span><span style="display:flex;"><span>                input_ids_paragraph <span style="color:#f92672">=</span> tokenized_paragraph<span style="color:#f92672">.</span>input_ids[ : full_paragraph_len] <span style="color:#f92672">+</span> [<span style="color:#ae81ff">102</span>]
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># Pad sequence and obtain inputs to model</span>
+</span></span><span style="display:flex;"><span>                input_ids, token_type_ids, attention_mask <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>padding(input_ids_question, input_ids_paragraph)
+</span></span><span style="display:flex;"><span>                input_ids_list<span style="color:#f92672">.</span>append(input_ids)
+</span></span><span style="display:flex;"><span>                token_type_ids_list<span style="color:#f92672">.</span>append(token_type_ids)
+</span></span><span style="display:flex;"><span>                attention_mask_list<span style="color:#f92672">.</span>append(attention_mask)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># Paragraph is split into several windows, each with start positions separated by step &#34;doc_stride&#34;</span>
+</span></span><span style="display:flex;"><span>                len_diff <span style="color:#f92672">=</span> full_paragraph_len <span style="color:#f92672">-</span> max_paragraph_len
+</span></span><span style="display:flex;"><span>                doc_stride <span style="color:#f92672">=</span> math<span style="color:#f92672">.</span>ceil(len_diff <span style="color:#f92672">*</span> <span style="color:#ae81ff">1.</span><span style="color:#f92672">/</span>num_doc_stride)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len_diff<span style="color:#f92672">+</span>doc_stride, doc_stride):
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e"># Slice question/paragraph and add special tokens (101: CLS, 102: SEP)</span>
+</span></span><span style="display:flex;"><span>                    input_ids_question <span style="color:#f92672">=</span> [<span style="color:#ae81ff">101</span>] <span style="color:#f92672">+</span> tokenized_question<span style="color:#f92672">.</span>input_ids[: self<span style="color:#f92672">.</span>max_question_len] <span style="color:#f92672">+</span> [<span style="color:#ae81ff">102</span>]
+</span></span><span style="display:flex;"><span>                    input_ids_paragraph <span style="color:#f92672">=</span> tokenized_paragraph<span style="color:#f92672">.</span>input_ids[i : i <span style="color:#f92672">+</span> max_paragraph_len] <span style="color:#f92672">+</span> [<span style="color:#ae81ff">102</span>]
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e"># Pad sequence and obtain inputs to model</span>
+</span></span><span style="display:flex;"><span>                    input_ids, token_type_ids, attention_mask <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>padding(input_ids_question, input_ids_paragraph)
+</span></span><span style="display:flex;"><span>                    input_ids_list<span style="color:#f92672">.</span>append(input_ids)
+</span></span><span style="display:flex;"><span>                    token_type_ids_list<span style="color:#f92672">.</span>append(token_type_ids)
+</span></span><span style="display:flex;"><span>                    attention_mask_list<span style="color:#f92672">.</span>append(attention_mask)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> torch<span style="color:#f92672">.</span>tensor(input_ids_list), torch<span style="color:#f92672">.</span>tensor(token_type_ids_list), torch<span style="color:#f92672">.</span>tensor(attention_mask_list), answer2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">padding</span>(self, input_ids_question, input_ids_paragraph):
+</span></span><span style="display:flex;"><span>        padding_len <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>max_seq_len <span style="color:#f92672">-</span> len(input_ids_question) <span style="color:#f92672">-</span> len(input_ids_paragraph)
+</span></span><span style="display:flex;"><span>        input_ids <span style="color:#f92672">=</span> input_ids_question <span style="color:#f92672">+</span> input_ids_paragraph <span style="color:#f92672">+</span> [<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> padding_len
+</span></span><span style="display:flex;"><span>        token_type_ids <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> len(input_ids_question) <span style="color:#f92672">+</span> [<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> len(input_ids_paragraph) <span style="color:#f92672">+</span> [<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> padding_len
+</span></span><span style="display:flex;"><span>        attention_mask <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> (len(input_ids_question) <span style="color:#f92672">+</span> len(input_ids_paragraph)) <span style="color:#f92672">+</span> [<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> padding_len
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> input_ids, token_type_ids, attention_mask
+</span></span></code></pre></div><p>The figure below shows the pre-processed input data ready for BERT model. Here for each record, it has 5 parts: (1) a tensor for tokenized ids (i.e., ids of tokenized words), (2) a tensor indicating token_type_ids (i.e., question or document), (3) a tensor indicating attention_mask (i.e., boundary of padding, for parallel processing propose), (4) location in document where the answer starts, and (5) location in document where the answer ends.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-7-7.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-7-7.png" alt=""> </a></p>
+<p>           </p>
+<h3 id="32-model-training-and-testing">3.2. Model Training and Testing</h3>
+<p>In this project, we will build our model based on the &lsquo;bertForQuestionAnswering&rsquo; model that are available on <a href="https://huggingface.co/docs/transformers/model_doc/bert">huggingface</a>. Some of the model hyperparameters are listed below. Two key points: (1) instead of constant learning rate, we use Cosine Annealing learning rate and employ scheduler to adjust the learning rate automatically; (2) Since we use T4 GPUs on Google Colab for training, we use <a href="https://colab.research.google.com/github/thetestspecimen/notebooks/blob/main/mixed_precision_training.ipynb">mixed precision training</a> and the training speed increase significantly.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>optimizer <span style="color:#f92672">=</span> Adam(model<span style="color:#f92672">.</span>parameters(), lr<span style="color:#f92672">=</span>learning_rate, betas<span style="color:#f92672">=</span>(<span style="color:#ae81ff">0.9</span>, <span style="color:#ae81ff">0.999</span>), eps<span style="color:#f92672">=</span><span style="color:#ae81ff">1e-08</span>)
+</span></span><span style="display:flex;"><span>scheduler <span style="color:#f92672">=</span> optim<span style="color:#f92672">.</span>lr_scheduler<span style="color:#f92672">.</span>CosineAnnealingLR(optimizer, T_max<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fp16_training <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> fp16_training:
+</span></span><span style="display:flex;"><span>    accelerator <span style="color:#f92672">=</span> Accelerator(mixed_precision<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fp16&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    accelerator <span style="color:#f92672">=</span> Accelerator()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>model, optimizer, train_loader <span style="color:#f92672">=</span> accelerator<span style="color:#f92672">.</span>prepare(model, optimizer, train_loader)
+</span></span></code></pre></div><p>The code block below is for the training of the BERT-based QA model.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model<span style="color:#f92672">.</span>train()
+</span></span><span style="display:flex;"><span>dev_acc_best <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>step <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> epoch <span style="color:#f92672">in</span> range(num_epoch):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> epoch <span style="color:#f92672">&lt;=</span> skip_epoch: <span style="color:#75715e"># Skip first several epoches</span>
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;skipping train_set epoch: &#34;</span>, epoch)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> data <span style="color:#f92672">in</span> tqdm(train_loader):
+</span></span><span style="display:flex;"><span>            data <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> data]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> validation:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;skipping test_set epoch: &#34;</span>, epoch)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> data <span style="color:#f92672">in</span> tqdm(test_loader):
+</span></span><span style="display:flex;"><span>                data <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> data]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> epoch <span style="color:#f92672">&gt;</span> skip_epoch:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;epoch: &#34;</span>, epoch)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Start Training ...&#34;</span>)
+</span></span><span style="display:flex;"><span>        train_loss <span style="color:#f92672">=</span> train_acc <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> data <span style="color:#f92672">in</span> tqdm(train_loader):
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Load all data into GPU</span>
+</span></span><span style="display:flex;"><span>            data <span style="color:#f92672">=</span> [i<span style="color:#f92672">.</span>to(device) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> data]
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Model inputs: input_ids, token_type_ids, attention_mask, start_positions, end_positions (Note: only &#34;input_ids&#34; is mandatory)</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Model outputs: start_logits, end_logits, loss (return when start_positions/end_positions are provided)</span>
+</span></span><span style="display:flex;"><span>            output <span style="color:#f92672">=</span> model(input_ids<span style="color:#f92672">=</span>data[<span style="color:#ae81ff">0</span>], token_type_ids<span style="color:#f92672">=</span>data[<span style="color:#ae81ff">1</span>], attention_mask<span style="color:#f92672">=</span>data[<span style="color:#ae81ff">2</span>], start_positions<span style="color:#f92672">=</span>data[<span style="color:#ae81ff">3</span>], end_positions<span style="color:#f92672">=</span>data[<span style="color:#ae81ff">4</span>])
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Choose the most probable start position / end position</span>
+</span></span><span style="display:flex;"><span>            start_index <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>argmax(output<span style="color:#f92672">.</span>start_logits, dim<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>            end_index <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>argmax(output<span style="color:#f92672">.</span>end_logits, dim<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Prediction is correct only if both start_index and end_index are correct</span>
+</span></span><span style="display:flex;"><span>            train_acc <span style="color:#f92672">+=</span> ((start_index <span style="color:#f92672">==</span> data[<span style="color:#ae81ff">3</span>]) <span style="color:#f92672">&amp;</span> (end_index <span style="color:#f92672">==</span> data[<span style="color:#ae81ff">4</span>]))<span style="color:#f92672">.</span>float()<span style="color:#f92672">.</span>mean()
+</span></span><span style="display:flex;"><span>            train_loss <span style="color:#f92672">+=</span> output<span style="color:#f92672">.</span>loss
+</span></span><span style="display:flex;"><span>            accelerator<span style="color:#f92672">.</span>backward(output<span style="color:#f92672">.</span>loss)
+</span></span><span style="display:flex;"><span>            step <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            optimizer<span style="color:#f92672">.</span>step()
+</span></span><span style="display:flex;"><span>            scheduler<span style="color:#f92672">.</span>step()
+</span></span><span style="display:flex;"><span>            optimizer<span style="color:#f92672">.</span>zero_grad()
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> step <span style="color:#f92672">%</span> logging_step <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                lr <span style="color:#f92672">=</span> optimizer<span style="color:#f92672">.</span>param_groups[<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#34;lr&#34;</span>]
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Epoch </span><span style="color:#e6db74">{</span>epoch <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> | Step </span><span style="color:#e6db74">{</span>step<span style="color:#e6db74">}</span><span style="color:#e6db74"> | learning_rate = </span><span style="color:#e6db74">{</span>lr<span style="color:#e6db74">:</span><span style="color:#e6db74">.3e</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> | loss = </span><span style="color:#e6db74">{</span>train_loss<span style="color:#f92672">.</span>item() <span style="color:#f92672">/</span> logging_step<span style="color:#e6db74">:</span><span style="color:#e6db74">.4f</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> | acc = </span><span style="color:#e6db74">{</span>train_acc <span style="color:#f92672">/</span> logging_step<span style="color:#e6db74">:</span><span style="color:#e6db74">.4f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>                train_loss <span style="color:#f92672">=</span> train_acc <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Saving Model ...&#34;</span>)
+</span></span><span style="display:flex;"><span>        model_save_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;saved_model&#34;</span>
+</span></span><span style="display:flex;"><span>        model<span style="color:#f92672">.</span>save_pretrained(model_save_dir)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> validation:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;Evaluating Dev Set ...&#34;</span>)
+</span></span><span style="display:flex;"><span>            model<span style="color:#f92672">.</span>eval()
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">with</span> torch<span style="color:#f92672">.</span>no_grad():
+</span></span><span style="display:flex;"><span>                dev_acc <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">for</span> i, data <span style="color:#f92672">in</span> enumerate(tqdm(test_loader)):
+</span></span><span style="display:flex;"><span>                    answer_truth1 <span style="color:#f92672">=</span> tokenizer<span style="color:#f92672">.</span>convert_ids_to_tokens(data[<span style="color:#ae81ff">3</span>][<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>                    answer_truth2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">.</span>join(answer_truth1)
+</span></span><span style="display:flex;"><span>                    output <span style="color:#f92672">=</span> model(input_ids<span style="color:#f92672">=</span>data[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>squeeze(dim<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>to(device), token_type_ids<span style="color:#f92672">=</span>data[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>squeeze(dim<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>to(device),
+</span></span><span style="display:flex;"><span>                        attention_mask<span style="color:#f92672">=</span>data[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>squeeze(dim<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>to(device))
+</span></span><span style="display:flex;"><span>                    answer <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>                    max_prob <span style="color:#f92672">=</span> float(<span style="color:#e6db74">&#39;-inf&#39;</span>)
+</span></span><span style="display:flex;"><span>                    num_of_windows <span style="color:#f92672">=</span> data[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(num_of_windows):
+</span></span><span style="display:flex;"><span>                        <span style="color:#75715e"># Obtain answer by choosing the most probable start position / end position</span>
+</span></span><span style="display:flex;"><span>                        start_prob, start_index <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>max(output<span style="color:#f92672">.</span>start_logits[k], dim<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>                        end_prob, end_index <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>max(output<span style="color:#f92672">.</span>end_logits[k], dim<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>                        start_prob <span style="color:#f92672">=</span> start_prob<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>                        start_index <span style="color:#f92672">=</span> start_index<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>                        end_prob <span style="color:#f92672">=</span> end_prob<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>                        end_index <span style="color:#f92672">=</span> end_index<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>                        <span style="color:#75715e"># Probability of answer is calculated as sum of start_prob and end_prob</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#75715e"># prob = start_prob + end_prob</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">if</span> end_index <span style="color:#f92672">&lt;</span> start_index:
+</span></span><span style="display:flex;"><span>                            prob <span style="color:#f92672">=</span> float(<span style="color:#e6db74">&#39;-inf&#39;</span>)
+</span></span><span style="display:flex;"><span>                            answer_pred <span style="color:#f92672">=</span> data[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>][k][<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                            prob <span style="color:#f92672">=</span> start_prob <span style="color:#f92672">+</span> end_prob
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">if</span> start_index <span style="color:#f92672">==</span> end_index:
+</span></span><span style="display:flex;"><span>                                <span style="color:#66d9ef">if</span> end_index <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                                    print(<span style="color:#e6db74">&#34;check - 1&#34;</span>)
+</span></span><span style="display:flex;"><span>                                    end_index <span style="color:#f92672">=</span> end_index <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                                <span style="color:#66d9ef">elif</span> start_index <span style="color:#f92672">==</span> len(data[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>][k])<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>                                    print(<span style="color:#e6db74">&#34;check - 2&#34;</span>)
+</span></span><span style="display:flex;"><span>                                    start_index <span style="color:#f92672">=</span> start_index <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                                <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                                    print(<span style="color:#e6db74">&#34;check - 3&#34;</span>)
+</span></span><span style="display:flex;"><span>                                    end_index <span style="color:#f92672">=</span> end_index <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#75715e"># Replace answer if calculated probability is larger than previous windows</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">if</span> prob <span style="color:#f92672">&gt;</span> max_prob:
+</span></span><span style="display:flex;"><span>                            max_prob <span style="color:#f92672">=</span> prob
+</span></span><span style="display:flex;"><span>                            answer_pred <span style="color:#f92672">=</span> data[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>][k][start_index : end_index ]
+</span></span><span style="display:flex;"><span>                    answer_pred1 <span style="color:#f92672">=</span> tokenizer<span style="color:#f92672">.</span>convert_ids_to_tokens(answer_pred)
+</span></span><span style="display:flex;"><span>                    answer_pred2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">.</span>join(answer_pred1)
+</span></span><span style="display:flex;"><span>                    dev_acc0 <span style="color:#f92672">=</span> (answer_truth2 <span style="color:#f92672">==</span> answer_pred2)
+</span></span><span style="display:flex;"><span>                    dev_acc  <span style="color:#f92672">=</span> dev_acc <span style="color:#f92672">+</span> dev_acc0
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> i <span style="color:#f92672">%</span> output_step <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                        print(<span style="color:#e6db74">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>                        print(<span style="color:#e6db74">&#34;i: &#34;</span>, i)
+</span></span><span style="display:flex;"><span>                        print(<span style="color:#e6db74">&#34;answer_truth: &#34;</span>, answer_truth2)
+</span></span><span style="display:flex;"><span>                        print(<span style="color:#e6db74">&#34;answer_pred:  &#34;</span>, answer_pred2)
+</span></span><span style="display:flex;"><span>                        print(<span style="color:#e6db74">&#34;dev_acc0: &#34;</span>, dev_acc0)
+</span></span><span style="display:flex;"><span>                        print(<span style="color:#e6db74">&#34;dev_acc: &#34;</span>, dev_acc)
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Validation | Epoch </span><span style="color:#e6db74">{</span>epoch <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> | acc = </span><span style="color:#e6db74">{</span>dev_acc <span style="color:#f92672">/</span> len(test_loader)<span style="color:#e6db74">:</span><span style="color:#e6db74">.3f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>            model<span style="color:#f92672">.</span>train()
+</span></span><span style="display:flex;"><span>        dev_acc <span style="color:#f92672">=</span> dev_acc <span style="color:#f92672">/</span> len(test_loader)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> dev_acc <span style="color:#f92672">&gt;</span> dev_acc_best:
+</span></span><span style="display:flex;"><span>            dev_acc_best <span style="color:#f92672">=</span> dev_acc
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Saving Best Model | Epoch </span><span style="color:#e6db74">{</span>epoch <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> | acc = </span><span style="color:#e6db74">{</span>dev_acc<span style="color:#e6db74">:</span><span style="color:#e6db74">.3f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>            model_save_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;saved_best_model&#34;</span>
+</span></span><span style="display:flex;"><span>            model<span style="color:#f92672">.</span>save_pretrained(model_save_dir)<span style="color:#960050;background-color:#1e0010">```</span>
+</span></span></code></pre></div><p>Since we have trained the model for very long time (see attached file P7-QA-training-record.dat in the <a href="https://drive.google.com/drive/folders/1CaYRHPOJ6iGFAN6W1z9lneOsrdtz7XAB?usp=sharing">Google Drive</a> folder), here we just load the checkpoint and run one epoch. For the Training dataset, we achieve accuracy of 83.2%.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>cp <span style="color:#f92672">/</span>content<span style="color:#f92672">/</span>drive<span style="color:#f92672">/</span>MyDrive<span style="color:#f92672">/</span><span style="color:#ae81ff">210</span><span style="color:#f92672">-</span>Projects<span style="color:#f92672">/</span><span style="color:#ae81ff">710</span>_Question_Answering<span style="color:#f92672">/</span>P7<span style="color:#f92672">-</span>QA<span style="color:#f92672">.</span>tar<span style="color:#f92672">.</span>gz <span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>tar <span style="color:#f92672">-</span>xf P7<span style="color:#f92672">-</span>QA<span style="color:#f92672">.</span>tar<span style="color:#f92672">.</span>gz
+</span></span><span style="display:flex;"><span>model <span style="color:#f92672">=</span> BertForQuestionAnswering<span style="color:#f92672">.</span>from_pretrained(<span style="color:#e6db74">&#34;P7-QA&#34;</span>)<span style="color:#f92672">.</span>to(device)
+</span></span></code></pre></div><p>Next we move on to evaluate the model&rsquo;s performance on the test set, with code shown in the block below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Evaluating Dev Set ...&#34;</span>)
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>eval()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> torch<span style="color:#f92672">.</span>no_grad():
+</span></span><span style="display:flex;"><span>    dev_acc <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i, data <span style="color:#f92672">in</span> enumerate(tqdm(test_loader)):
+</span></span><span style="display:flex;"><span>        answer_truth1 <span style="color:#f92672">=</span> tokenizer<span style="color:#f92672">.</span>convert_ids_to_tokens(data[<span style="color:#ae81ff">3</span>][<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>        answer_truth2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">.</span>join(answer_truth1)
+</span></span><span style="display:flex;"><span>        output <span style="color:#f92672">=</span> model(input_ids<span style="color:#f92672">=</span>data[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>squeeze(dim<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>to(device), token_type_ids<span style="color:#f92672">=</span>data[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>squeeze(dim<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>to(device),
+</span></span><span style="display:flex;"><span>            attention_mask<span style="color:#f92672">=</span>data[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>squeeze(dim<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>to(device))
+</span></span><span style="display:flex;"><span>        answer <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>        max_prob <span style="color:#f92672">=</span> float(<span style="color:#e6db74">&#39;-inf&#39;</span>)
+</span></span><span style="display:flex;"><span>        num_of_windows <span style="color:#f92672">=</span> data[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(num_of_windows):
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Obtain answer by choosing the most probable start position / end position</span>
+</span></span><span style="display:flex;"><span>            start_prob, start_index <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>max(output<span style="color:#f92672">.</span>start_logits[k], dim<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>            end_prob, end_index <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>max(output<span style="color:#f92672">.</span>end_logits[k], dim<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>            start_prob <span style="color:#f92672">=</span> start_prob<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>            start_index <span style="color:#f92672">=</span> start_index<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>            end_prob <span style="color:#f92672">=</span> end_prob<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>            end_index <span style="color:#f92672">=</span> end_index<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Probability of answer is calculated as sum of start_prob and end_prob</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># prob = start_prob + end_prob</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> end_index <span style="color:#f92672">&lt;</span> start_index:
+</span></span><span style="display:flex;"><span>                prob <span style="color:#f92672">=</span> float(<span style="color:#e6db74">&#39;-inf&#39;</span>)
+</span></span><span style="display:flex;"><span>                answer_pred <span style="color:#f92672">=</span> data[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>][k][<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                prob <span style="color:#f92672">=</span> start_prob <span style="color:#f92672">+</span> end_prob
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> start_index <span style="color:#f92672">==</span> end_index:
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> end_index <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                        print(<span style="color:#e6db74">&#34;check - 1&#34;</span>)
+</span></span><span style="display:flex;"><span>                        end_index <span style="color:#f92672">=</span> end_index <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">elif</span> start_index <span style="color:#f92672">==</span> len(data[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>][k])<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>                        print(<span style="color:#e6db74">&#34;check - 2&#34;</span>)
+</span></span><span style="display:flex;"><span>                        start_index <span style="color:#f92672">=</span> start_index <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                        print(<span style="color:#e6db74">&#34;check - 3&#34;</span>)
+</span></span><span style="display:flex;"><span>                        end_index <span style="color:#f92672">=</span> end_index <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Replace answer if calculated probability is larger than previous windows</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> prob <span style="color:#f92672">&gt;</span> max_prob:
+</span></span><span style="display:flex;"><span>                max_prob <span style="color:#f92672">=</span> prob
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># answer_pred = data[0][0][k][start_index : end_index + 1]</span>
+</span></span><span style="display:flex;"><span>                answer_pred <span style="color:#f92672">=</span> data[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>][k][start_index : end_index ]
+</span></span><span style="display:flex;"><span>        answer_pred1 <span style="color:#f92672">=</span> tokenizer<span style="color:#f92672">.</span>convert_ids_to_tokens(answer_pred)
+</span></span><span style="display:flex;"><span>        answer_pred2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">.</span>join(answer_pred1)
+</span></span><span style="display:flex;"><span>        dev_acc0 <span style="color:#f92672">=</span> (answer_truth2 <span style="color:#f92672">==</span> answer_pred2)
+</span></span><span style="display:flex;"><span>        dev_acc  <span style="color:#f92672">=</span> dev_acc <span style="color:#f92672">+</span> dev_acc0
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> i <span style="color:#f92672">%</span> output_step <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;i: &#34;</span>, i)
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;answer_truth: &#34;</span>, answer_truth2)
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;answer_pred:  &#34;</span>, answer_pred2)
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;dev_acc0: &#34;</span>, dev_acc0)
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;dev_acc: &#34;</span>, dev_acc)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Validation | Epoch </span><span style="color:#e6db74">{</span>epoch <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> | acc = </span><span style="color:#e6db74">{</span>dev_acc <span style="color:#f92672">/</span> len(test_loader)<span style="color:#e6db74">:</span><span style="color:#e6db74">.3f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div><p>On the test set, however, the accuracy is only 13.1%, which drops significantly compared to 83.2% on training set. To figure out why there is such big difference in model performance, we output comparisons of 10 ground truth answer and predicted answer from test set, in the figure below. From this figure, we noticed that in most cases the difference between predicted answer and ground truth answer is quite minor &ndash; sometimes just a full stop. In addition, we also notice that sometimes the predicted answers are too verbose, while in other times the ground truth answers are too verbose. To fully resolve this issue, we need to go through the dataset thoroughly and clean it up to that the provided ground truth answer are in a consistent style.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-7-8.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-7-8.png" alt=""> </a></p>
+<p>           </p>
+<h3 id="33-results-on-custom-inputs">3.3. Results on custom inputs</h3>
+<p>Next we develop a program so that we could manually choose a QA problem from CoQA dataset, make the prediction and shows the Question, Document, ground truth answer, and predicted answer. The code to realize this function is shown below, with two results shown in the following two figures.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Combined train_set and test_set.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># First 107286 records [0, 107285] are from train_set and last 7918 records [107286, 115203] are from test_set</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># qa_item can be given manually or chosen randomly</span>
+</span></span><span style="display:flex;"><span>qa_item <span style="color:#f92672">=</span> <span style="color:#ae81ff">1789</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># qa_item = np.random.randint(0,len(data_all))</span>
+</span></span><span style="display:flex;"><span>data_all <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat([data_train, data_test], ignore_index<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>data_all <span style="color:#f92672">=</span> data_all<span style="color:#f92672">.</span>reset_index(drop<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>data_qa <span style="color:#f92672">=</span> data_all<span style="color:#f92672">.</span>iloc[qa_item:qa_item<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>data_qa <span style="color:#f92672">=</span> data_qa<span style="color:#f92672">.</span>reset_index(drop<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>qa_set <span style="color:#f92672">=</span> QA_Dataset(<span style="color:#e6db74">&#34;test&#34;</span>, data_qa)
+</span></span><span style="display:flex;"><span>qa_loader <span style="color:#f92672">=</span> DataLoader(qa_set, batch_size<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, shuffle<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, pin_memory<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># print(&#34;Evaluating Dev Set ...&#34;)</span>
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>eval()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> torch<span style="color:#f92672">.</span>no_grad():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> data <span style="color:#f92672">in</span> qa_loader:
+</span></span><span style="display:flex;"><span>        answer_truth1 <span style="color:#f92672">=</span> tokenizer<span style="color:#f92672">.</span>convert_ids_to_tokens(data[<span style="color:#ae81ff">3</span>][<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>        answer_truth2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">.</span>join(answer_truth1)
+</span></span><span style="display:flex;"><span>        output <span style="color:#f92672">=</span> model(input_ids<span style="color:#f92672">=</span>data[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>squeeze(dim<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>to(device), token_type_ids<span style="color:#f92672">=</span>data[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>squeeze(dim<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>to(device),
+</span></span><span style="display:flex;"><span>            attention_mask<span style="color:#f92672">=</span>data[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>squeeze(dim<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>to(device))
+</span></span><span style="display:flex;"><span>        answer <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>        max_prob <span style="color:#f92672">=</span> float(<span style="color:#e6db74">&#39;-inf&#39;</span>)
+</span></span><span style="display:flex;"><span>        num_of_windows <span style="color:#f92672">=</span> data[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(num_of_windows):
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Obtain answer by choosing the most probable start position / end position</span>
+</span></span><span style="display:flex;"><span>            start_prob, start_index <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>max(output<span style="color:#f92672">.</span>start_logits[k], dim<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>            end_prob, end_index <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>max(output<span style="color:#f92672">.</span>end_logits[k], dim<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>            start_prob <span style="color:#f92672">=</span> start_prob<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>            start_index <span style="color:#f92672">=</span> start_index<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>            end_prob <span style="color:#f92672">=</span> end_prob<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>            end_index <span style="color:#f92672">=</span> end_index<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Probability of answer is calculated as sum of start_prob and end_prob</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># prob = start_prob + end_prob</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> end_index <span style="color:#f92672">&lt;</span> start_index:
+</span></span><span style="display:flex;"><span>                prob <span style="color:#f92672">=</span> float(<span style="color:#e6db74">&#39;-inf&#39;</span>)
+</span></span><span style="display:flex;"><span>                answer_pred <span style="color:#f92672">=</span> data[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>][k][<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                prob <span style="color:#f92672">=</span> start_prob <span style="color:#f92672">+</span> end_prob
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> start_index <span style="color:#f92672">==</span> end_index:
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> end_index <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                        print(<span style="color:#e6db74">&#34;check - 1&#34;</span>)
+</span></span><span style="display:flex;"><span>                        end_index <span style="color:#f92672">=</span> end_index <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">elif</span> start_index <span style="color:#f92672">==</span> len(data[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>][k])<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>                        print(<span style="color:#e6db74">&#34;check - 2&#34;</span>)
+</span></span><span style="display:flex;"><span>                        start_index <span style="color:#f92672">=</span> start_index <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                        print(<span style="color:#e6db74">&#34;check - 3&#34;</span>)
+</span></span><span style="display:flex;"><span>                        end_index <span style="color:#f92672">=</span> end_index <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Replace answer if calculated probability is larger than previous windows</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> prob <span style="color:#f92672">&gt;</span> max_prob:
+</span></span><span style="display:flex;"><span>                max_prob <span style="color:#f92672">=</span> prob
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># answer_pred = data[0][0][k][start_index : end_index + 1]</span>
+</span></span><span style="display:flex;"><span>                answer_pred <span style="color:#f92672">=</span> data[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>][k][start_index : end_index]
+</span></span><span style="display:flex;"><span>        answer_pred1 <span style="color:#f92672">=</span> tokenizer<span style="color:#f92672">.</span>convert_ids_to_tokens(answer_pred)
+</span></span><span style="display:flex;"><span>        answer_pred2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">.</span>join(answer_pred1)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;----------------------------------------------------------------------------&#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Question: &#34;</span>)
+</span></span><span style="display:flex;"><span>        print(data_qa[<span style="color:#e6db74">&#34;question&#34;</span>][<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;----------------------------------------------------------------------------&#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Text: &#34;</span>)
+</span></span><span style="display:flex;"><span>        print(data_qa[<span style="color:#e6db74">&#34;text&#34;</span>][<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;----------------------------------------------------------------------------&#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Expected answer: &#34;</span>)
+</span></span><span style="display:flex;"><span>        print(answer_truth2)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;----------------------------------------------------------------------------&#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Predicted answer: &#34;</span>)
+</span></span><span style="display:flex;"><span>        print(answer_pred2)
+</span></span></code></pre></div><p>From these results, we can see that the QA model we built can provide very accurate answers. Given the Documents are much longer than 512 characters (1632 characters and 1478 characters in these examples), it also prove that the <code>doc_stride</code> approach we employed in our model is very successful.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-7-9.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-7-9.png" alt=""> </a></p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-7-10.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-7-10.png" alt=""> </a></p>
+<p>           
+           </p>
+<h2 id="4-conclusions">4. Conclusions</h2>
+<p>In this project, we built a BERT based Natural Language Processing model for Question and Answering task, and the model was fine-tuned on the Conversational Question Answering Challenge (CoQA) dataset from Stanford University. The QA model has amazing performance and can accurately extract the answer from the Document, even when the length of Document is significantly larger than 512. To further improve the performance of the QA model, I would suggest changing from BERT_base model to BERT_large model.</p>
+<h2 id="references">References:</h2>
 <p>Source of hero image: <a href="https://towardsml.wordpress.com/2019/09/17/bert-explained-a-complete-guide-with-theory-and-tutorial/">https://towardsml.wordpress.com/2019/09/17/bert-explained-a-complete-guide-with-theory-and-tutorial/</a></p>
 <ul class="pa0">
   
    <li class="list">
      <a href="https://andysucao.github.io/Andy_Portfolio/tags/natural-language-processing" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Natural Language Processing</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://andysucao.github.io/Andy_Portfolio/tags/bidirectional-encoder-representations-from-transformers-bert" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Bidirectional Encoder Representations from Transformers (BERT)</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://andysucao.github.io/Andy_Portfolio/tags/question-answering" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Question Answering</a>
    </li>
   
 </ul>
