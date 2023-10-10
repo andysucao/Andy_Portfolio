@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Project 8: NLP - Machine Translation | Andy Cao</title>
+    <title>Project 8: Machine Translation with Transformers | Andy Cao</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="generator" content="Hugo 0.116.1">
     
@@ -25,19 +25,19 @@
 
     
     
-    <meta property="og:title" content="Project 8: NLP - Machine Translation" />
-<meta property="og:description" content="A tool that performs natural language processing" />
+    <meta property="og:title" content="Project 8: Machine Translation with Transformers" />
+<meta property="og:description" content="Build a Neural Machine Translation model with Transformer that can translate English into Chinese naturally." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://andysucao.github.io/Andy_Portfolio/post/project-8/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-08-20T06:07:00-04:00" />
 <meta property="article:modified_time" content="2023-08-20T06:07:00-04:00" />
-<meta itemprop="name" content="Project 8: NLP - Machine Translation">
-<meta itemprop="description" content="A tool that performs natural language processing"><meta itemprop="datePublished" content="2023-08-20T06:07:00-04:00" />
+<meta itemprop="name" content="Project 8: Machine Translation with Transformers">
+<meta itemprop="description" content="Build a Neural Machine Translation model with Transformer that can translate English into Chinese naturally."><meta itemprop="datePublished" content="2023-08-20T06:07:00-04:00" />
 <meta itemprop="dateModified" content="2023-08-20T06:07:00-04:00" />
-<meta itemprop="wordCount" content="0">
-<meta itemprop="keywords" content="Natural Language Processing," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Project 8: NLP - Machine Translation"/>
-<meta name="twitter:description" content="A tool that performs natural language processing"/>
+<meta itemprop="wordCount" content="3475">
+<meta itemprop="keywords" content="Natural Language Processing,Transformer,Machine Translation," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Project 8: Machine Translation with Transformers"/>
+<meta name="twitter:description" content="Build a Neural Machine Translation model with Transformer that can translate English into Chinese naturally."/>
 
   </head>
 
@@ -49,7 +49,7 @@
 
   
   
-  <header class="cover bg-top" style="background-image: url('https://andysucao.github.io/Andy_Portfolio/images/project-1-1b.jpg');">
+  <header class="cover bg-top" style="background-image: url('https://andysucao.github.io/Andy_Portfolio/images/projects-8-1.jpg');">
     <div class="pb3-m pb6-l bg-black-60">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
@@ -129,10 +129,10 @@
 
       <div class="tc-l pv6 ph3 ph4-ns">
         
-          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Project 8: NLP - Machine Translation</h1>
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Project 8: Machine Translation with Transformers</h1>
           
             <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
-              A tool that performs natural language processing
+              Build a Neural Machine Translation model with Transformer that can translate English into Chinese naturally.
             </h2>
           
         
@@ -166,13 +166,13 @@
 
     
     
-    <a href="https://twitter.com/share?url=https://andysucao.github.io/Andy_Portfolio/post/project-8/&amp;text=Project%208:%20NLP%20-%20Machine%20Translation" class="twitter no-underline" aria-label="share on Twitter">
+    <a href="https://twitter.com/share?url=https://andysucao.github.io/Andy_Portfolio/post/project-8/&amp;text=Project%208:%20Machine%20Translation%20with%20Transformers" class="twitter no-underline" aria-label="share on Twitter">
       <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
 
     </a>
 
     
-    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://andysucao.github.io/Andy_Portfolio/post/project-8/&amp;title=Project%208:%20NLP%20-%20Machine%20Translation" class="linkedin no-underline" aria-label="share on LinkedIn">
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://andysucao.github.io/Andy_Portfolio/post/project-8/&amp;title=Project%208:%20Machine%20Translation%20with%20Transformers" class="linkedin no-underline" aria-label="share on LinkedIn">
       <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
 </svg>
@@ -181,7 +181,7 @@
   </div>
 
 
-      <h1 class="f1 athelas mt3 mb1">Project 8: NLP - Machine Translation</h1>
+      <h1 class="f1 athelas mt3 mb1">Project 8: Machine Translation with Transformers</h1>
       
       
       <time class="f6 mv4 dib tracked" datetime="2023-08-20T06:07:00-04:00">August 20, 2023</time>
@@ -189,10 +189,479 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><ul class="pa0">
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="1-overview">1. Overview</h2>
+<p>In this project, we will build a neural machine translation model with <a href="https://github.com/facebookresearch/fairseq">Fairseq</a> Transformer that can translate English into Chinese naturally. The model will be trained and evaluated on the <a href="https://opus.nlpl.eu/TED2020.php">TED2020</a> En-Zh Bilingual Parallel Corpus.</p>
+<p>The Python Notebook containing the complete model development process and the data used in this project can be found at <a href="https://drive.google.com/drive/folders/1dPc4tAoNwL4S0x7r7dsiPs4Q-hIUwXt9?usp=sharing">Google Drive</a>.</p>
+<p>           
+           </p>
+<h2 id="2-machine-translation-and-transformer">2. Machine translation and Transformer</h2>
+<h3 id="21-brief-history-of-machine-translation">2.1. Brief history of machine translation</h3>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-8-2.jpg"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-8-2.jpg" alt=""> </a></p>
+<p>The figure above illustrates the development of Machine Translation from 1950s to today (<a href="https://www.freecodecamp.org/news/a-history-of-machine-translation-from-the-cold-war-to-deep-learning-f1d335ce8b5/">source</a>). In brief, the development of Machine Translation has 4 main stages: (1) Rule-based Machine Translation (RBMT), (2) Example-based Machine Translation (EBMT), (3) Statistical Machine Translation (SMT), and (4) Neural Machine Translation (NMT). Detailed discussion of each stage can be found in this great <a href="https://www.freecodecamp.org/news/a-history-of-machine-translation-from-the-cold-war-to-deep-learning-f1d335ce8b5/">article</a>. In the following part of this post, we will focus on the Neural Machine Translation (NMT) stage, because that is where Transformer are developed from.</p>
+<p>           </p>
+<h3 id="22-sequence-to-sequence-seq2seq-model">2.2. Sequence-to-sequence (seq2seq) model</h3>
+<p>Since 2015, Neural Machine Translation (NMT) has become very popular in machine translation. In this school of methods, sentences from source language and target language are treated as sequences. As a consequence, the machine translation task essentially becomes a sequence generation task, and we can use a Sequence-to-sequence model (aka seq2seq) to complete this task (see picture below).</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-8-5.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-8-5.png" alt=""> </a></p>
+<p>A schematic plot of a Sequence-to-sequence (seq2seq) model is shown in the figure below. Essentially, the seq2seq model contains an Encoder and a Decoder. The Encoder processes the source language input sequentially and shrink the information into a vector using RNN and passes it to the Decoder. The Decoder then processes this information by another RNN and makes predictions in the target language.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-8-3.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-8-3.png" alt=""> </a></p>
+<p>One potential limitation of RNN-based seq2seq model is long sentences (i.e., long-range dependencies). One potential solution is to use Long Short-term Memory (LSTM) cells instead of RNN cells. This approach can effectively alleviate the difficulty, but an even better solution is to employ the attention mechanism. The figure below shows how attention mechanism works in seq2seq model for English-French translation (<a href="https://github.com/tensorflow/nmt#background-on-the-attention-mechanism">figure source</a>).</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-8-4.jpg"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-8-4.jpg" alt=""> </a></p>
+<p>Another great source of information is Google Neural Machine Translation system (GNMT), which can be found in <a href="https://arxiv.org/abs/1609.08144">arxiv</a>. GNMT is also illustrated in the figure below (<a href="https://blog.research.google/2016/09/a-neural-network-for-machine.html">figure source</a>).</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-8-6.gif"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-8-6.gif" alt=""> </a></p>
+<p>On the other hand, since hidden state of RNN or LSTM depends on the previous one, it become very difficult to parallelize and makes it inefficient on GPUs. To resolve this limitation, Google proposed the Transformer model, which is published in the very famous paper <a href="https://arxiv.org/pdf/1706.03762.pdf">Attention Is All You Need</a>. We will take a close look at it in the next section.</p>
+<h3 id="23-transformer-model">2.3. Transformer model</h3>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-8-7.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-8-7.png" alt=""> </a></p>
+<p>The architecture of the Transformer model is shown above (<a href="https://arxiv.org/pdf/1706.03762.pdf">figure source</a>). In the following part, we will discuss some of the most important features of the Transformer model.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-8-8.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-8-8.png" alt=""> </a></p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-8-9.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-8-9.png" alt=""> </a></p>
+<p>As illustrated in the two figures above (<a href="https://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2019/Lecture/Transformer%20(v5).pdf">source</a>), three vectors will be generated first for each element of the input sequence:</p>
+<ul>
+<li><code>q</code>: query (to match others) &ndash; q^i = W^q a^i</li>
+<li><code>k</code>: key (to be matched) &ndash; k^i = W^k a^i</li>
+<li><code>v</code>: value (information to be extracted) &ndash; v^i = W^v a^i</li>
+</ul>
+<p>Then we could get the scaled dot-product attention by</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-8-10.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-8-10.png" alt=""> </a></p>
+<p>here d is the dimension of <code>q</code> and <code>k</code>. Then all the scaled dot-product attention will go through a soft-max layer, so that their values are between 0 and 1 and the sum of their values will be 1.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-8-11.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-8-11.png" alt=""> </a></p>
+<p>Next we could get the output <code>b^1</code> by multiplying <code>alpha_hat_1,i</code> with <code>v^i</code> of each element of the input sequence.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-8-12.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-8-12.png" alt=""> </a></p>
+<p>The discussion above is a conceptual discussion about how the Self-Attention Layer works. In practice, all these calculations are realized by matrix operations as illustrated in the figure (<a href="https://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2019/Lecture/Transformer%20(v5).pdf">source</a>) below. Consequently, they can be done extremely efficiently and parallelly, which is ideal for GPUs.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-8-13.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-8-13.png" alt=""> </a></p>
+<p>Multi-head attention is another key feature of Transformer, which is illustrated schematically in the figure (<a href="https://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2019/Lecture/Transformer%20(v5).pdf">source</a>) below. Compared to single-head attention, multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-8-14.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-8-14.png" alt=""> </a></p>
+<p>Since the Transformer processes each element of the input sequence parallelly as one-piece, the information about the order of these elements in the sequence will be lost. On the other hand, the position of each element is critical for the next steps, so a function (shown below) named Positional Encoding (PE) will be added to the embedding vector before the encoder and decoder, which can produces an index that shows the element&rsquo;s location in the sequence.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-8-15.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-8-15.png" alt=""> </a></p>
+<p>To help stabilize the training process, Residual Connection and Layer Normalization are employed in each Encoder and Decoder, as shown in the figure below.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-8-16.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-8-16.png" alt=""> </a></p>
+<p>           
+           </p>
+<h2 id="3-model-development">3. Model development</h2>
+<h3 id="31-install-required-packages">3.1. Install required packages</h3>
+<p>To build a Transformer-based model for English-Chinese translation on Google Colab, we need to install required packages first. In particular, the Transformer model toolkit we used in this project is developed by Facebook AI Research (<a href="https://fairseq.readthedocs.io/en/latest/index.html#">FAIR</a>).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>pip install <span style="color:#e6db74">&#39;torch&gt;=1.6.0&#39;</span> editdistance matplotlib sacrebleu sacremoses sentencepiece tqdm wandb
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>pip install <span style="color:#f92672">--</span>upgrade jupyter ipywidgets
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>git clone https:<span style="color:#f92672">//</span>github<span style="color:#f92672">.</span>com<span style="color:#f92672">/</span>pytorch<span style="color:#f92672">/</span>fairseq<span style="color:#f92672">.</span>git
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>cd fairseq <span style="color:#f92672">&amp;&amp;</span> git checkout <span style="color:#ae81ff">3</span>f6ba43
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>pip install <span style="color:#f92672">--</span>upgrade <span style="color:#f92672">./</span>fairseq<span style="color:#f92672">/</span>
+</span></span></code></pre></div><p>Then we can import the toolkit by the following commands.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> fairseq <span style="color:#f92672">import</span> utils
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> fairseq.tasks.translation <span style="color:#f92672">import</span> TranslationConfig, TranslationTask
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> fairseq.data <span style="color:#f92672">import</span> iterators
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> fairseq.models.transformer <span style="color:#f92672">import</span> TransformerEncoder, TransformerDecoder
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> fairseq.models <span style="color:#f92672">import</span> FairseqEncoder, FairseqIncrementalDecoder,FairseqEncoderDecoderModel
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> fairseq.modules <span style="color:#f92672">import</span> MultiheadAttention
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> fairseq.models.transformer <span style="color:#f92672">import</span> base_architecture
+</span></span></code></pre></div><p>           </p>
+<h3 id="32-data-pre-processing">3.2. Data pre-processing</h3>
+<p>The dataset we used in this project is the TED2020 English-Chinese bilingual parallel corpus. We could download it from opus.nlpl.eu/TED2020.php. Since I have already download it, to reduce the load of the server, I will copy it from Google Drive. Below also shows some example from the source language (i.e., English) and target language (i.e., Chinese) dataset.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># TED2020 - En-Zh Bilingual Parallel Corpus</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># https://opus.nlpl.eu/TED2020.php</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>cp <span style="color:#f92672">-</span>r drive<span style="color:#f92672">/</span>MyDrive<span style="color:#f92672">/</span><span style="color:#ae81ff">210</span><span style="color:#f92672">-</span>Projects<span style="color:#f92672">/</span><span style="color:#ae81ff">810</span>_Machine_translation<span style="color:#f92672">/</span>data<span style="color:#f92672">/</span> <span style="color:#f92672">./</span>
+</span></span><span style="display:flex;"><span>data_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;./data/rawdata&#39;</span>
+</span></span><span style="display:flex;"><span>prefix <span style="color:#f92672">=</span> Path(data_dir)<span style="color:#f92672">.</span>absolute()
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Language</span>
+</span></span><span style="display:flex;"><span>src_lang <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;en&#39;</span>
+</span></span><span style="display:flex;"><span>tgt_lang <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;zh&#39;</span>
+</span></span><span style="display:flex;"><span>data_prefix <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>prefix<span style="color:#e6db74">}</span><span style="color:#e6db74">/ted2020.raw&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>head {data_prefix<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;.&#39;</span><span style="color:#f92672">+</span>src_lang} <span style="color:#f92672">-</span>n <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>head {data_prefix<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;.&#39;</span><span style="color:#f92672">+</span>tgt_lang} <span style="color:#f92672">-</span>n <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Thank you so much, Chris.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># And it&#39;s truly a great honor to have the opportunity to come to this stage twice; I&#39;m extremely grateful.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># I have been blown away by this conference, and I want to thank all of you for the many nice comments about what I had to say the other night.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># And I say that sincerely, partly because I need that.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Put yourselves in my position.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 非常謝謝你，克里斯。能有這個機會第二度踏上這個演講台</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 真是一大榮幸。我非常感激。</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 這個研討會給我留下了極為深刻的印象，我想感謝大家 對我之前演講的好評。</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 我是由衷的想這麼說，有部份原因是因為 —— 我真的有需要!</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 請你們設身處地為我想一想！</span>
+</span></span></code></pre></div><p>In next step, we will clean up the dataset and split it into training set (95% of data) and validation set (5% of data). Then we will use the following code block to create two dictionaries for the source language and target language. Examples of processed data are also shown below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>vocab_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">8000</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (prefix<span style="color:#f92672">/</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;spm</span><span style="color:#e6db74">{</span>vocab_size<span style="color:#e6db74">}</span><span style="color:#e6db74">.model&#39;</span>)<span style="color:#f92672">.</span>exists():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>prefix<span style="color:#e6db74">}</span><span style="color:#e6db74">/spm</span><span style="color:#e6db74">{</span>vocab_size<span style="color:#e6db74">}</span><span style="color:#e6db74">.model exists. skipping spm_train.&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    spm<span style="color:#f92672">.</span>SentencePieceTrainer<span style="color:#f92672">.</span>train(
+</span></span><span style="display:flex;"><span>        input<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;,&#39;</span><span style="color:#f92672">.</span>join([<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>prefix<span style="color:#e6db74">}</span><span style="color:#e6db74">/train.clean.</span><span style="color:#e6db74">{</span>src_lang<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>prefix<span style="color:#e6db74">}</span><span style="color:#e6db74">/valid.clean.</span><span style="color:#e6db74">{</span>src_lang<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>prefix<span style="color:#e6db74">}</span><span style="color:#e6db74">/train.clean.</span><span style="color:#e6db74">{</span>tgt_lang<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>prefix<span style="color:#e6db74">}</span><span style="color:#e6db74">/valid.clean.</span><span style="color:#e6db74">{</span>tgt_lang<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>]),
+</span></span><span style="display:flex;"><span>        model_prefix<span style="color:#f92672">=</span>prefix<span style="color:#f92672">/</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;spm</span><span style="color:#e6db74">{</span>vocab_size<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>,
+</span></span><span style="display:flex;"><span>        vocab_size<span style="color:#f92672">=</span>vocab_size,
+</span></span><span style="display:flex;"><span>        character_coverage<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>        model_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;unigram&#39;</span>, <span style="color:#75715e"># &#39;bpe&#39; works as well</span>
+</span></span><span style="display:flex;"><span>        input_sentence_size<span style="color:#f92672">=</span><span style="color:#ae81ff">1e6</span>,
+</span></span><span style="display:flex;"><span>        shuffle_input_sentence<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
+</span></span><span style="display:flex;"><span>        normalization_rule_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;nmt_nfkc_cf&#39;</span>,
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>spm_model <span style="color:#f92672">=</span> spm<span style="color:#f92672">.</span>SentencePieceProcessor(model_file<span style="color:#f92672">=</span>str(prefix<span style="color:#f92672">/</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;spm</span><span style="color:#e6db74">{</span>vocab_size<span style="color:#e6db74">}</span><span style="color:#e6db74">.model&#39;</span>))
+</span></span><span style="display:flex;"><span>in_tag <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;train&#39;</span>: <span style="color:#e6db74">&#39;train.clean&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;valid&#39;</span>: <span style="color:#e6db74">&#39;valid.clean&#39;</span>,
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> split <span style="color:#f92672">in</span> [<span style="color:#e6db74">&#39;train&#39;</span>, <span style="color:#e6db74">&#39;valid&#39;</span>]:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> lang <span style="color:#f92672">in</span> [src_lang, tgt_lang]:
+</span></span><span style="display:flex;"><span>        out_path <span style="color:#f92672">=</span> prefix<span style="color:#f92672">/</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>split<span style="color:#e6db74">}</span><span style="color:#e6db74">.</span><span style="color:#e6db74">{</span>lang<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> out_path<span style="color:#f92672">.</span>exists():
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>out_path<span style="color:#e6db74">}</span><span style="color:#e6db74"> exists. skipping spm_encode.&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">with</span> open(prefix<span style="color:#f92672">/</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>split<span style="color:#e6db74">}</span><span style="color:#e6db74">.</span><span style="color:#e6db74">{</span>lang<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> out_f:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">with</span> open(prefix<span style="color:#f92672">/</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>in_tag[split]<span style="color:#e6db74">}</span><span style="color:#e6db74">.</span><span style="color:#e6db74">{</span>lang<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>) <span style="color:#66d9ef">as</span> in_f:
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> in_f:
+</span></span><span style="display:flex;"><span>                        line <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>                        tok <span style="color:#f92672">=</span> spm_model<span style="color:#f92672">.</span>encode(line, out_type<span style="color:#f92672">=</span>str)
+</span></span><span style="display:flex;"><span>                        print(<span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">.</span>join(tok), file<span style="color:#f92672">=</span>out_f)
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>head {data_dir<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;/&#39;</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#39;/train.&#39;</span><span style="color:#f92672">+</span>src_lang} <span style="color:#f92672">-</span>n <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>head {data_dir<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;/&#39;</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#39;/train.&#39;</span><span style="color:#f92672">+</span>tgt_lang} <span style="color:#f92672">-</span>n <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ▁thank ▁you ▁so ▁much ▁, ▁chris ▁.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ▁and ▁it &#39; s ▁ t ru ly ▁a ▁great ▁ho n or ▁to ▁have ▁the ▁opportunity ▁to ▁come ▁to ▁this ▁stage ▁ t wi ce ▁; ▁i &#39; m ▁extreme ly ▁gr ate ful ▁.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ▁i ▁have ▁been ▁ bl ow n ▁away ▁by ▁this ▁con f er ence ▁, ▁and ▁i ▁want ▁to ▁thank ▁all ▁of ▁you ▁for ▁the ▁many ▁ ni ce ▁ com ment s ▁about ▁what ▁i ▁had ▁to ▁say ▁the ▁other ▁night ▁.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ▁and ▁i ▁say ▁that ▁since re ly ▁, ▁part ly ▁because ▁i ▁need ▁that ▁.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ▁put ▁your s el ve s ▁in ▁my ▁po s ition ▁.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ▁ 非常 謝 謝 你 ▁, ▁ 克 里 斯 ▁。 ▁ 能 有 這個 機會 第二 度 踏 上 這個 演講 台</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ▁ 真 是 一 大 榮 幸 ▁。 ▁我 非常 感 激 ▁。</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ▁這個 研 討 會 給我 留 下 了 極 為 深 刻 的 印 象 ▁, ▁我想 感 謝 大家 對 我 之前 演講 的 好 評 ▁。</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ▁我 是由 衷 的 想 這麼 說 ▁, ▁有 部份 原因 是因為 我 真的 有 需要 ▁!</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ▁ 請 你們 設 身 處 地 為 我想 一 想 ▁!</span>
+</span></span></code></pre></div><p>Then, we will binarize the data with fairseq by preparing the files in pairs for both the source and target languages. The code is shown in the block below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>binpath <span style="color:#f92672">=</span> Path(<span style="color:#e6db74">&#39;./data/data-bin&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> binpath<span style="color:#f92672">.</span>exists():
+</span></span><span style="display:flex;"><span>    print(binpath, <span style="color:#e6db74">&#34;exists, will not overwrite!&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">!</span>python <span style="color:#f92672">-</span>m fairseq_cli<span style="color:#f92672">.</span>preprocess \
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">--</span>source<span style="color:#f92672">-</span>lang {src_lang}\
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">--</span>target<span style="color:#f92672">-</span>lang {tgt_lang}\
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">--</span>trainpref {prefix<span style="color:#f92672">/</span><span style="color:#e6db74">&#39;train&#39;</span>}\
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">--</span>validpref {prefix<span style="color:#f92672">/</span><span style="color:#e6db74">&#39;valid&#39;</span>}\
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">--</span>destdir {binpath}\
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">--</span>joined<span style="color:#f92672">-</span>dictionary\
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">--</span>workers <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><p>We will use the TranslationTask from fairseq to load the binarized data created above. It has well-implemented data iterator (dataloader) and well-implemented beam search decoder. Also,its built-in <code>task.source_dictionary</code> and <code>task.target_dictionary</code> are also very handy. The code block below shows some highlighted part and example output. Full working code is available <a href="https://drive.google.com/drive/folders/1dPc4tAoNwL4S0x7r7dsiPs4Q-hIUwXt9?usp=sharing">here</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>task <span style="color:#f92672">=</span> TranslationTask<span style="color:#f92672">.</span>setup_task(task_cfg)
+</span></span><span style="display:flex;"><span>task<span style="color:#f92672">.</span>load_dataset(split<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;train&#34;</span>, epoch<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, combine<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>task<span style="color:#f92672">.</span>load_dataset(split<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;valid&#34;</span>, epoch<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>sample <span style="color:#f92672">=</span> task<span style="color:#f92672">.</span>dataset(<span style="color:#e6db74">&#34;train&#34;</span>)[<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>pprint<span style="color:#f92672">.</span>pprint(sample)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># {&#39;id&#39;: 1,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  &#39;source&#39;: tensor([  11,   20,   15,    6,    5,   14,  281,   42,   13,  644,  440,   32,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#           79,   12,   59,    9, 2952,   12,  407,   12,   31, 2963,    5,   14,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         1342,  123,  352,   19,   15,   33, 2975,   42,  582,  149,  579,    7,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#            2]),</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  &#39;target&#39;: tensor([   5,  859,   29,   55,   78, 3239, 1563,   10,   39,  299,  448, 1554,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#           10,    2])}</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (&#34;Source: and it&#39;s truly a great honor to have the opportunity to come to this &#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  &#34;stage twice ; i&#39;m extremely grateful .&#34;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#39;Target: 真是一大榮幸 。 我非常感激 。&#39;</span>
+</span></span></code></pre></div><p>           </p>
+<h3 id="33-model-configuration">3.3. Model configuration</h3>
+<p>First we build a seq2seq class, which is composed of an Encoder and a Decoder. The input sequence will be passed to Encoder first. Then the Decoder will decode according to outputs of previous steps as well as Encoder outputs. Once done decoding, the seq2seq object will return the outputs from the Decoder.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Seq2Seq</span>(FairseqEncoderDecoderModel):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, args, encoder, decoder):
+</span></span><span style="display:flex;"><span>        super()<span style="color:#f92672">.</span>__init__(encoder, decoder)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>args <span style="color:#f92672">=</span> args
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">forward</span>(self,src_tokens,src_lengths,prev_output_tokens,return_all_hiddens: bool <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>,):
+</span></span><span style="display:flex;"><span>        encoder_out <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>encoder(src_tokens, src_lengths<span style="color:#f92672">=</span>src_lengths, return_all_hiddens<span style="color:#f92672">=</span>return_all_hiddens)
+</span></span><span style="display:flex;"><span>        logits, extra <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>decoder(prev_output_tokens,encoder_out<span style="color:#f92672">=</span>encoder_out,src_lengths<span style="color:#f92672">=</span>src_lengths,return_all_hiddens<span style="color:#f92672">=</span>return_all_hiddens,)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> logits, extra
+</span></span></code></pre></div><p>The code block below shows the model initialization function.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">build_model</span>(args, task):
+</span></span><span style="display:flex;"><span>    src_dict, tgt_dict <span style="color:#f92672">=</span> task<span style="color:#f92672">.</span>source_dictionary, task<span style="color:#f92672">.</span>target_dictionary
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># token embeddings</span>
+</span></span><span style="display:flex;"><span>    encoder_embed_tokens <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Embedding(len(src_dict), args<span style="color:#f92672">.</span>encoder_embed_dim, src_dict<span style="color:#f92672">.</span>pad())
+</span></span><span style="display:flex;"><span>    decoder_embed_tokens <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Embedding(len(tgt_dict), args<span style="color:#f92672">.</span>decoder_embed_dim, tgt_dict<span style="color:#f92672">.</span>pad())
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># encoder decoder</span>
+</span></span><span style="display:flex;"><span>    encoder <span style="color:#f92672">=</span> TransformerEncoder(args, src_dict, encoder_embed_tokens)
+</span></span><span style="display:flex;"><span>    decoder <span style="color:#f92672">=</span> TransformerDecoder(args, tgt_dict, decoder_embed_tokens)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># sequence to sequence model</span>
+</span></span><span style="display:flex;"><span>    model <span style="color:#f92672">=</span> Seq2Seq(args, encoder, decoder)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># initialization for seq2seq model</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">init_params</span>(module):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> isinstance(module, nn<span style="color:#f92672">.</span>Linear):
+</span></span><span style="display:flex;"><span>            module<span style="color:#f92672">.</span>weight<span style="color:#f92672">.</span>data<span style="color:#f92672">.</span>normal_(mean<span style="color:#f92672">=</span><span style="color:#ae81ff">0.0</span>, std<span style="color:#f92672">=</span><span style="color:#ae81ff">0.02</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> module<span style="color:#f92672">.</span>bias <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>                module<span style="color:#f92672">.</span>bias<span style="color:#f92672">.</span>data<span style="color:#f92672">.</span>zero_()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> isinstance(module, nn<span style="color:#f92672">.</span>Embedding):
+</span></span><span style="display:flex;"><span>            module<span style="color:#f92672">.</span>weight<span style="color:#f92672">.</span>data<span style="color:#f92672">.</span>normal_(mean<span style="color:#f92672">=</span><span style="color:#ae81ff">0.0</span>, std<span style="color:#f92672">=</span><span style="color:#ae81ff">0.02</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> module<span style="color:#f92672">.</span>padding_idx <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>                module<span style="color:#f92672">.</span>weight<span style="color:#f92672">.</span>data[module<span style="color:#f92672">.</span>padding_idx]<span style="color:#f92672">.</span>zero_()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> isinstance(module, MultiheadAttention):
+</span></span><span style="display:flex;"><span>            module<span style="color:#f92672">.</span>q_proj<span style="color:#f92672">.</span>weight<span style="color:#f92672">.</span>data<span style="color:#f92672">.</span>normal_(mean<span style="color:#f92672">=</span><span style="color:#ae81ff">0.0</span>, std<span style="color:#f92672">=</span><span style="color:#ae81ff">0.02</span>)
+</span></span><span style="display:flex;"><span>            module<span style="color:#f92672">.</span>k_proj<span style="color:#f92672">.</span>weight<span style="color:#f92672">.</span>data<span style="color:#f92672">.</span>normal_(mean<span style="color:#f92672">=</span><span style="color:#ae81ff">0.0</span>, std<span style="color:#f92672">=</span><span style="color:#ae81ff">0.02</span>)
+</span></span><span style="display:flex;"><span>            module<span style="color:#f92672">.</span>v_proj<span style="color:#f92672">.</span>weight<span style="color:#f92672">.</span>data<span style="color:#f92672">.</span>normal_(mean<span style="color:#f92672">=</span><span style="color:#ae81ff">0.0</span>, std<span style="color:#f92672">=</span><span style="color:#ae81ff">0.02</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> isinstance(module, nn<span style="color:#f92672">.</span>RNNBase):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> name, param <span style="color:#f92672">in</span> module<span style="color:#f92672">.</span>named_parameters():
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;weight&#34;</span> <span style="color:#f92672">in</span> name <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;bias&#34;</span> <span style="color:#f92672">in</span> name:
+</span></span><span style="display:flex;"><span>                    param<span style="color:#f92672">.</span>data<span style="color:#f92672">.</span>uniform_(<span style="color:#f92672">-</span><span style="color:#ae81ff">0.1</span>, <span style="color:#ae81ff">0.1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># weight initialization</span>
+</span></span><span style="display:flex;"><span>    model<span style="color:#f92672">.</span>apply(init_params)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> model
+</span></span></code></pre></div><p>Next we will show the architecture related configuration, which is based on the hyperparameters in Table 3 of the very famous paper <a href="https://arxiv.org/pdf/1706.03762.pdf">Attention Is All You Need</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>arch_args <span style="color:#f92672">=</span> Namespace(
+</span></span><span style="display:flex;"><span>    encoder_embed_dim<span style="color:#f92672">=</span><span style="color:#ae81ff">512</span>,
+</span></span><span style="display:flex;"><span>    encoder_ffn_embed_dim<span style="color:#f92672">=</span><span style="color:#ae81ff">2048</span>,
+</span></span><span style="display:flex;"><span>    encoder_layers<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>,
+</span></span><span style="display:flex;"><span>    decoder_embed_dim<span style="color:#f92672">=</span><span style="color:#ae81ff">512</span>,
+</span></span><span style="display:flex;"><span>    decoder_ffn_embed_dim<span style="color:#f92672">=</span><span style="color:#ae81ff">2048</span>,
+</span></span><span style="display:flex;"><span>    decoder_layers<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>,
+</span></span><span style="display:flex;"><span>    share_decoder_input_output_embed<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
+</span></span><span style="display:flex;"><span>    dropout<span style="color:#f92672">=</span><span style="color:#ae81ff">0.1</span>,
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_transformer_args</span>(args):
+</span></span><span style="display:flex;"><span>    args<span style="color:#f92672">.</span>encoder_attention_heads<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>    args<span style="color:#f92672">.</span>encoder_normalize_before<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>    args<span style="color:#f92672">.</span>decoder_attention_heads<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>    args<span style="color:#f92672">.</span>decoder_normalize_before<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>    args<span style="color:#f92672">.</span>activation_fn<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;relu&#34;</span>
+</span></span><span style="display:flex;"><span>    args<span style="color:#f92672">.</span>max_source_positions<span style="color:#f92672">=</span><span style="color:#ae81ff">1024</span>
+</span></span><span style="display:flex;"><span>    args<span style="color:#f92672">.</span>max_target_positions<span style="color:#f92672">=</span><span style="color:#ae81ff">1024</span>
+</span></span><span style="display:flex;"><span>    base_architecture(arch_args)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>add_transformer_args(arch_args)
+</span></span><span style="display:flex;"><span>model <span style="color:#f92672">=</span> build_model(arch_args, task)
+</span></span></code></pre></div><p>           </p>
+<h3 id="34-optimization">3.4. Optimization</h3>
+<p>In order to stabilize the training for transformers in its early stages, we will employ the learning rate scheduling technique. As visualized in the figure below, the learning rate will increase linearly for the first <code>warmup_steps</code> training steps, and it will then decrease thereafter proportionally to the inverse square root of the <code>step_number</code>.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-8-17.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-8-17.png" alt=""> </a></p>
+<p>The realization of learning rate scheduling is shown in the code block below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_rate</span>(d_model, step_num, warmup_step):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># lr = 0.001</span>
+</span></span><span style="display:flex;"><span>    lr <span style="color:#f92672">=</span> d_model<span style="color:#f92672">**</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">0.5</span>) <span style="color:#f92672">*</span> min(step_num<span style="color:#f92672">**</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">0.5</span>), step_num<span style="color:#f92672">*</span>warmup_step<span style="color:#f92672">**</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1.5</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> lr
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NoamOpt</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Optim wrapper that implements rate.&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, model_size, factor, warmup, optimizer):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>optimizer <span style="color:#f92672">=</span> optimizer
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_step <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>warmup <span style="color:#f92672">=</span> warmup
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>factor <span style="color:#f92672">=</span> factor
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>model_size <span style="color:#f92672">=</span> model_size
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_rate <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@property</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">param_groups</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>optimizer<span style="color:#f92672">.</span>param_groups
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">multiply_grads</span>(self, c):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;Multiplies grads by a constant *c*.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> group <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>param_groups:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> group[<span style="color:#e6db74">&#39;params&#39;</span>]:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> p<span style="color:#f92672">.</span>grad <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>                    p<span style="color:#f92672">.</span>grad<span style="color:#f92672">.</span>data<span style="color:#f92672">.</span>mul_(c)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">step</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Update parameters and rate&#34;</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_step <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        rate <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>rate()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>param_groups:
+</span></span><span style="display:flex;"><span>            p[<span style="color:#e6db74">&#39;lr&#39;</span>] <span style="color:#f92672">=</span> rate
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_rate <span style="color:#f92672">=</span> rate
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>optimizer<span style="color:#f92672">.</span>step()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">rate</span>(self, step <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Implement `lrate` above&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> step <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>            step <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_step
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> step <span style="color:#66d9ef">else</span> self<span style="color:#f92672">.</span>factor <span style="color:#f92672">*</span> get_rate(self<span style="color:#f92672">.</span>model_size, step, self<span style="color:#f92672">.</span>warmup)
+</span></span></code></pre></div><p>Label Smoothing regularization is also employed in our program to help avoid overfitting. As shown in the figure below, when calculating loss, Label Smoothing Regularization lets the model learn to generate less concentrated distribution, and prevent over-confidence. As occasionally the ground truth may not be the only answer, thus, when calculating loss, we reserve some probability for incorrect labels, and this can help to avoid overfitting.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-8-18.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-8-18.png" alt=""> </a></p>
+<p>The realization of Label Smoothing regularization (<a href="https://fairseq.readthedocs.io/en/latest/_modules/fairseq/criterions/label_smoothed_cross_entropy.html">reference</a>) is shown in the code block below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LabelSmoothedCrossEntropyCriterion</span>(nn<span style="color:#f92672">.</span>Module):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, smoothing, ignore_index<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, reduce<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>):
+</span></span><span style="display:flex;"><span>        super()<span style="color:#f92672">.</span>__init__()
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>smoothing <span style="color:#f92672">=</span> smoothing
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>ignore_index <span style="color:#f92672">=</span> ignore_index
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>reduce <span style="color:#f92672">=</span> reduce
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">forward</span>(self, lprobs, target):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> target<span style="color:#f92672">.</span>dim() <span style="color:#f92672">==</span> lprobs<span style="color:#f92672">.</span>dim() <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>            target <span style="color:#f92672">=</span> target<span style="color:#f92672">.</span>unsqueeze(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># nll: Negative log likelihood，the cross-entropy when target is one-hot. following line is same as F.nll_loss</span>
+</span></span><span style="display:flex;"><span>        nll_loss <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>lprobs<span style="color:#f92672">.</span>gather(dim<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>, index<span style="color:#f92672">=</span>target)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">#  reserve some probability for other labels. thus when calculating cross-entropy,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># equivalent to summing the log probs of all labels</span>
+</span></span><span style="display:flex;"><span>        smooth_loss <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>lprobs<span style="color:#f92672">.</span>sum(dim<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>, keepdim<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>ignore_index <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>            pad_mask <span style="color:#f92672">=</span> target<span style="color:#f92672">.</span>eq(self<span style="color:#f92672">.</span>ignore_index)
+</span></span><span style="display:flex;"><span>            nll_loss<span style="color:#f92672">.</span>masked_fill_(pad_mask, <span style="color:#ae81ff">0.0</span>)
+</span></span><span style="display:flex;"><span>            smooth_loss<span style="color:#f92672">.</span>masked_fill_(pad_mask, <span style="color:#ae81ff">0.0</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            nll_loss <span style="color:#f92672">=</span> nll_loss<span style="color:#f92672">.</span>squeeze(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>            smooth_loss <span style="color:#f92672">=</span> smooth_loss<span style="color:#f92672">.</span>squeeze(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>reduce:
+</span></span><span style="display:flex;"><span>            nll_loss <span style="color:#f92672">=</span> nll_loss<span style="color:#f92672">.</span>sum()
+</span></span><span style="display:flex;"><span>            smooth_loss <span style="color:#f92672">=</span> smooth_loss<span style="color:#f92672">.</span>sum()
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># when calculating cross-entropy, add the loss of other labels</span>
+</span></span><span style="display:flex;"><span>        eps_i <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>smoothing <span style="color:#f92672">/</span> lprobs<span style="color:#f92672">.</span>size(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        loss <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1.0</span> <span style="color:#f92672">-</span> self<span style="color:#f92672">.</span>smoothing) <span style="color:#f92672">*</span> nll_loss <span style="color:#f92672">+</span> eps_i <span style="color:#f92672">*</span> smooth_loss
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> loss
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>criterion <span style="color:#f92672">=</span> LabelSmoothedCrossEntropyCriterion(
+</span></span><span style="display:flex;"><span>    smoothing<span style="color:#f92672">=</span><span style="color:#ae81ff">0.1</span>, <span style="color:#75715e"># generally, 0.1 is good enough</span>
+</span></span><span style="display:flex;"><span>    ignore_index<span style="color:#f92672">=</span>task<span style="color:#f92672">.</span>target_dictionary<span style="color:#f92672">.</span>pad(),
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>           </p>
+<h3 id="34-model-training">3.4. Model training</h3>
+<p>The block below shows the code used to train the model for one epoch.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">train_one_epoch</span>(epoch_itr, model, task, criterion, optimizer, accum_steps<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>    itr <span style="color:#f92672">=</span> epoch_itr<span style="color:#f92672">.</span>next_epoch_itr(shuffle<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    itr <span style="color:#f92672">=</span> iterators<span style="color:#f92672">.</span>GroupedIterator(itr, accum_steps) <span style="color:#75715e"># gradient accumulation: update every accum_steps samples</span>
+</span></span><span style="display:flex;"><span>    stats <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;loss&#34;</span>: []}
+</span></span><span style="display:flex;"><span>    scaler <span style="color:#f92672">=</span> GradScaler() <span style="color:#75715e"># automatic mixed precision (amp)</span>
+</span></span><span style="display:flex;"><span>    model<span style="color:#f92672">.</span>train()
+</span></span><span style="display:flex;"><span>    progress <span style="color:#f92672">=</span> tqdm<span style="color:#f92672">.</span>tqdm(itr, desc<span style="color:#f92672">=</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;train epoch </span><span style="color:#e6db74">{</span>epoch_itr<span style="color:#f92672">.</span>epoch<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>, leave<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> samples <span style="color:#f92672">in</span> progress:
+</span></span><span style="display:flex;"><span>        model<span style="color:#f92672">.</span>zero_grad()
+</span></span><span style="display:flex;"><span>        accum_loss <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        sample_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># gradient accumulation: update every accum_steps samples</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i, sample <span style="color:#f92672">in</span> enumerate(samples):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># emptying the CUDA cache after the first step can reduce the chance of OOM</span>
+</span></span><span style="display:flex;"><span>                torch<span style="color:#f92672">.</span>cuda<span style="color:#f92672">.</span>empty_cache()
+</span></span><span style="display:flex;"><span>            sample <span style="color:#f92672">=</span> utils<span style="color:#f92672">.</span>move_to_cuda(sample, device<span style="color:#f92672">=</span>device)
+</span></span><span style="display:flex;"><span>            target <span style="color:#f92672">=</span> sample[<span style="color:#e6db74">&#34;target&#34;</span>]
+</span></span><span style="display:flex;"><span>            sample_size_i <span style="color:#f92672">=</span> sample[<span style="color:#e6db74">&#34;ntokens&#34;</span>]
+</span></span><span style="display:flex;"><span>            sample_size <span style="color:#f92672">+=</span> sample_size_i
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># mixed precision training</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">with</span> autocast():
+</span></span><span style="display:flex;"><span>                net_output <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>forward(<span style="color:#f92672">**</span>sample[<span style="color:#e6db74">&#34;net_input&#34;</span>])
+</span></span><span style="display:flex;"><span>                lprobs <span style="color:#f92672">=</span> F<span style="color:#f92672">.</span>log_softmax(net_output[<span style="color:#ae81ff">0</span>], <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>                loss <span style="color:#f92672">=</span> criterion(lprobs<span style="color:#f92672">.</span>view(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, lprobs<span style="color:#f92672">.</span>size(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)), target<span style="color:#f92672">.</span>view(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># logging</span>
+</span></span><span style="display:flex;"><span>                accum_loss <span style="color:#f92672">+=</span> loss<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># back-prop</span>
+</span></span><span style="display:flex;"><span>                scaler<span style="color:#f92672">.</span>scale(loss)<span style="color:#f92672">.</span>backward()
+</span></span><span style="display:flex;"><span>        scaler<span style="color:#f92672">.</span>unscale_(optimizer)
+</span></span><span style="display:flex;"><span>        optimizer<span style="color:#f92672">.</span>multiply_grads(<span style="color:#ae81ff">1</span> <span style="color:#f92672">/</span> (sample_size <span style="color:#f92672">or</span> <span style="color:#ae81ff">1.0</span>)) <span style="color:#75715e"># (sample_size or 1.0) handles the case of a zero gradient</span>
+</span></span><span style="display:flex;"><span>        gnorm <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>utils<span style="color:#f92672">.</span>clip_grad_norm_(model<span style="color:#f92672">.</span>parameters(), config<span style="color:#f92672">.</span>clip_norm) <span style="color:#75715e"># grad norm clipping prevents gradient exploding</span>
+</span></span><span style="display:flex;"><span>        scaler<span style="color:#f92672">.</span>step(optimizer)
+</span></span><span style="display:flex;"><span>        scaler<span style="color:#f92672">.</span>update()
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># logging</span>
+</span></span><span style="display:flex;"><span>        loss_print <span style="color:#f92672">=</span> accum_loss<span style="color:#f92672">/</span>sample_size
+</span></span><span style="display:flex;"><span>        stats[<span style="color:#e6db74">&#34;loss&#34;</span>]<span style="color:#f92672">.</span>append(loss_print)
+</span></span><span style="display:flex;"><span>        progress<span style="color:#f92672">.</span>set_postfix(loss<span style="color:#f92672">=</span>loss_print)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> config<span style="color:#f92672">.</span>use_wandb:
+</span></span><span style="display:flex;"><span>            wandb<span style="color:#f92672">.</span>log({
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;train/loss&#34;</span>: loss_print,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;train/grad_norm&#34;</span>: gnorm<span style="color:#f92672">.</span>item(),
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;train/lr&#34;</span>: optimizer<span style="color:#f92672">.</span>rate(),
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;train/sample_size&#34;</span>: sample_size,
+</span></span><span style="display:flex;"><span>            })
+</span></span><span style="display:flex;"><span>    loss_print <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean(stats[<span style="color:#e6db74">&#34;loss&#34;</span>])
+</span></span><span style="display:flex;"><span>    logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;training loss: </span><span style="color:#e6db74">{</span>loss_print<span style="color:#e6db74">:</span><span style="color:#e6db74">.4f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> stats
+</span></span></code></pre></div><p>Next, the code for validation is shown in the block below. To prevent overfitting, validation is required every epoch to validate the performance on unseen data. However, Validation loss alone cannot describe the actual performance of the model. So we will directly produce translation hypotheses based on current model, then calculate <a href="https://aclanthology.org/P02-1040.pdf">BLEU</a> score with the reference translation.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-8-19.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-8-19.png" alt=""> </a></p>
+<p>In the equation above, <code>BP</code> is brevity penalty, <code>w_n</code> is weight, and <code>p_n</code> is n-gram precision. Essentially, BLEU score measures the similarity between the output and target. Due to high variance, empirically we will train the model for more epochs to stabilize the results. In our project, we will use fairseq&rsquo;s sequence generator for beam search to generate translation hypotheses. Fairseq&rsquo;s beam search generator, given model and input sequence, will produce translation hypotheses by beam search.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">validate</span>(model, task, criterion, log_to_wandb<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>):
+</span></span><span style="display:flex;"><span>    logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#39;begin validation&#39;</span>)
+</span></span><span style="display:flex;"><span>    itr <span style="color:#f92672">=</span> load_data_iterator(task, <span style="color:#e6db74">&#34;valid&#34;</span>, <span style="color:#ae81ff">1</span>, config<span style="color:#f92672">.</span>max_tokens, config<span style="color:#f92672">.</span>num_workers)<span style="color:#f92672">.</span>next_epoch_itr(shuffle<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>    stats <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;loss&#34;</span>:[], <span style="color:#e6db74">&#34;bleu&#34;</span>: <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;srcs&#34;</span>:[], <span style="color:#e6db74">&#34;hyps&#34;</span>:[], <span style="color:#e6db74">&#34;refs&#34;</span>:[]}
+</span></span><span style="display:flex;"><span>    srcs <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    hyps <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    refs <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    model<span style="color:#f92672">.</span>eval()
+</span></span><span style="display:flex;"><span>    progress <span style="color:#f92672">=</span> tqdm<span style="color:#f92672">.</span>tqdm(itr, desc<span style="color:#f92672">=</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;validation&#34;</span>, leave<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> torch<span style="color:#f92672">.</span>no_grad():
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i, sample <span style="color:#f92672">in</span> enumerate(progress):
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># validation loss</span>
+</span></span><span style="display:flex;"><span>            sample <span style="color:#f92672">=</span> utils<span style="color:#f92672">.</span>move_to_cuda(sample, device<span style="color:#f92672">=</span>device)
+</span></span><span style="display:flex;"><span>            net_output <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>forward(<span style="color:#f92672">**</span>sample[<span style="color:#e6db74">&#34;net_input&#34;</span>])
+</span></span><span style="display:flex;"><span>            lprobs <span style="color:#f92672">=</span> F<span style="color:#f92672">.</span>log_softmax(net_output[<span style="color:#ae81ff">0</span>], <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>            target <span style="color:#f92672">=</span> sample[<span style="color:#e6db74">&#34;target&#34;</span>]
+</span></span><span style="display:flex;"><span>            sample_size <span style="color:#f92672">=</span> sample[<span style="color:#e6db74">&#34;ntokens&#34;</span>]
+</span></span><span style="display:flex;"><span>            loss <span style="color:#f92672">=</span> criterion(lprobs<span style="color:#f92672">.</span>view(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, lprobs<span style="color:#f92672">.</span>size(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)), target<span style="color:#f92672">.</span>view(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)) <span style="color:#f92672">/</span> sample_size
+</span></span><span style="display:flex;"><span>            progress<span style="color:#f92672">.</span>set_postfix(valid_loss<span style="color:#f92672">=</span>loss<span style="color:#f92672">.</span>item())
+</span></span><span style="display:flex;"><span>            stats[<span style="color:#e6db74">&#34;loss&#34;</span>]<span style="color:#f92672">.</span>append(loss)
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># do inference</span>
+</span></span><span style="display:flex;"><span>            s, h, r <span style="color:#f92672">=</span> inference_step(sample, model)
+</span></span><span style="display:flex;"><span>            srcs<span style="color:#f92672">.</span>extend(s)
+</span></span><span style="display:flex;"><span>            hyps<span style="color:#f92672">.</span>extend(h)
+</span></span><span style="display:flex;"><span>            refs<span style="color:#f92672">.</span>extend(r)
+</span></span><span style="display:flex;"><span>    tok <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;zh&#39;</span> <span style="color:#66d9ef">if</span> task<span style="color:#f92672">.</span>cfg<span style="color:#f92672">.</span>target_lang <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;zh&#39;</span> <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#39;13a&#39;</span>
+</span></span><span style="display:flex;"><span>    stats[<span style="color:#e6db74">&#34;loss&#34;</span>] <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>stack(stats[<span style="color:#e6db74">&#34;loss&#34;</span>])<span style="color:#f92672">.</span>mean()<span style="color:#f92672">.</span>item()
+</span></span><span style="display:flex;"><span>    stats[<span style="color:#e6db74">&#34;bleu&#34;</span>] <span style="color:#f92672">=</span> sacrebleu<span style="color:#f92672">.</span>corpus_bleu(hyps, [refs], tokenize<span style="color:#f92672">=</span>tok) <span style="color:#75715e"># Compute BLEU score</span>
+</span></span><span style="display:flex;"><span>    stats[<span style="color:#e6db74">&#34;srcs&#34;</span>] <span style="color:#f92672">=</span> srcs
+</span></span><span style="display:flex;"><span>    stats[<span style="color:#e6db74">&#34;hyps&#34;</span>] <span style="color:#f92672">=</span> hyps
+</span></span><span style="display:flex;"><span>    stats[<span style="color:#e6db74">&#34;refs&#34;</span>] <span style="color:#f92672">=</span> refs
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> config<span style="color:#f92672">.</span>use_wandb <span style="color:#f92672">and</span> log_to_wandb:
+</span></span><span style="display:flex;"><span>        wandb<span style="color:#f92672">.</span>log({
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;valid/loss&#34;</span>: stats[<span style="color:#e6db74">&#34;loss&#34;</span>],
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;valid/bleu&#34;</span>: stats[<span style="color:#e6db74">&#34;bleu&#34;</span>]<span style="color:#f92672">.</span>score,
+</span></span><span style="display:flex;"><span>        }, commit<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>    showid <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>randint(len(hyps))
+</span></span><span style="display:flex;"><span>    logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#34;example source: &#34;</span> <span style="color:#f92672">+</span> srcs[showid])
+</span></span><span style="display:flex;"><span>    logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#34;example hypothesis: &#34;</span> <span style="color:#f92672">+</span> hyps[showid])
+</span></span><span style="display:flex;"><span>    logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#34;example reference: &#34;</span> <span style="color:#f92672">+</span> refs[showid])
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># show bleu results</span>
+</span></span><span style="display:flex;"><span>    logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;validation loss:</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">{</span>stats[<span style="color:#e6db74">&#39;loss&#39;</span>]<span style="color:#e6db74">:</span><span style="color:#e6db74">.4f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    logger<span style="color:#f92672">.</span>info(stats[<span style="color:#e6db74">&#34;bleu&#34;</span>]<span style="color:#f92672">.</span>format())
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> stats
+</span></span></code></pre></div><p>Finally, we are ready to train the model, and here is the code to do that.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>epoch_itr <span style="color:#f92672">=</span> load_data_iterator(task, <span style="color:#e6db74">&#34;train&#34;</span>, config<span style="color:#f92672">.</span>start_epoch, config<span style="color:#f92672">.</span>max_tokens, config<span style="color:#f92672">.</span>num_workers)
+</span></span><span style="display:flex;"><span>try_load_checkpoint(model, optimizer, name<span style="color:#f92672">=</span>config<span style="color:#f92672">.</span>resume)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> epoch_itr<span style="color:#f92672">.</span>next_epoch_idx <span style="color:#f92672">&lt;=</span> config<span style="color:#f92672">.</span>max_epoch:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># train for one epoch</span>
+</span></span><span style="display:flex;"><span>    train_one_epoch(epoch_itr, model, task, criterion, optimizer, config<span style="color:#f92672">.</span>accum_steps)
+</span></span><span style="display:flex;"><span>    stats <span style="color:#f92672">=</span> validate_and_save(model, task, criterion, optimizer, epoch<span style="color:#f92672">=</span>epoch_itr<span style="color:#f92672">.</span>epoch)
+</span></span><span style="display:flex;"><span>    logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#34;end of epoch </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>format(epoch_itr<span style="color:#f92672">.</span>epoch))
+</span></span><span style="display:flex;"><span>    epoch_itr <span style="color:#f92672">=</span> load_data_iterator(task, <span style="color:#e6db74">&#34;train&#34;</span>, epoch_itr<span style="color:#f92672">.</span>next_epoch_idx, config<span style="color:#f92672">.</span>max_tokens, config<span style="color:#f92672">.</span>num_workers)
+</span></span></code></pre></div><p>Since we employed <code>wandb</code> package in our code, it will enable us to log the loss, bleu, etc. in the training process as well as to visualize them.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>logging<span style="color:#f92672">.</span>basicConfig(
+</span></span><span style="display:flex;"><span>    format<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%(asctime)s</span><span style="color:#e6db74"> | </span><span style="color:#e6db74">%(levelname)s</span><span style="color:#e6db74"> | </span><span style="color:#e6db74">%(name)s</span><span style="color:#e6db74"> | </span><span style="color:#e6db74">%(message)s</span><span style="color:#e6db74">&#34;</span>,
+</span></span><span style="display:flex;"><span>    datefmt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %H:%M:%S&#34;</span>,
+</span></span><span style="display:flex;"><span>    level<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;INFO&#34;</span>, <span style="color:#75715e"># &#34;DEBUG&#34; &#34;WARNING&#34; &#34;ERROR&#34;</span>
+</span></span><span style="display:flex;"><span>    stream<span style="color:#f92672">=</span>sys<span style="color:#f92672">.</span>stdout,
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>proj <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;P8.seq2seq&#34;</span>
+</span></span><span style="display:flex;"><span>logger <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>getLogger(proj)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> config<span style="color:#f92672">.</span>use_wandb:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">import</span> wandb
+</span></span><span style="display:flex;"><span>    wandb<span style="color:#f92672">.</span>init(project<span style="color:#f92672">=</span>proj, name<span style="color:#f92672">=</span>Path(config<span style="color:#f92672">.</span>savedir)<span style="color:#f92672">.</span>stem, config<span style="color:#f92672">=</span>config)
+</span></span></code></pre></div><p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-8-20.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-8-20.png" alt=""> </a></p>
+<p>The training loss and validation loss is shown in the figure below. From this figure, we can see that after more than 35,000 steps, both the training loss and validation loss are stabilized. Also we noticed that there is very little overfitting in our model, because the training loss and validation loss are very close to each other.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-8-21.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-8-21.png" alt=""> </a></p>
+<p>Next we will examine the BLEU score of the validation set, and the results are shown in the figure below. From this figure, we can see that after about 12,000 steps, out BLEU score exceeds 25, and the maximum BLEU score is 25.78.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-8-22.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-8-22.png" alt=""> </a></p>
+<p>One famous difficulty in training neural networks is exploding gradient (<a href="https://arxiv.org/abs/1211.5063">ref</a>). To address this issue, in our code we will first set up a maximum norm value max_norm. Then we will collect the gradient of each parameters to be a vector and calculate the
+p-norm of the vector and call it Lnorm. If Lnorm &gt; max_norm, then we will calculate the scale factor scale_factor = max_norm / Lnorm and multiply each gradient by the scale factor. The gradient norm vs step is shown in the figure below, with large gradient norm (and gradient norm clipping) marked by orange circle.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-8-23.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-8-23.png" alt=""> </a></p>
+<p>Finally, we will examine some English-Chinese translation results manually. During the training process, we will save the translation results of validation set at the end of each epoch. Here we arbitraly choose record #17561 and compare the translation results after different epoches. From the results shown below, we can find that we train the model for more epoches, the quality of translation gets better and better, and this improvement is particular noticable in the first 16 epoches. In addition, all the data are available at <a href="https://drive.google.com/drive/folders/1dPc4tAoNwL4S0x7r7dsiPs4Q-hIUwXt9?usp=sharing">Google Drive</a>.</p>
+<hr>
+<p><strong>Source langauge:</strong> <code>what you see here is two male chimpanzees who are the same size , but one is walking upright , has his hair up , has a big rock in his hand , and he's the alpha male .</code></p>
+<hr>
+<p><strong>Translation after epoch 1 (samples1.en-zh.txt):</strong> <code>你看到這兩個小小小的小小小 , 但他走走了一半 , 但他走走了他 , 但他走進步 。</code></p>
+<hr>
+<p><strong>Translation after epoch 2 (samples2.en-zh.txt):</strong> <code>這裡你看到的是兩個兩個大猩猩 , 其中一個是大小的大小 , 但他在他的手中 , 他的大大大大大大大小 , 牠的大大小 , 大大大大大小 。</code></p>
+<hr>
+<p><strong>Translation after epoch 4 (samples4.en-zh.txt):</strong> <code>這裡有兩個男性黑猩猩是相同的 , 但一個是同一個 , 他的頭髮有他的頭髮 , 他是雄性領袖 , 他是雄性領袖 。</code></p>
+<hr>
+<p><strong>Translation after epoch 8 (samples8.en-zh.txt):</strong> <code>這裡你看到的是兩隻雄猩猩猩 , 牠們的身高相同大小 , 但一隻是直立行走的 , 牠的頭髮上有一隻大石頭 , 手上有一隻大石頭 , 牠是雄性領袖 。</code></p>
+<hr>
+<p><strong>Translation after epoch 12 (samples12.en-zh.txt):</strong> <code>各位現在看到的是兩隻雄性黑猩猩 , 大小相同 , 但其中一隻是直立行走的 , 手上有一顆大石頭 , 牠是雄性領袖 。</code></p>
+<hr>
+<p><strong>Translation after epoch 16 (samples16.en-zh.txt):</strong> <code>這裡你看到的是兩隻雄性黑猩猩 , 大小相同 , 但一隻是直立行走 , 牠的頭髮有頭髮 , 手上有一塊巨大的石頭 , 他是雄性領袖 。</code></p>
+<hr>
+<p><strong>Translation after epoch 24 (samples24.en-zh.txt):</strong> <code>這裡你看到的是兩隻雄性黑猩猩 , 大小相同 , 但有一隻直立行走 , 牠的頭髮長起來 , 手上有很大的石頭 , 牠是雄性領袖 。</code></p>
+<hr>
+<p><strong>Translation after epoch 32 (samples32.en-zh.txt):</strong> <code>各位在這裡看到的是兩隻雄猩猩 , 大小相同 , 但一隻正在走向直上 , 牠的頭髮舉起來 , 手上有很大的石頭 , 而牠是雄性領袖 。</code></p>
+<hr>
+<p><strong>Translation after epoch 40 (samples40.en-zh.txt):</strong> <code>這裡你可以看到兩隻雄猩猩 , 大小相同 , 但一隻正在直立行走 , 牠的頭髮長高 , 牠的手也有很大的石頭 , 而牠是雄性領袖 。</code></p>
+<hr>
+<p><strong>Translation after epoch 48 (samples48.en-zh.txt):</strong> <code>各位現在看到的是兩隻雄猩猩 , 大小相同 , 但一隻正在直立行走 , 牠頭髮向上 , 牠手上有很大的石頭 , 牠是雄性領袖 。</code></p>
+<hr>
+<p>           
+           </p>
+<h2 id="4-conclusions">4. Conclusions</h2>
+<p>In this project, we built a Transformer-based model for English-Chinese translation. The model was trained on the TED2020 En-Zh Bilingual Parallel Corpus, and we achieve BLEU score of 25.78 on the validation set. We have also examined some translation results manually and found that the model developed in this work can indeed generate high quality translations. In the future, we would like to employ back translation in our model so that the tanslation results will be more natual and of even higher quality.</p>
+<ul class="pa0">
   
    <li class="list">
      <a href="https://andysucao.github.io/Andy_Portfolio/tags/natural-language-processing" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Natural Language Processing</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://andysucao.github.io/Andy_Portfolio/tags/transformer" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Transformer</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://andysucao.github.io/Andy_Portfolio/tags/machine-translation" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Machine Translation</a>
    </li>
   
 </ul>

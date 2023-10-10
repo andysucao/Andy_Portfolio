@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Transformer on Andy Cao</title>
+    <link>https://andysucao.github.io/Andy_Portfolio/tags/transformer/</link>
+    <description>Recent content in Transformer on Andy Cao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Aug 2023 06:07:00 -0400</lastBuildDate><atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/transformer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project 8: Machine Translation with Transformers</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-8/</link>
+      <pubDate>Sun, 20 Aug 2023 06:07:00 -0400</pubDate>
+      
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-8/</guid>
+      <description>1. Overview In this project, we will build a neural machine translation model with Fairseq Transformer that can translate English into Chinese naturally. The model will be trained and evaluated on the TED2020 En-Zh Bilingual Parallel Corpus.
+The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.
+2. Machine translation and Transformer 2.1. Brief history of machine translation The figure above illustrates the development of Machine Translation from 1950s to today (source).</description>
+    </item>
+    
+  </channel>
+</rss>
