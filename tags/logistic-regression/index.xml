@@ -6,16 +6,14 @@
     <description>Recent content in Logistic Regression on Andy Cao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Aug 2023 06:01:00 -0400</lastBuildDate><atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/logistic-regression/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Aug 2023 06:01:00 -0400</lastBuildDate>
+    <atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/logistic-regression/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Project 2: Predicitng Customer Churn for a Mobile Phone Carrier</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-2/</link>
       <pubDate>Sun, 20 Aug 2023 06:01:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-2/</guid>
-      <description>1. Overview In this project, we will build a series of models to predict the probability of Customer Churn for a Mobile Phone Carrier.
-In the first part, we will conduct Exploratory Data Analysis (EDA). Here the Synthetic Minority Oversampling Technique (SMOTE) method is employed to address the imbalanced classification problem. Then we will develop customer churn prediction models based on (1) Logistic Regression, (2) Decision Tree, (3) Random Forest, (4) AdaBoost, (5) Gradient Boosting Decision Trees (GBDT), and (6) Neural Network.</description>
+      <description>1. Overview In this project, we will build a series of models to predict the probability of Customer Churn for a Mobile Phone Carrier.&#xA;In the first part, we will conduct Exploratory Data Analysis (EDA). Here the Synthetic Minority Oversampling Technique (SMOTE) method is employed to address the imbalanced classification problem. Then we will develop customer churn prediction models based on (1) Logistic Regression, (2) Decision Tree, (3) Random Forest, (4) AdaBoost, (5) Gradient Boosting Decision Trees (GBDT), and (6) Neural Network.</description>
     </item>
-    
   </channel>
 </rss>

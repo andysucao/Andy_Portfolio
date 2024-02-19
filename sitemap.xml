@@ -3,7 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://andysucao.github.io/Andy_Portfolio/</loc>
-    <lastmod>2023-08-20T06:07:00-04:00</lastmod>
+    <lastmod>2023-08-20T06:08:00-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://andysucao.github.io/Andy_Portfolio/tags/generative-question-answering-qa/</loc>
+    <lastmod>2023-08-20T06:08:00-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://andysucao.github.io/Andy_Portfolio/tags/gpt/</loc>
+    <lastmod>2023-08-20T06:08:00-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://andysucao.github.io/Andy_Portfolio/tags/natural-language-processing/</loc>
+    <lastmod>2023-08-20T06:08:00-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://andysucao.github.io/Andy_Portfolio/post/project-9/</loc>
+    <lastmod>2023-08-20T06:08:00-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://andysucao.github.io/Andy_Portfolio/tags/retrieval-augmented-generation-rag/</loc>
+    <lastmod>2023-08-20T06:08:00-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://andysucao.github.io/Andy_Portfolio/tags/</loc>
+    <lastmod>2023-08-20T06:08:00-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://andysucao.github.io/Andy_Portfolio/tags/truera/</loc>
+    <lastmod>2023-08-20T06:08:00-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -12,17 +47,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://andysucao.github.io/Andy_Portfolio/tags/natural-language-processing/</loc>
-    <lastmod>2023-08-20T06:07:00-04:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://andysucao.github.io/Andy_Portfolio/post/project-8/</loc>
-    <lastmod>2023-08-20T06:07:00-04:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://andysucao.github.io/Andy_Portfolio/tags/</loc>
     <lastmod>2023-08-20T06:07:00-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -139,6 +164,16 @@
   </url><url>
     <loc>https://andysucao.github.io/Andy_Portfolio/skills/</loc>
     <lastmod>2023-08-11T08:58:08-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://andysucao.github.io/Andy_Portfolio/tags/misc/</loc>
+    <lastmod>2023-07-11T08:58:08-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://andysucao.github.io/Andy_Portfolio/post/project-0/</loc>
+    <lastmod>2023-07-11T08:58:08-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>

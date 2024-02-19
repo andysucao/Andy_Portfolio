@@ -6,139 +6,98 @@
     <description>Recent content in Data Science Portfolio on Andy Cao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Aug 2023 06:07:00 -0400</lastBuildDate><atom:link href="https://andysucao.github.io/Andy_Portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Aug 2023 06:08:00 -0400</lastBuildDate>
+    <atom:link href="https://andysucao.github.io/Andy_Portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project 9: Generative QA with Retrieval-Augmented Generation (RAG) and TruEra Evaluation</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-9/</link>
+      <pubDate>Sun, 20 Aug 2023 06:08:00 -0400</pubDate>
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-9/</guid>
+      <description>1. Overview In this project, we will build a Generative Question Answering model with Retrieval-Augmented Generation (RAG) with the help of LlamaIndex that can answer questions from internal documentation. We will also evaluate, iterate, and improve the model by using TruLens.&#xA;The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.&#xA;2. Retrieval-Augmented Generation (RAG) for Question Answering (QA) In the first part of this section, we will discuss the basic RAG pipeline for generative Question Answering from internal documentation.</description>
+    </item>
     <item>
       <title>Project 8: Machine Translation with Transformers</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-8/</link>
       <pubDate>Sun, 20 Aug 2023 06:07:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-8/</guid>
-      <description>1. Overview In this project, we will build a neural machine translation model with Fairseq Transformer that can translate English into Chinese naturally. The model will be trained and evaluated on the TED2020 En-Zh Bilingual Parallel Corpus.
-The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.
-2. Machine translation and Transformer 2.1. Brief history of machine translation The figure above illustrates the development of Machine Translation from 1950s to today (source).</description>
+      <description>1. Overview In this project, we will build a neural machine translation model with Fairseq Transformer that can translate English into Chinese naturally. The model will be trained and evaluated on the TED2020 En-Zh Bilingual Parallel Corpus.&#xA;The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.&#xA;2. Machine translation and Transformer 2.1. Brief history of machine translation The figure above illustrates the development of Machine Translation from 1950s to today (source).</description>
     </item>
-    
     <item>
-      <title>Project 7: Question Answering with a Fine-Tuned BERT</title>
+      <title>Project 7: Extractive QA with a Fine-Tuned BERT</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-7/</link>
       <pubDate>Sun, 20 Aug 2023 06:06:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-7/</guid>
-      <description>1. Overview In this project, we will build a Bidirectional Encoder Representations from Transformers (BERT) based model for a different Natural Language Processing task &amp;ndash; Question Answering. The model will be fine-tuned on the Conversational Question Answering Challenge (CoQA) dataset from Stanford University.
-The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.
-2. Question Answering (QA) Question Answering, particularly Extraction-based Question Answering, is another type of Natural Language Processing task.</description>
+      <description>1. Overview In this project, we will build a Bidirectional Encoder Representations from Transformers (BERT) based model for a different Natural Language Processing task &amp;ndash; Question Answering. The model will be fine-tuned on the Conversational Question Answering Challenge (CoQA) dataset from Stanford University.&#xA;The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.&#xA;2. Question Answering (QA) Question Answering, particularly Extraction-based Question Answering, is another type of Natural Language Processing task.</description>
     </item>
-    
     <item>
       <title>Project 6: Natural Language Inference with BERT and Explainable Artificial Intelligence</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-6/</link>
       <pubDate>Sun, 20 Aug 2023 06:05:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-6/</guid>
-      <description>1. Overview In this project, we will build a Bidirectional Encoder Representations from Transformers (BERT) based model for Natural Language Inference. The performance of the model will be evaluated on the Stanford Natural Language Inference (SNLI) Corpus. To further understand how it works, we will visualize attention mechanism and compare output embedding of BERT using Euclidean distance and Cosine similarity.
-The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.</description>
+      <description>1. Overview In this project, we will build a Bidirectional Encoder Representations from Transformers (BERT) based model for Natural Language Inference. The performance of the model will be evaluated on the Stanford Natural Language Inference (SNLI) Corpus. To further understand how it works, we will visualize attention mechanism and compare output embedding of BERT using Euclidean distance and Cosine similarity.&#xA;The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.</description>
     </item>
-    
     <item>
       <title>Project 5: Using Autoencoder for Anomaly Detection and searching similar images</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-5/</link>
       <pubDate>Sun, 20 Aug 2023 06:04:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-5/</guid>
-      <description>1. Overview Anomaly detection is a technique used for identifying rare items, events or observations, which deviate significantly from the majority of the data and do not conform to a well defined notion of normal behavior wikipedia.
-Anomaly detection has very wide applications, such as Fraud detection in credit card transactions ref, Network Intrusion detection ref, and Cancer cell detection ref.
-A wide spectrum of techniques have been proposed for anomaly detection, some of the popular methods are: Density-based techniques (e.</description>
+      <description>1. Overview Anomaly detection is a technique used for identifying rare items, events or observations, which deviate significantly from the majority of the data and do not conform to a well defined notion of normal behavior wikipedia.&#xA;Anomaly detection has very wide applications, such as Fraud detection in credit card transactions ref, Network Intrusion detection ref, and Cancer cell detection ref.&#xA;A wide spectrum of techniques have been proposed for anomaly detection, some of the popular methods are: Density-based techniques (e.</description>
     </item>
-    
     <item>
       <title>Project 4: Image Classification and Explainable Artificial Intelligence</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-4/</link>
       <pubDate>Sun, 20 Aug 2023 06:03:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-4/</guid>
-      <description>1. Project Overview In this project, we will build a model for image classification and understand how it works.
-In the first part, we will develop a convolutional neural network (CNN) model for food image classification. We will also apply t-distributed Stochastic Neighbor Embedding (t-SNE) technique on the output of different layers to visualize learned visual representations of the CNN model.
-In order to understand how the model works, we will employ four popular Explainable AI approaches in the second part, including (1) Saliency map, (2) Smooth gradient, (3) Lime package, and (4) Integrated gradients.</description>
+      <description>1. Project Overview In this project, we will build a model for image classification and understand how it works.&#xA;In the first part, we will develop a convolutional neural network (CNN) model for food image classification. We will also apply t-distributed Stochastic Neighbor Embedding (t-SNE) technique on the output of different layers to visualize learned visual representations of the CNN model.&#xA;In order to understand how the model works, we will employ four popular Explainable AI approaches in the second part, including (1) Saliency map, (2) Smooth gradient, (3) Lime package, and (4) Integrated gradients.</description>
     </item>
-    
     <item>
       <title>Project 3: Understanding Ridesharing Demands in New York City</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-3/</link>
       <pubDate>Sun, 20 Aug 2023 06:02:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-3/</guid>
-      <description>1. Overview In this project, we will focus on New York City&amp;rsquo;s Ridesharing Trips Data Set and try to answer three interesting questions:
-(1) How do the residents of New York City use Ridesharing?
-(2) What usage patterns can we see?
-(3) Can we predict usage?
-To answer these questions, first we will clean up the trip data and integrate them with weather data and taxi zone geodata. Then we will conduct Exploratory Data Analysis (EDA) and Statistical Tests to find Temporal and Spatial Patterns, as well as weather effects and tipping behaviors.</description>
+      <description>1. Overview In this project, we will focus on New York City&amp;rsquo;s Ridesharing Trips Data Set and try to answer three interesting questions:&#xA;(1) How do the residents of New York City use Ridesharing?&#xA;(2) What usage patterns can we see?&#xA;(3) Can we predict usage?&#xA;To answer these questions, first we will clean up the trip data and integrate them with weather data and taxi zone geodata. Then we will conduct Exploratory Data Analysis (EDA) and Statistical Tests to find Temporal and Spatial Patterns, as well as weather effects and tipping behaviors.</description>
     </item>
-    
     <item>
       <title>Project 2: Predicitng Customer Churn for a Mobile Phone Carrier</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-2/</link>
       <pubDate>Sun, 20 Aug 2023 06:01:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-2/</guid>
-      <description>1. Overview In this project, we will build a series of models to predict the probability of Customer Churn for a Mobile Phone Carrier.
-In the first part, we will conduct Exploratory Data Analysis (EDA). Here the Synthetic Minority Oversampling Technique (SMOTE) method is employed to address the imbalanced classification problem. Then we will develop customer churn prediction models based on (1) Logistic Regression, (2) Decision Tree, (3) Random Forest, (4) AdaBoost, (5) Gradient Boosting Decision Trees (GBDT), and (6) Neural Network.</description>
+      <description>1. Overview In this project, we will build a series of models to predict the probability of Customer Churn for a Mobile Phone Carrier.&#xA;In the first part, we will conduct Exploratory Data Analysis (EDA). Here the Synthetic Minority Oversampling Technique (SMOTE) method is employed to address the imbalanced classification problem. Then we will develop customer churn prediction models based on (1) Logistic Regression, (2) Decision Tree, (3) Random Forest, (4) AdaBoost, (5) Gradient Boosting Decision Trees (GBDT), and (6) Neural Network.</description>
     </item>
-    
     <item>
       <title>Project 1: Predict Real Estate Prices in Beijing</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-1/</link>
       <pubDate>Sun, 20 Aug 2023 06:00:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-1/</guid>
-      <description>1. Overview In this project, we will build a linear regression model to help people better understand the factors that can affect the price of a house in Beijing.
-The main sections of this article are: (1) Exploratory Data Analysis (EDA), (2) Developing Linear Regression model for predicting real estate price, and (3) Use that model to make predictions.
-The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.</description>
+      <description>1. Overview In this project, we will build a linear regression model to help people better understand the factors that can affect the price of a house in Beijing.&#xA;The main sections of this article are: (1) Exploratory Data Analysis (EDA), (2) Developing Linear Regression model for predicting real estate price, and (3) Use that model to make predictions.&#xA;The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.</description>
     </item>
-    
     <item>
       <title>Coursera UIUC iMBA</title>
       <link>https://andysucao.github.io/Andy_Portfolio/skills/coursera-uiuc-imba/</link>
       <pubDate>Fri, 11 Aug 2023 08:58:08 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/skills/coursera-uiuc-imba/</guid>
-      <description>Fundamentals of Accounting Specialization
-Understanding Financial Statements-Company Performance Proof of Completion
-Understanding Financial Statements-Company Position Proof of Completion
-Accounting for Business Decision Making-Measurement and Operational Decisions Proof of Completion
-Accounting for Business Decision Making-Strategy Assessment and Control Proof of Completion
-Financial Management Specialization
-Financial Accounting-Foundations Proof of Completion
-Financial Accounting-Advanced Topics Proof of Completion
-Investments I-Fundamentals of Performance Evaluation Proof of Completion
-Investments II-Lessons and Applications for Investors Proof of Completion</description>
+      <description>Fundamentals of Accounting Specialization&#xA;Understanding Financial Statements-Company Performance Proof of Completion&#xA;Understanding Financial Statements-Company Position Proof of Completion&#xA;Accounting for Business Decision Making-Measurement and Operational Decisions Proof of Completion&#xA;Accounting for Business Decision Making-Strategy Assessment and Control Proof of Completion&#xA;Financial Management Specialization&#xA;Financial Accounting-Foundations Proof of Completion&#xA;Financial Accounting-Advanced Topics Proof of Completion&#xA;Investments I-Fundamentals of Performance Evaluation Proof of Completion&#xA;Investments II-Lessons and Applications for Investors Proof of Completion</description>
     </item>
-    
     <item>
       <title>Data Science Courses</title>
       <link>https://andysucao.github.io/Andy_Portfolio/skills/data-science-courses/</link>
       <pubDate>Fri, 11 Aug 2023 08:58:08 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/skills/data-science-courses/</guid>
-      <description>Business Statistics and Analysis Specialization course certificate
-Introduction to Data Analysis Using Excel course certificate
-Basic Data Descriptors Statistical Distributions and Application to Business Decisions course certificate
-Business Applications of Hypothesis Testing and Confidence Interval Estimation course certificate
-Linear Regression for Business Statistics course certificate
-Business Statistics and Analysis Capstone course certificate
-Data Science Specialization
-The Data Scientists Toolbox course certificate
-R Programming course certificate
-Getting and Cleaning Data course certificate</description>
+      <description>Business Statistics and Analysis Specialization course certificate&#xA;Introduction to Data Analysis Using Excel course certificate&#xA;Basic Data Descriptors Statistical Distributions and Application to Business Decisions course certificate&#xA;Business Applications of Hypothesis Testing and Confidence Interval Estimation course certificate&#xA;Linear Regression for Business Statistics course certificate&#xA;Business Statistics and Analysis Capstone course certificate&#xA;Data Science Specialization&#xA;The Data Scientists Toolbox course certificate&#xA;R Programming course certificate&#xA;Getting and Cleaning Data course certificate</description>
     </item>
-    
+    <item>
+      <title>Project 0: Template &amp; Misc</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-0/</link>
+      <pubDate>Tue, 11 Jul 2023 08:58:08 -0400</pubDate>
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-0/</guid>
+      <description> </description>
+    </item>
     <item>
       <title>Contact</title>
       <link>https://andysucao.github.io/Andy_Portfolio/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/contact/</guid>
       <description> Email: andy.su.cao@gmail.com Phone: (203) 500-5096 LinkedIn: https://www.linkedin.com/in/cao/ GitHub: https://github.com/andysucao </description>
     </item>
-    
   </channel>
 </rss>

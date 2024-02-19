@@ -6,16 +6,14 @@
     <description>Recent content in Natural Language Inference on Andy Cao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Aug 2023 06:05:00 -0400</lastBuildDate><atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/natural-language-inference/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Aug 2023 06:05:00 -0400</lastBuildDate>
+    <atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/natural-language-inference/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Project 6: Natural Language Inference with BERT and Explainable Artificial Intelligence</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-6/</link>
       <pubDate>Sun, 20 Aug 2023 06:05:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-6/</guid>
-      <description>1. Overview In this project, we will build a Bidirectional Encoder Representations from Transformers (BERT) based model for Natural Language Inference. The performance of the model will be evaluated on the Stanford Natural Language Inference (SNLI) Corpus. To further understand how it works, we will visualize attention mechanism and compare output embedding of BERT using Euclidean distance and Cosine similarity.
-The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.</description>
+      <description>1. Overview In this project, we will build a Bidirectional Encoder Representations from Transformers (BERT) based model for Natural Language Inference. The performance of the model will be evaluated on the Stanford Natural Language Inference (SNLI) Corpus. To further understand how it works, we will visualize attention mechanism and compare output embedding of BERT using Euclidean distance and Cosine similarity.&#xA;The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.</description>
     </item>
-    
   </channel>
 </rss>

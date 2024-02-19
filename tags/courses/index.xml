@@ -6,42 +6,21 @@
     <description>Recent content in courses on Andy Cao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Aug 2023 08:58:08 -0400</lastBuildDate><atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/courses/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Aug 2023 08:58:08 -0400</lastBuildDate>
+    <atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/courses/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Coursera UIUC iMBA</title>
       <link>https://andysucao.github.io/Andy_Portfolio/skills/coursera-uiuc-imba/</link>
       <pubDate>Fri, 11 Aug 2023 08:58:08 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/skills/coursera-uiuc-imba/</guid>
-      <description>Fundamentals of Accounting Specialization
-Understanding Financial Statements-Company Performance Proof of Completion
-Understanding Financial Statements-Company Position Proof of Completion
-Accounting for Business Decision Making-Measurement and Operational Decisions Proof of Completion
-Accounting for Business Decision Making-Strategy Assessment and Control Proof of Completion
-Financial Management Specialization
-Financial Accounting-Foundations Proof of Completion
-Financial Accounting-Advanced Topics Proof of Completion
-Investments I-Fundamentals of Performance Evaluation Proof of Completion
-Investments II-Lessons and Applications for Investors Proof of Completion</description>
+      <description>Fundamentals of Accounting Specialization&#xA;Understanding Financial Statements-Company Performance Proof of Completion&#xA;Understanding Financial Statements-Company Position Proof of Completion&#xA;Accounting for Business Decision Making-Measurement and Operational Decisions Proof of Completion&#xA;Accounting for Business Decision Making-Strategy Assessment and Control Proof of Completion&#xA;Financial Management Specialization&#xA;Financial Accounting-Foundations Proof of Completion&#xA;Financial Accounting-Advanced Topics Proof of Completion&#xA;Investments I-Fundamentals of Performance Evaluation Proof of Completion&#xA;Investments II-Lessons and Applications for Investors Proof of Completion</description>
     </item>
-    
     <item>
       <title>Data Science Courses</title>
       <link>https://andysucao.github.io/Andy_Portfolio/skills/data-science-courses/</link>
       <pubDate>Fri, 11 Aug 2023 08:58:08 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/skills/data-science-courses/</guid>
-      <description>Business Statistics and Analysis Specialization course certificate
-Introduction to Data Analysis Using Excel course certificate
-Basic Data Descriptors Statistical Distributions and Application to Business Decisions course certificate
-Business Applications of Hypothesis Testing and Confidence Interval Estimation course certificate
-Linear Regression for Business Statistics course certificate
-Business Statistics and Analysis Capstone course certificate
-Data Science Specialization
-The Data Scientists Toolbox course certificate
-R Programming course certificate
-Getting and Cleaning Data course certificate</description>
+      <description>Business Statistics and Analysis Specialization course certificate&#xA;Introduction to Data Analysis Using Excel course certificate&#xA;Basic Data Descriptors Statistical Distributions and Application to Business Decisions course certificate&#xA;Business Applications of Hypothesis Testing and Confidence Interval Estimation course certificate&#xA;Linear Regression for Business Statistics course certificate&#xA;Business Statistics and Analysis Capstone course certificate&#xA;Data Science Specialization&#xA;The Data Scientists Toolbox course certificate&#xA;R Programming course certificate&#xA;Getting and Cleaning Data course certificate</description>
     </item>
-    
   </channel>
 </rss>

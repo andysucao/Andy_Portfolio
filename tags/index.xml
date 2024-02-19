@@ -6,141 +6,147 @@
     <description>Recent content in Tags on Andy Cao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Aug 2023 06:07:00 -0400</lastBuildDate><atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Aug 2023 06:08:00 -0400</lastBuildDate>
+    <atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Generative Question Answering (QA)</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/tags/generative-question-answering-qa/</link>
+      <pubDate>Sun, 20 Aug 2023 06:08:00 -0400</pubDate>
+      <guid>https://andysucao.github.io/Andy_Portfolio/tags/generative-question-answering-qa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GPT</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/tags/gpt/</link>
+      <pubDate>Sun, 20 Aug 2023 06:08:00 -0400</pubDate>
+      <guid>https://andysucao.github.io/Andy_Portfolio/tags/gpt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Natural Language Processing</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/tags/natural-language-processing/</link>
+      <pubDate>Sun, 20 Aug 2023 06:08:00 -0400</pubDate>
+      <guid>https://andysucao.github.io/Andy_Portfolio/tags/natural-language-processing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Retrieval-Augmented Generation (RAG)</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/tags/retrieval-augmented-generation-rag/</link>
+      <pubDate>Sun, 20 Aug 2023 06:08:00 -0400</pubDate>
+      <guid>https://andysucao.github.io/Andy_Portfolio/tags/retrieval-augmented-generation-rag/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>TruEra</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/tags/truera/</link>
+      <pubDate>Sun, 20 Aug 2023 06:08:00 -0400</pubDate>
+      <guid>https://andysucao.github.io/Andy_Portfolio/tags/truera/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Machine Translation</title>
       <link>https://andysucao.github.io/Andy_Portfolio/tags/machine-translation/</link>
       <pubDate>Sun, 20 Aug 2023 06:07:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/tags/machine-translation/</guid>
       <description></description>
     </item>
-    
-    <item>
-      <title>Natural Language Processing</title>
-      <link>https://andysucao.github.io/Andy_Portfolio/tags/natural-language-processing/</link>
-      <pubDate>Sun, 20 Aug 2023 06:07:00 -0400</pubDate>
-      
-      <guid>https://andysucao.github.io/Andy_Portfolio/tags/natural-language-processing/</guid>
-      <description></description>
-    </item>
-    
     <item>
       <title>Transformer</title>
       <link>https://andysucao.github.io/Andy_Portfolio/tags/transformer/</link>
       <pubDate>Sun, 20 Aug 2023 06:07:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/tags/transformer/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Bidirectional Encoder Representations from Transformers (BERT)</title>
       <link>https://andysucao.github.io/Andy_Portfolio/tags/bidirectional-encoder-representations-from-transformers-bert/</link>
       <pubDate>Sun, 20 Aug 2023 06:06:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/tags/bidirectional-encoder-representations-from-transformers-bert/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Question Answering</title>
       <link>https://andysucao.github.io/Andy_Portfolio/tags/question-answering/</link>
       <pubDate>Sun, 20 Aug 2023 06:06:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/tags/question-answering/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Explainable AI</title>
       <link>https://andysucao.github.io/Andy_Portfolio/tags/explainable-ai/</link>
       <pubDate>Sun, 20 Aug 2023 06:05:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/tags/explainable-ai/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Natural Language Inference</title>
       <link>https://andysucao.github.io/Andy_Portfolio/tags/natural-language-inference/</link>
       <pubDate>Sun, 20 Aug 2023 06:05:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/tags/natural-language-inference/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Anomaly Detection</title>
       <link>https://andysucao.github.io/Andy_Portfolio/tags/anomaly-detection/</link>
       <pubDate>Sun, 20 Aug 2023 06:04:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/tags/anomaly-detection/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Computer Vision</title>
       <link>https://andysucao.github.io/Andy_Portfolio/tags/computer-vision/</link>
       <pubDate>Sun, 20 Aug 2023 06:04:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/tags/computer-vision/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Unsupervised Learning</title>
       <link>https://andysucao.github.io/Andy_Portfolio/tags/unsupervised-learning/</link>
       <pubDate>Sun, 20 Aug 2023 06:04:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/tags/unsupervised-learning/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Machine Learning</title>
       <link>https://andysucao.github.io/Andy_Portfolio/tags/machine-learning/</link>
       <pubDate>Sun, 20 Aug 2023 06:02:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/tags/machine-learning/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Time Series Analysis</title>
       <link>https://andysucao.github.io/Andy_Portfolio/tags/time-series-analysis/</link>
       <pubDate>Sun, 20 Aug 2023 06:02:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/tags/time-series-analysis/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Logistic Regression</title>
       <link>https://andysucao.github.io/Andy_Portfolio/tags/logistic-regression/</link>
       <pubDate>Sun, 20 Aug 2023 06:01:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/tags/logistic-regression/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Linear Regression</title>
       <link>https://andysucao.github.io/Andy_Portfolio/tags/linear-regression/</link>
       <pubDate>Sun, 20 Aug 2023 06:00:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/tags/linear-regression/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>courses</title>
       <link>https://andysucao.github.io/Andy_Portfolio/tags/courses/</link>
       <pubDate>Fri, 11 Aug 2023 08:58:08 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/tags/courses/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>misc</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/tags/misc/</link>
+      <pubDate>Tue, 11 Jul 2023 08:58:08 -0400</pubDate>
+      <guid>https://andysucao.github.io/Andy_Portfolio/tags/misc/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

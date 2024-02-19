@@ -6,38 +6,35 @@
     <description>Recent content in Natural Language Processing on Andy Cao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Aug 2023 06:07:00 -0400</lastBuildDate><atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/natural-language-processing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Aug 2023 06:08:00 -0400</lastBuildDate>
+    <atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/natural-language-processing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project 9: Generative QA with Retrieval-Augmented Generation (RAG) and TruEra Evaluation</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-9/</link>
+      <pubDate>Sun, 20 Aug 2023 06:08:00 -0400</pubDate>
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-9/</guid>
+      <description>1. Overview In this project, we will build a Generative Question Answering model with Retrieval-Augmented Generation (RAG) with the help of LlamaIndex that can answer questions from internal documentation. We will also evaluate, iterate, and improve the model by using TruLens.&#xA;The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.&#xA;2. Retrieval-Augmented Generation (RAG) for Question Answering (QA) In the first part of this section, we will discuss the basic RAG pipeline for generative Question Answering from internal documentation.</description>
+    </item>
     <item>
       <title>Project 8: Machine Translation with Transformers</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-8/</link>
       <pubDate>Sun, 20 Aug 2023 06:07:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-8/</guid>
-      <description>1. Overview In this project, we will build a neural machine translation model with Fairseq Transformer that can translate English into Chinese naturally. The model will be trained and evaluated on the TED2020 En-Zh Bilingual Parallel Corpus.
-The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.
-2. Machine translation and Transformer 2.1. Brief history of machine translation The figure above illustrates the development of Machine Translation from 1950s to today (source).</description>
+      <description>1. Overview In this project, we will build a neural machine translation model with Fairseq Transformer that can translate English into Chinese naturally. The model will be trained and evaluated on the TED2020 En-Zh Bilingual Parallel Corpus.&#xA;The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.&#xA;2. Machine translation and Transformer 2.1. Brief history of machine translation The figure above illustrates the development of Machine Translation from 1950s to today (source).</description>
     </item>
-    
     <item>
-      <title>Project 7: Question Answering with a Fine-Tuned BERT</title>
+      <title>Project 7: Extractive QA with a Fine-Tuned BERT</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-7/</link>
       <pubDate>Sun, 20 Aug 2023 06:06:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-7/</guid>
-      <description>1. Overview In this project, we will build a Bidirectional Encoder Representations from Transformers (BERT) based model for a different Natural Language Processing task &amp;ndash; Question Answering. The model will be fine-tuned on the Conversational Question Answering Challenge (CoQA) dataset from Stanford University.
-The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.
-2. Question Answering (QA) Question Answering, particularly Extraction-based Question Answering, is another type of Natural Language Processing task.</description>
+      <description>1. Overview In this project, we will build a Bidirectional Encoder Representations from Transformers (BERT) based model for a different Natural Language Processing task &amp;ndash; Question Answering. The model will be fine-tuned on the Conversational Question Answering Challenge (CoQA) dataset from Stanford University.&#xA;The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.&#xA;2. Question Answering (QA) Question Answering, particularly Extraction-based Question Answering, is another type of Natural Language Processing task.</description>
     </item>
-    
     <item>
       <title>Project 6: Natural Language Inference with BERT and Explainable Artificial Intelligence</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-6/</link>
       <pubDate>Sun, 20 Aug 2023 06:05:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-6/</guid>
-      <description>1. Overview In this project, we will build a Bidirectional Encoder Representations from Transformers (BERT) based model for Natural Language Inference. The performance of the model will be evaluated on the Stanford Natural Language Inference (SNLI) Corpus. To further understand how it works, we will visualize attention mechanism and compare output embedding of BERT using Euclidean distance and Cosine similarity.
-The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.</description>
+      <description>1. Overview In this project, we will build a Bidirectional Encoder Representations from Transformers (BERT) based model for Natural Language Inference. The performance of the model will be evaluated on the Stanford Natural Language Inference (SNLI) Corpus. To further understand how it works, we will visualize attention mechanism and compare output embedding of BERT using Euclidean distance and Cosine similarity.&#xA;The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.</description>
     </item>
-    
   </channel>
 </rss>

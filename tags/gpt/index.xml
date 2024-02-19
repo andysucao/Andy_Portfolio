@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GPT on Andy Cao</title>
+    <link>https://andysucao.github.io/Andy_Portfolio/tags/gpt/</link>
+    <description>Recent content in GPT on Andy Cao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Aug 2023 06:08:00 -0400</lastBuildDate>
+    <atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/gpt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project 9: Generative QA with Retrieval-Augmented Generation (RAG) and TruEra Evaluation</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-9/</link>
+      <pubDate>Sun, 20 Aug 2023 06:08:00 -0400</pubDate>
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-9/</guid>
+      <description>1. Overview In this project, we will build a Generative Question Answering model with Retrieval-Augmented Generation (RAG) with the help of LlamaIndex that can answer questions from internal documentation. We will also evaluate, iterate, and improve the model by using TruLens.&#xA;The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.&#xA;2. Retrieval-Augmented Generation (RAG) for Question Answering (QA) In the first part of this section, we will discuss the basic RAG pipeline for generative Question Answering from internal documentation.</description>
+    </item>
+  </channel>
+</rss>

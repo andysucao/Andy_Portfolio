@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Project 9: Generative QA with Retrieval-Augmented Generation (RAG) and TruEra Evaluation | Andy Cao</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.122.0">
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="https://andysucao.github.io/Andy_Portfolio/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="Project 9: Generative QA with Retrieval-Augmented Generation (RAG) and TruEra Evaluation" />
+<meta property="og:description" content="Build a Generative QA with Retrieval-Augmented Generation (RAG) and TruEra Evaluation" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://andysucao.github.io/Andy_Portfolio/post/project-9/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-08-20T06:08:00-04:00" />
+<meta property="article:modified_time" content="2023-08-20T06:08:00-04:00" />
+
+<meta itemprop="name" content="Project 9: Generative QA with Retrieval-Augmented Generation (RAG) and TruEra Evaluation">
+<meta itemprop="description" content="Build a Generative QA with Retrieval-Augmented Generation (RAG) and TruEra Evaluation"><meta itemprop="datePublished" content="2023-08-20T06:08:00-04:00" />
+<meta itemprop="dateModified" content="2023-08-20T06:08:00-04:00" />
+<meta itemprop="wordCount" content="2235">
+<meta itemprop="keywords" content="Natural Language Processing,Generative Question Answering (QA),GPT,Retrieval-Augmented Generation (RAG),TruEra," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Project 9: Generative QA with Retrieval-Augmented Generation (RAG) and TruEra Evaluation"/>
+<meta name="twitter:description" content="Build a Generative QA with Retrieval-Augmented Generation (RAG) and TruEra Evaluation"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://andysucao.github.io/Andy_Portfolio/images/projects-9-1.png');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://andysucao.github.io/Andy_Portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Andy Cao
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://andysucao.github.io/Andy_Portfolio/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://andysucao.github.io/Andy_Portfolio/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://andysucao.github.io/Andy_Portfolio/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://andysucao.github.io/Andy_Portfolio/skills/" title="Useful skills page">
+              Useful skills
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+<a href="https://www.linkedin.com/in/cao/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/andysucao" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Project 9: Generative QA with Retrieval-Augmented Generation (RAG) and TruEra Evaluation</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Build a Generative QA with Retrieval-Augmented Generation (RAG) and TruEra Evaluation
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://andysucao.github.io/Andy_Portfolio/post/project-9/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://andysucao.github.io/Andy_Portfolio/post/project-9/&amp;text=Project%209:%20Generative%20QA%20with%20Retrieval-Augmented%20Generation%20%28RAG%29%20and%20TruEra%20Evaluation" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://andysucao.github.io/Andy_Portfolio/post/project-9/&amp;title=Project%209:%20Generative%20QA%20with%20Retrieval-Augmented%20Generation%20%28RAG%29%20and%20TruEra%20Evaluation" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Project 9: Generative QA with Retrieval-Augmented Generation (RAG) and TruEra Evaluation</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2023-08-20T06:08:00-04:00">August 20, 2023</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="1-overview">1. Overview</h2>
+<p>In this project, we will build a Generative Question Answering model with Retrieval-Augmented Generation (RAG) with the help of <a href="https://www.llamaindex.ai/">LlamaIndex</a> that can answer questions from internal documentation. We will also evaluate, iterate, and improve the model by using <a href="https://truera.com/">TruLens</a>.</p>
+<p>The Python Notebook containing the complete model development process and the data used in this project can be found at <a href="https://drive.google.com/drive/folders/1z0qulEVCWV6mRDdjEszp6sGMlX29yzGE?usp=sharing">Google Drive</a>.</p>
+<p>           
+           </p>
+<h2 id="2-retrieval-augmented-generation-rag-for-question-answering-qa">2. Retrieval-Augmented Generation (RAG) for Question Answering (QA)</h2>
+<p>In the first part of this section, we will discuss the basic RAG pipeline for generative Question Answering from internal documentation. Then in the following parts, we will discuss two advanced RAG pipelines, including Sentence-Window Retrieval and Auto-Merging Retrieval.</p>
+<h3 id="21-basic-rag-pipeline">2.1. Basic RAG Pipeline</h3>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-9-2.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-9-2.png" alt=""> </a></p>
+<p>The structure of a basic Retrieval Augmented Generation (RAG) pipeline for Generative Question Answering (QA) is shown above. Generally, it consists of three different components, Ingestion, Retrieval, and Synthesis.</p>
+<p>In the Ingestion phase, we first load in a set of documents. For each document, we split it into a set of text chunks using a text splitter. Then for each chunk, we generate an embedding for that chunk using an embedding model. And then for each chunk with embedding, we offload it to an index. Once the data is stored within an index, we then perform retrieval against that index. First, we launch a user query against the index, and then we fetch the top K most similar chunks to the user query. Afterwards, we take these relevant chunks, combine it with the user query, and put it into the prompt window of the LLM in the synthesis phase. And this allows us to generate a final response.</p>
+<p>           </p>
+<h3 id="22-sentence-window-retrieval">2.2. Sentence-Window Retrieval</h3>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-9-3.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-9-3.png" alt=""> </a></p>
+<p>The advanced technique of Sentence-Window Retrieval is illustrated in the figure above. Similar to the basic RAG Pipeline, Sentence-Window Retrieval also works by embedding and retrieving single sentences, i.e., more granular chunks. But after retrieval, the sentences are replaced with a larger window of sentences around the original retrieved sentence. The intuition is that this allows for the LLM in the Synthesis phase to have more context for the information retrieved in order to better answer queries while still retrieving on more granular pieces of information. Consequently, it can improve both retrieval as well as synthesis performance. </p>
+<p>In practice, we will gradually increase the sentence window size starting with 1, evaluate the model performance with TruLens and the RAG triad (will be discussed in the next section), track experiments to pick the best sentence window size. As we go through this exercise, we also need to note the trade-offs between token usage or cost. As we increase the window size, the token usage and cost will go up, as in many cases will context relevance.</p>
+<p>There is also a very interesting relationship between context relevance and Groundedness that you can see in practice. When context relevance is low, Groundedness tends to be low as well. This is because the LLM will usually try to fill in the gaps in the retrieved pieces of context by leveraging its knowledge from the pre-training stage. This results in a reduction in Groundedness, even if the answers actually happen to be quite relevant. As context relevance increases, Groundedness also tends to increase up to a certain point. But if the context size becomes too big, even if the context relevance is high, there could be a drop in the Groundedness because the LLM can get overwhelmed with contexts that are too large and fall back on its pre-existing knowledge base from the training phase.</p>
+<p>           </p>
+<h3 id="23-auto-merging-retrieval">2.3. Auto-Merging Retrieval</h3>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-9-4.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-9-4.png" alt=""> </a></p>
+<p>The next advanced retrieval technique we will discuss about is the Auto-Merging Retriever. In this approach, we will construct a hierarchy of larger parent nodes with smaller child nodes that reference the parent node, and the combination of all the child nodes is the same text as the parent node. For instance, as shown in the figure above, we might have a parent node of chunk size 512 tokens, and underneath there are four child nodes of chunk size 128 tokens that link to this parent node. The auto-merging retriever works by merging retrieved nodes into larger parent nodes, which means that during retrieval, if a parent actually has a majority of its children nodes retrieved, then we&rsquo;ll replace the children nodes with the parent node.</p>
+<p>Compared with the Auto-Merging Retrieval, a common issue with the basic RAG pipeline is that it retrieves a bunch of fragmented context chunks for the downstream Synthesis LLM, and this fragmentation issue may get worse as the chunk size becomes smaller. For instance, we might get back two or more retrieved context chunks in roughly the same section, but there&rsquo;s actually no guarantees on the ordering of these chunks. This can potentially damage the LLM&rsquo;s ability to synthesize over this retrieved context within its context window, because the order of text is usually quite important.</p>
+<p>To set up auto-merging retriever, the first step is to define a hierarchical node parser. This means that nodes are parsed in decreasing sizes and contain relationships to their parent node. The next step is to construct the index, i.e., a vector index on each leaf node. All other intermediate and parent nodes are stored in a doc store and are retrieved dynamically during retrieval. During Retrieval we will fetch the top-K embeddings of the leaf nodes. If a majority of children nodes are retrieved for a given parent, they are swapped out for the parent instead by the auto-merging retriever.</p>
+<p>In order for this merging to work well, we typically set a large top-K for the leaf nodes. Then in order to reduce token usage, we usually apply a re-ranker, e.g., sentence transformer re-rank module, after the merging has taken place. Finally, we will combine both the auto-merging retriever and the re-rank module into the retriever query engine, which handles both retrieval and synthesis.</p>
+<p>           
+           </p>
+<h2 id="3-rag-triad-of-metrics-and-truera">3. RAG Triad of Metrics and TruEra</h2>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-9-5.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-9-5.png" alt=""> </a></p>
+<p>TruEra provides measurements of three key metrics for RAG applications.</p>
+<ul>
+<li>
+<p>The first one is Context Relevance, which answers the question of whether the retrieved context is relevant to the query, or how good is the retrieval?</p>
+</li>
+<li>
+<p>The second one is Groundedness, which answers the question of whether the response is supported by the context, or how severe are the hallucinations in LLM?</p>
+</li>
+<li>
+<p>The third one is Answer Relevance, which answers the question of whether the response is relevant to the query, or how useful is the final response?</p>
+</li>
+</ul>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-9-6.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-9-6.png" alt=""> </a></p>
+<p>If we take a broad view of evaluation methods and plot them as a function of Meaningful and Scalable, we can get the figure above. From this figure, we can observe that Human evaluations and Ground truth evaluations are generally very meaningful but less scalable. On the other hand, Traditional NLP evaluations (e.g., BLEU and ROUGE), Medium size Language Mode (MLM) evaluations (e.g., BERT) are highly scalable but less meaningful. Among all these approaches, the Large size Language Mode (LLM) evaluations (e.g., GPT-4) are highly attractive, because it is both highly scalable and highly meaningful.</p>
+<p>TruLens developed by TruEra provides feedback functions of Context Relevance, Groundedness, and Answer Relevance based on state-of-the-art LLMs such as OpenAI GPT-4. After reviewing the app&rsquo;s inputs, outputs, and intermediate results, TruLens will provide a score and corresponding supporting evidence/chain-of-thought reasoning. This is particularly helpful in diagnosing the model, determining its failure mode, and optimizing the model settings.</p>
+<p>           
+           </p>
+<h2 id="4-model-development">4. Model development</h2>
+<h3 id="41-data-pre-processing">4.1. Data Pre-Processing</h3>
+<p>The documents we will use in this study are 10 articles from L.L. Bean. These articles are very interesting and teach people with some very useful knowledge. Here are the links to these articles. We will first print each article as a PDF file, and then we will clean them up and combine them together into a single file named <code>Outdoor-Basics.pdf</code>.</p>
+<ul>
+<li>
+<p><a href="https://www.rei.com/learn/expert-advice/camping-for-beginners.html">Camping for Beginners</a></p>
+</li>
+<li>
+<p><a href="https://www.rei.com/learn/expert-advice/campfire-basics.html?series=intro-to-camping">How to Build a Campfire</a></p>
+</li>
+<li>
+<p><a href="https://www.rei.com/learn/expert-advice/downhill-skis.html">How to Choose Downhill Skis</a></p>
+</li>
+<li>
+<p><a href="https://www.rei.com/learn/expert-advice/mountain-bike.html">How to Choose Mountain Bikes</a></p>
+</li>
+<li>
+<p><a href="https://www.rei.com/learn/expert-advice/underwear.html">How to Choose Base Layers</a></p>
+</li>
+<li>
+<p><a href="https://www.rei.com/learn/expert-advice/binoculars.html">How to Choose Binoculars</a></p>
+</li>
+<li>
+<p><a href="https://www.rei.com/learn/expert-advice/energy-foods.html">How to Choose Energy Food and Drinks</a></p>
+</li>
+<li>
+<p><a href="https://www.rei.com/learn/expert-advice/altitude-sickness.html">How to Identify and Treat Altitude Sickness</a></p>
+</li>
+<li>
+<p><a href="https://www.rei.com/learn/expert-advice/training-for-your-first-marathon.html">How to Train for a Marathon</a></p>
+</li>
+<li>
+<p><a href="https://www.rei.com/learn/expert-advice/ultralight-backpacking.html">Ultralight Backpacking Basics</a></p>
+</li>
+</ul>
+<p>In addition, we have also prepared 10 questions below and put them in a file called <code>eval_questions_outdoor.txt</code>.</p>
+<ul>
+<li>
+<p>What essential gear do I need for a basic camping trip?</p>
+</li>
+<li>
+<p>Which three types fuel do I need to burn a successful campfire?</p>
+</li>
+<li>
+<p>What are All-Mountain Wide Skis best for?</p>
+</li>
+<li>
+<p>What are Cross-Country Mountain Bikes?</p>
+</li>
+<li>
+<p>What are the three key considerations in choosing a base layer?</p>
+</li>
+<li>
+<p>How to focus binoculars?</p>
+</li>
+<li>
+<p>What are Energy Gels?</p>
+</li>
+<li>
+<p>What are the three variations of altitude illnesses?</p>
+</li>
+<li>
+<p>What are the four building blocks of Marathon training?</p>
+</li>
+<li>
+<p>What are tips for Ultralight Backpacking?</p>
+</li>
+<li>
+<p>What are the causes of altitude sickness?</p>
+</li>
+</ul>
+<p>We will ask our RAG QA model to answer these questions based on the articles above, and evaluate the model&rsquo;s performance by TruLens.</p>
+<p>           </p>
+<h3 id="42-basic-rag-pipeline-model">4.2. Basic RAG Pipeline Model</h3>
+<p>To build the basic RAG Pipeline Model, we need to import the <code>SimpleDirectoryReader</code> from <code>llama_index</code>, and then read the internal document. The internal document will be read as a list of <code>llama_index.schema.Document</code>, and the length of the list equals to the number of pages in the document. Each <code>llama_index.schema.Document</code> object (i.e., each page) contains a unique <code>Doc ID</code> and text on that page.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> llama_index <span style="color:#f92672">import</span> SimpleDirectoryReader
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>documents <span style="color:#f92672">=</span> SimpleDirectoryReader(
+</span></span><span style="display:flex;"><span>    input_files<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;./Outdoor-Basics.pdf&#34;</span>]
+</span></span><span style="display:flex;"><span>)<span style="color:#f92672">.</span>load_data()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(type(documents), <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>print(len(documents), <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>print(type(documents[<span style="color:#ae81ff">0</span>]))
+</span></span><span style="display:flex;"><span>print(documents[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">####################### Output ##########################</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &lt;class &#39;list&#39;&gt; </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 51 </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &lt;class &#39;llama_index.schema.Document&#39;&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Doc ID: c3dc0f74-5361-40c3-9baa-557864340972</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Text: Beginner&#39;s Guide to Your First Campout rei.com /learn/expert-</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># advice/camping-for-beginners.html Here&#39;s what you should bring, wear</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># and know for your first campout. Even if you’re the most urban of</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># creatures, the urge to get out of the city—to camp out, in fact—can</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># seize your imagination at any time. If you find yourself contemplating</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># car camping ...</span>
+</span></span></code></pre></div><p>With the help of LlamaIndex, building the basic RAG Pipeline Model becomes very straightforward, as shown in the code snippet below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> llama_index <span style="color:#f92672">import</span> Document
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> llama_index <span style="color:#f92672">import</span> VectorStoreIndex
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> llama_index <span style="color:#f92672">import</span> ServiceContext
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> llama_index.llms <span style="color:#f92672">import</span> OpenAI
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>document <span style="color:#f92672">=</span> Document(text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>join([doc<span style="color:#f92672">.</span>text <span style="color:#66d9ef">for</span> doc <span style="color:#f92672">in</span> documents]))
+</span></span><span style="display:flex;"><span>llm <span style="color:#f92672">=</span> OpenAI(model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gpt-3.5-turbo&#34;</span>, temperature<span style="color:#f92672">=</span><span style="color:#ae81ff">0.1</span>)
+</span></span><span style="display:flex;"><span>service_context <span style="color:#f92672">=</span> ServiceContext<span style="color:#f92672">.</span>from_defaults(llm<span style="color:#f92672">=</span>llm, embed_model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;local:BAAI/bge-large-en-v1.5&#34;</span>)
+</span></span><span style="display:flex;"><span>index <span style="color:#f92672">=</span> VectorStoreIndex<span style="color:#f92672">.</span>from_documents([document],service_context<span style="color:#f92672">=</span>service_context)
+</span></span><span style="display:flex;"><span>query_engine <span style="color:#f92672">=</span> index<span style="color:#f92672">.</span>as_query_engine()
+</span></span><span style="display:flex;"><span>response <span style="color:#f92672">=</span> query_engine<span style="color:#f92672">.</span>query(<span style="color:#e6db74">&#34;What are the four building blocks of Marathon training?&#34;</span>)
+</span></span><span style="display:flex;"><span>print(str(response))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">####################### Output ##########################</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># The four building blocks of marathon training are base mileage, the long run, speed work, and rest and recovery.</span>
+</span></span></code></pre></div><p>To evaluate the model performance using TruLens, we can employ the following code snippet.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> trulens_eval <span style="color:#f92672">import</span> Tru
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> utils <span style="color:#f92672">import</span> get_prebuilt_trulens_recorder
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tru <span style="color:#f92672">=</span> Tru()
+</span></span><span style="display:flex;"><span>tru<span style="color:#f92672">.</span>reset_database()
+</span></span><span style="display:flex;"><span>tru_recorder <span style="color:#f92672">=</span> get_prebuilt_trulens_recorder(query_engine, app_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Direct Query Engine&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> tru_recorder <span style="color:#66d9ef">as</span> recording:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> question <span style="color:#f92672">in</span> eval_questions:
+</span></span><span style="display:flex;"><span>        response <span style="color:#f92672">=</span> query_engine<span style="color:#f92672">.</span>query(question)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>records, feedback <span style="color:#f92672">=</span> tru<span style="color:#f92672">.</span>get_records_and_feedback(app_ids<span style="color:#f92672">=</span>[])
+</span></span><span style="display:flex;"><span>tru<span style="color:#f92672">.</span>run_dashboard()
+</span></span></code></pre></div><p>If we check the TruLens Dashboard, we can see that while the model has relatively lower score in Context Relevance, it has very high scores for the Groundedness and Answer Relevance.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-9-7.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-9-7.png" alt=""> </a></p>
+<p>           </p>
+<h3 id="43-sentence-window-retrieval-model">4.3. Sentence-Window Retrieval Model</h3>
+<p>To employ the more advanced Sentence-Window Retrieval Model, we can update the Retrieve phase with the following code snippet. From the results shown below, we can observe that as the size of the Sentence-Window gets larger, all metrics, especially the Context Relevance, get improved significantly.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> llama_index.node_parser <span style="color:#f92672">import</span> SentenceWindowNodeParser
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> llama_index.llms <span style="color:#f92672">import</span> OpenAI
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> llama_index <span style="color:#f92672">import</span> ServiceContext
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> llama_index <span style="color:#f92672">import</span> VectorStoreIndex
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> llama_index.indices.postprocessor <span style="color:#f92672">import</span> MetadataReplacementPostProcessor
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> llama_index.schema <span style="color:#f92672">import</span> NodeWithScore
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> copy <span style="color:#f92672">import</span> deepcopy
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> llama_index.indices.postprocessor <span style="color:#f92672">import</span> SentenceTransformerRerank
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> llama_index <span style="color:#f92672">import</span> QueryBundle
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> llama_index.schema <span style="color:#f92672">import</span> TextNode, NodeWithScore
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Window-sentence retrieval setup -- window_size = 5</span>
+</span></span><span style="display:flex;"><span>node_parser_5 <span style="color:#f92672">=</span> SentenceWindowNodeParser<span style="color:#f92672">.</span>from_defaults(window_size<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>, window_metadata_key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;window&#34;</span>, original_text_metadata_key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;original_text&#34;</span>,)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Building the index</span>
+</span></span><span style="display:flex;"><span>llm <span style="color:#f92672">=</span> OpenAI(model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gpt-3.5-turbo&#34;</span>, temperature<span style="color:#f92672">=</span><span style="color:#ae81ff">0.1</span>)
+</span></span><span style="display:flex;"><span>sentence_context_5 <span style="color:#f92672">=</span> ServiceContext<span style="color:#f92672">.</span>from_defaults(llm<span style="color:#f92672">=</span>llm, embed_model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;local:BAAI/bge-large-en-v1.5&#34;</span>, node_parser<span style="color:#f92672">=</span>node_parser_5,)
+</span></span><span style="display:flex;"><span>sentence_index_5 <span style="color:#f92672">=</span> VectorStoreIndex<span style="color:#f92672">.</span>from_documents([document], service_context<span style="color:#f92672">=</span>sentence_context_5)
+</span></span><span style="display:flex;"><span>sentence_index_5<span style="color:#f92672">.</span>storage_context<span style="color:#f92672">.</span>persist(persist_dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./sentence_index_5&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Building the postprocessor</span>
+</span></span><span style="display:flex;"><span>postproc <span style="color:#f92672">=</span> MetadataReplacementPostProcessor(target_metadata_key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;window&#34;</span>)
+</span></span><span style="display:flex;"><span>rerank <span style="color:#f92672">=</span> SentenceTransformerRerank(top_n<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;BAAI/bge-reranker-large&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Runing the query engine</span>
+</span></span><span style="display:flex;"><span>sentence_window_engine_5 <span style="color:#f92672">=</span> sentence_index_5<span style="color:#f92672">.</span>as_query_engine(similarity_top_k<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>, node_postprocessors<span style="color:#f92672">=</span>[postproc, rerank])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># TruLens Evaluation</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run_evals</span>(eval_questions, tru_recorder, query_engine):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> question <span style="color:#f92672">in</span> eval_questions:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Question: &#34;</span>, question)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> tru_recorder <span style="color:#66d9ef">as</span> recording:
+</span></span><span style="display:flex;"><span>            response <span style="color:#f92672">=</span> query_engine<span style="color:#f92672">.</span>query(question)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Tru()<span style="color:#f92672">.</span>reset_database()
+</span></span><span style="display:flex;"><span>tru_recorder_5 <span style="color:#f92672">=</span> get_prebuilt_trulens_recorder(sentence_window_engine_5, app_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sentence window engine 5&#39;</span>)
+</span></span><span style="display:flex;"><span>run_evals(eval_questions, tru_recorder_5, sentence_window_engine_5)
+</span></span><span style="display:flex;"><span>Tru()<span style="color:#f92672">.</span>run_dashboard()
+</span></span></code></pre></div><p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-9-8.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-9-8.png" alt=""> </a></p>
+<p>           </p>
+<h3 id="44-auto-merging-retrieval-model">4.4. Auto-merging Retrieval Model</h3>
+<p>Next, we will continue to employ another advanced retrieval model, i.e., the Auto-merging Retrieval Model, by employing the code snippets below. Similarly, we can see that as by introducing and finetuning the Auto-merging Retrieval Model, all metrics get improved noticeably.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> llama_index.node_parser <span style="color:#f92672">import</span> HierarchicalNodeParser
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> llama_index.node_parser <span style="color:#f92672">import</span> get_leaf_nodes
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> llama_index.llms <span style="color:#f92672">import</span> OpenAI
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> llama_index <span style="color:#f92672">import</span> ServiceContext
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> llama_index <span style="color:#f92672">import</span> VectorStoreIndex, StorageContext
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> llama_index.indices.postprocessor <span style="color:#f92672">import</span> SentenceTransformerRerank
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> llama_index.retrievers <span style="color:#f92672">import</span> AutoMergingRetriever
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> llama_index.query_engine <span style="color:#f92672">import</span> RetrieverQueryEngine
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> trulens_eval <span style="color:#f92672">import</span> Tru
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> utils <span style="color:#f92672">import</span> get_prebuilt_trulens_recorder
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>node_parser_4 <span style="color:#f92672">=</span> HierarchicalNodeParser<span style="color:#f92672">.</span>from_defaults(chunk_sizes<span style="color:#f92672">=</span>[<span style="color:#ae81ff">8192</span>, <span style="color:#ae81ff">2048</span>, <span style="color:#ae81ff">512</span>, <span style="color:#ae81ff">128</span>])
+</span></span><span style="display:flex;"><span>nodes_4 <span style="color:#f92672">=</span> node_parser_4<span style="color:#f92672">.</span>get_nodes_from_documents([document])
+</span></span><span style="display:flex;"><span>leaf_nodes_4 <span style="color:#f92672">=</span> get_leaf_nodes(nodes_4)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>llm <span style="color:#f92672">=</span> OpenAI(model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gpt-3.5-turbo&#34;</span>, temperature<span style="color:#f92672">=</span><span style="color:#ae81ff">0.1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>auto_merging_context_4 <span style="color:#f92672">=</span> ServiceContext<span style="color:#f92672">.</span>from_defaults(llm<span style="color:#f92672">=</span>llm, embed_model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;local:BAAI/bge-large-en-v1.5&#34;</span>,node_parser<span style="color:#f92672">=</span>node_parser_4,)
+</span></span><span style="display:flex;"><span>storage_context_4 <span style="color:#f92672">=</span> StorageContext<span style="color:#f92672">.</span>from_defaults()
+</span></span><span style="display:flex;"><span>storage_context_4<span style="color:#f92672">.</span>docstore<span style="color:#f92672">.</span>add_documents(nodes_4)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>automerging_index_4 <span style="color:#f92672">=</span> VectorStoreIndex(leaf_nodes_4, storage_context<span style="color:#f92672">=</span>storage_context_4, service_context<span style="color:#f92672">=</span>auto_merging_context_4)
+</span></span><span style="display:flex;"><span>automerging_index_4<span style="color:#f92672">.</span>storage_context<span style="color:#f92672">.</span>persist(persist_dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./merging_index_4&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>automerging_retriever_4 <span style="color:#f92672">=</span> automerging_index_4<span style="color:#f92672">.</span>as_retriever(similarity_top_k<span style="color:#f92672">=</span><span style="color:#ae81ff">12</span>)
+</span></span><span style="display:flex;"><span>retriever_4 <span style="color:#f92672">=</span> AutoMergingRetriever(automerging_retriever_4, automerging_index_4<span style="color:#f92672">.</span>storage_context, verbose<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rerank <span style="color:#f92672">=</span> SentenceTransformerRerank(top_n<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>, model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;BAAI/bge-reranker-base&#34;</span>)
+</span></span><span style="display:flex;"><span>auto_merging_engine_4 <span style="color:#f92672">=</span> RetrieverQueryEngine<span style="color:#f92672">.</span>from_args(automerging_retriever_4, node_postprocessors<span style="color:#f92672">=</span>[rerank])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Tru()<span style="color:#f92672">.</span>reset_database()
+</span></span><span style="display:flex;"><span>tru_recorder <span style="color:#f92672">=</span> get_prebuilt_trulens_recorder(auto_merging_engine_4, app_id <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;four_layers&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run_evals</span>(eval_questions, tru_recorder, query_engine):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> question <span style="color:#f92672">in</span> eval_questions:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Question: &#34;</span>, question)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> tru_recorder <span style="color:#66d9ef">as</span> recording:
+</span></span><span style="display:flex;"><span>            response <span style="color:#f92672">=</span> query_engine<span style="color:#f92672">.</span>query(question)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>run_evals(eval_questions, tru_recorder, auto_merging_engine_4)
+</span></span><span style="display:flex;"><span>Tru()<span style="color:#f92672">.</span>run_dashboard()
+</span></span></code></pre></div><p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-9-9.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-9-9.png" alt=""> </a></p>
+<p>           
+           </p>
+<h2 id="5-conclusions">5. Conclusions</h2>
+<p>In this project, we built a Generative QA model with RAG that can answer questions from internal documents by using <a href="https://www.llamaindex.ai/">LlamaIndex</a>. The model performance, including Context Relevance, Groundedness, and Answer Relevance, are evaluated by TruLens developed by <a href="https://truera.com/">TruEra</a>.</p>
+<p>In addition to the basic RAG pipeline, we have also explored more advanced RAG pipeline models, including Sentence-Window Retrieval Model and Auto-merging Retrieval Model. The results indicate that more advanced RAG models will indeed lead to better model performance. By finetuning model parameters together with TruLens, we can effectively improve the model performance.</p>
+<h2 id="references">References:</h2>
+<p>Source of hero image: <a href="https://medium.com/geekculture/create-a-question-answer-service-using-gpt-3-and-openai-41498c73879b">https://medium.com/geekculture/create-a-question-answer-service-using-gpt-3-and-openai-41498c73879b</a></p>
+<p>Source of images in this post: <a href="https://learn.deeplearning.ai/building-evaluating-advanced-rag">https://learn.deeplearning.ai/building-evaluating-advanced-rag</a></p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="https://andysucao.github.io/Andy_Portfolio/tags/natural-language-processing" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Natural Language Processing</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://andysucao.github.io/Andy_Portfolio/tags/generative-question-answering-qa" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Generative Question Answering (QA)</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://andysucao.github.io/Andy_Portfolio/tags/gpt" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">GPT</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://andysucao.github.io/Andy_Portfolio/tags/retrieval-augmented-generation-rag" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Retrieval-Augmented Generation (RAG)</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://andysucao.github.io/Andy_Portfolio/tags/truera" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">TruEra</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="https://andysucao.github.io/Andy_Portfolio/post/project-8/">Project 8: Machine Translation with Transformers</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="https://andysucao.github.io/Andy_Portfolio/post/project-7/">Project 7: Extractive QA with a Fine-Tuned BERT</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="https://andysucao.github.io/Andy_Portfolio/post/project-6/">Project 6: Natural Language Inference with BERT and Explainable Artificial Intelligence</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://andysucao.github.io/Andy_Portfolio/" >
+    &copy;  Andy Cao 2024 
+  </a>
+    <div>
+
+
+
+
+
+
+
+<a href="https://www.linkedin.com/in/cao/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/andysucao" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="https://andysucao.github.io/Andy_Portfolio/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

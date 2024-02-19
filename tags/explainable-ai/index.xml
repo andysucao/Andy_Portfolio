@@ -6,27 +6,21 @@
     <description>Recent content in Explainable AI on Andy Cao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Aug 2023 06:05:00 -0400</lastBuildDate><atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/explainable-ai/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Aug 2023 06:05:00 -0400</lastBuildDate>
+    <atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/explainable-ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Project 6: Natural Language Inference with BERT and Explainable Artificial Intelligence</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-6/</link>
       <pubDate>Sun, 20 Aug 2023 06:05:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-6/</guid>
-      <description>1. Overview In this project, we will build a Bidirectional Encoder Representations from Transformers (BERT) based model for Natural Language Inference. The performance of the model will be evaluated on the Stanford Natural Language Inference (SNLI) Corpus. To further understand how it works, we will visualize attention mechanism and compare output embedding of BERT using Euclidean distance and Cosine similarity.
-The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.</description>
+      <description>1. Overview In this project, we will build a Bidirectional Encoder Representations from Transformers (BERT) based model for Natural Language Inference. The performance of the model will be evaluated on the Stanford Natural Language Inference (SNLI) Corpus. To further understand how it works, we will visualize attention mechanism and compare output embedding of BERT using Euclidean distance and Cosine similarity.&#xA;The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.</description>
     </item>
-    
     <item>
       <title>Project 4: Image Classification and Explainable Artificial Intelligence</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-4/</link>
       <pubDate>Sun, 20 Aug 2023 06:03:00 -0400</pubDate>
-      
       <guid>https://andysucao.github.io/Andy_Portfolio/post/project-4/</guid>
-      <description>1. Project Overview In this project, we will build a model for image classification and understand how it works.
-In the first part, we will develop a convolutional neural network (CNN) model for food image classification. We will also apply t-distributed Stochastic Neighbor Embedding (t-SNE) technique on the output of different layers to visualize learned visual representations of the CNN model.
-In order to understand how the model works, we will employ four popular Explainable AI approaches in the second part, including (1) Saliency map, (2) Smooth gradient, (3) Lime package, and (4) Integrated gradients.</description>
+      <description>1. Project Overview In this project, we will build a model for image classification and understand how it works.&#xA;In the first part, we will develop a convolutional neural network (CNN) model for food image classification. We will also apply t-distributed Stochastic Neighbor Embedding (t-SNE) technique on the output of different layers to visualize learned visual representations of the CNN model.&#xA;In order to understand how the model works, we will employ four popular Explainable AI approaches in the second part, including (1) Saliency map, (2) Smooth gradient, (3) Lime package, and (4) Integrated gradients.</description>
     </item>
-    
   </channel>
 </rss>
