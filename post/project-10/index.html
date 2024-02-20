@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Project 10: Build a Chatbot with LangChain and Chroma to chat with your own documents | Andy Cao</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.122.0">
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="https://andysucao.github.io/Andy_Portfolio/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="Project 10: Build a Chatbot with LangChain and Chroma to chat with your own documents" />
+<meta property="og:description" content="Build a Chatbot with LangChain and Chroma to chat with your own documents" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://andysucao.github.io/Andy_Portfolio/post/project-10/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-08-20T06:09:00-04:00" />
+<meta property="article:modified_time" content="2023-08-20T06:09:00-04:00" />
+
+<meta itemprop="name" content="Project 10: Build a Chatbot with LangChain and Chroma to chat with your own documents">
+<meta itemprop="description" content="Build a Chatbot with LangChain and Chroma to chat with your own documents"><meta itemprop="datePublished" content="2023-08-20T06:09:00-04:00" />
+<meta itemprop="dateModified" content="2023-08-20T06:09:00-04:00" />
+<meta itemprop="wordCount" content="3001">
+<meta itemprop="keywords" content="Natural Language Processing,Generative Question Answering (QA),ChatBot,Chroma,cohere,OpenAI,Retrieval-Augmented Generation (RAG),LangChain," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Project 10: Build a Chatbot with LangChain and Chroma to chat with your own documents"/>
+<meta name="twitter:description" content="Build a Chatbot with LangChain and Chroma to chat with your own documents"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://andysucao.github.io/Andy_Portfolio/images/projects-10-1.png');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://andysucao.github.io/Andy_Portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Andy Cao
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://andysucao.github.io/Andy_Portfolio/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://andysucao.github.io/Andy_Portfolio/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://andysucao.github.io/Andy_Portfolio/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://andysucao.github.io/Andy_Portfolio/skills/" title="Useful skills page">
+              Useful skills
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+<a href="https://www.linkedin.com/in/cao/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/andysucao" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Project 10: Build a Chatbot with LangChain and Chroma to chat with your own documents</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Build a Chatbot with LangChain and Chroma to chat with your own documents
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://andysucao.github.io/Andy_Portfolio/post/project-10/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://andysucao.github.io/Andy_Portfolio/post/project-10/&amp;text=Project%2010:%20Build%20a%20Chatbot%20with%20LangChain%20and%20Chroma%20to%20chat%20with%20your%20own%20documents" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://andysucao.github.io/Andy_Portfolio/post/project-10/&amp;title=Project%2010:%20Build%20a%20Chatbot%20with%20LangChain%20and%20Chroma%20to%20chat%20with%20your%20own%20documents" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Project 10: Build a Chatbot with LangChain and Chroma to chat with your own documents</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2023-08-20T06:09:00-04:00">August 20, 2023</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="1-overview">1. Overview</h2>
+<p>In this project, we will build a Retrieval-Augmented Generation Chatbot with the help of <a href="https://www.langchain.com/">LangChain</a> that can answer questions from internal documentation and have memory. By using Panel’s chat interface, we will also build a LangChain-powered AI chatbot for our RAG application.</p>
+<p>The Python Notebook containing the complete model development process and the data used in this project can be found at <a href="https://drive.google.com/drive/folders/1EAO-F5s4ZVyTygAF73SDjI2y2To1ECOF?usp=sharing">Google Drive</a>.</p>
+<p>           
+           </p>
+<h2 id="2-langchain">2. LangChain</h2>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-10-2.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-10-2.png" alt=""> </a></p>
+<p>LangChain is an open-source developer framework for building LLM applications. It is focused on composition and modularity. As shown in the figure above, it has six major components: Prompts, Models, Memory, Indexes, Chains, and Agents.</p>
+<p>           </p>
+<h3 id="21-prompts">2.1. Prompts</h3>
+<p>Prompts refers to the style of creating inputs to pass into the models. It allows us to build dynamic prompts using templates. It can adapt to different LLM types depending on the context window size and the input variables used as context. It also includes parsers which involves taking the output of these models and parsing it into a more structured format so that we can do things downstream with it. </p>
+<p>           </p>
+<h3 id="22-models">2.2. Models</h3>
+<p>Models refers to the underpinning language models. This module provides an abstraction layer to connect to most 3rd party LLM APIs available. It has API connections to ~40 of the public LLMs, chat and embedding models.</p>
+<p>           </p>
+<h3 id="23-memory">2.3. Memory</h3>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-10-3.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-10-3.png" alt=""> </a></p>
+<p>LLMs are &lsquo;stateless&rsquo;, meaning each transaction is independent. Chatbots appear to have memory because the full conversation is provided to it as its &lsquo;context&rsquo;. LangChain provides several kinds of memory to store and accumulate the conversation, including:</p>
+<ul>
+<li>
+<p><code>ConversationBufferMemory</code>: This memory allows for storing of messages and then extracts the messages in a variable.</p>
+</li>
+<li>
+<p><code>ConversationBufferWindowMemory</code>: This memory keeps a list of the interactions of the conversation over time. It only uses the last K interactions.</p>
+</li>
+<li>
+<p><code>ConversationTokenBufferMemory</code>: This memory keeps a buffer of recent interactions in memory, and uses token length rather than number of interactions to determine when to flush interactions.</p>
+</li>
+<li>
+<p><code>ConversationSummaryMemory</code>: This memory creates a summary of the conversation over time.</p>
+</li>
+</ul>
+<p>           </p>
+<h3 id="24-indexes">2.4. Indexes</h3>
+<p>Indexes refer to ways to structure documents so that LLMs can best interact with them. This module has four main parts, including Document Loaders, Text Splitters, Vector Stores, and Retrievers.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-10-4.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-10-4.png" alt=""> </a></p>
+<ul>
+<li>Document Loader:  Loaders deal with the specifics of accessing and converting data. LangChain has more than 50 implementations of loaders to handle a wide range of unstructured and structured document (as shown in the figure above). Document Loader will return a list of <code>Document</code> objects.</li>
+</ul>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-10-5.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-10-5.png" alt=""> </a></p>
+<ul>
+<li>Text Splitters: The goal of a text splitter is to split documents into smaller chunks, while retaining meaningful relationships. LangChain has more than 10 implementations of text splitters, some of the most useful ones are: <code>RecursiveCharacterTextSplitter</code>, <code>SentenceTransformerTokenTextSplitter</code>, <code>NLTKTextSplitter</code>, and <code>SpacyTextSplitter</code>.</li>
+</ul>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-10-6.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-10-6.png" alt=""> </a></p>
+<ul>
+<li>Vector Stores: A vector store is a database where we can easily look up similar vectors later on. After create smaller splits of those documents, we will then create embeddings of those documents, and then we store all of those in a vector store. This will become useful when we&rsquo;re trying to find documents that are relevant for a question at hand. The vector store that we&rsquo;ll use for this project is Chroma. We choose Chroma because it&rsquo;s lightweight and in memory, which makes it very easy to get up and started with.</li>
+</ul>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-10-7.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-10-7.png" alt=""> </a></p>
+<ul>
+<li>Retrievers: In the retrieval step, the retriever help accessing and indexing the data in the store. In addition to the basic semantic similarity, LangChain also has several more advanced retrievers. One of them is the Maximum Marginal Relevance (MMR). In practice, you may not always want to choose the most similar responses, for example, duplicated data. MMR algorithm addresses this need by first querying the Vector Store and choosing the top <code>fetch_k</code> most similar responses, and then within those responses choose the <code>k</code> most diverse ones. Another advanced approach worth mentioning is LLM Aided Retrieval. There are several situations where the Query applied to the database is more than just the Question asked, for example, &ldquo;What are some movies about aliens made in 1980?&rdquo; SelfQuery, which is a LLM Aided Retrieval method, uses an LLM to convert the user question into a query, in this case, a Filter with <code>eq(&quot;year&quot;, 1980)</code> and a Search term  <code>Aliens</code>.</li>
+</ul>
+<p>           </p>
+<h3 id="25-agents">2.5. Agents</h3>
+<p>Agents are algorithms for getting LLMs to use tools. Some applications will require not just a predetermined chain of calls to LLMs/other tools, but potentially an unknown chain that depends on the user’s input. In these types of chains, there is an agent with access to a suite of tools. LangChain has more than 10 implementations of agent toolkits, where agents are armed with specific tools for a specific application. Two very useful agents are DuckDuckGo search and Wikipedia.</p>
+<p>           </p>
+<h3 id="26-chains">2.6. Chains</h3>
+<p>Using an LLM in isolation is fine for some simple applications, but many more complex ones require chaining LLMs - either with each other or with other experts. LangChain provides more than 20 different types of chains for a variety of applications. When needed, these chains can be used as building block for other chains as well.</p>
+<p>Three common chains are demonstrated in the figure below. The idea of Sequential Chain is to combine multiple chains where output of the one chain is the input of the next chain. In particular, Simple Sequential Chain has single input/output, and Sequential Chain has multiple inputs/outputs. Router Chain will use input and LLM to determine the Destination Chain.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-10-8.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-10-8.png" alt=""> </a></p>
+<p>           
+           </p>
+<h2 id="3-question-answering-chatbot-with-retrieval-augmented-generation-rag">3. Question Answering Chatbot with Retrieval-Augmented Generation (RAG)</h2>
+<p>Since we have provided detailed discussion about the mechanism of Question Answering with Retrieval-Augmented Generation (RAG) in <a href="https://andysucao.github.io/Andy_Portfolio/post/project-9/">Project 9: Generative QA with Retrieval-Augmented Generation (RAG) and TruEra Evaluation</a>, we will briefly discuss it with a focus on LangChain in the first part, and then provide a more detailed discussion on LangChain&rsquo;s realization of Chatbot in the the second part.</p>
+<p>           </p>
+<h3 id="31-question-answering">3.1. Question Answering</h3>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-10-9.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-10-9.png" alt=""> </a></p>
+<p>The basic Question Answering steps are shown in the left side of the figure above, and three additional methods are shown in the right side.</p>
+<p>Typically, the question is applied to the Vector Store as a query, and the Vector Store provides k relevant documents. These Documents and the original question are then sent to an LLM to generate answer.</p>
+<p>In the <strong>Map-Reduce</strong> technique, each of the individual documents is first sent to the language model by itself to get an original answer. And then those answers are composed into a final answer with a final call to the language model. This involves many more calls to the language model, but it does have the advantage in that it can operate over arbitrarily many documents.</p>
+<p>The <strong>Refine</strong> documents chain constructs a response by looping over the input documents and iteratively updating its answer. For each document, it passes all non-document inputs, the current document, and the latest intermediate answer to an LLM chain to get a new answer. Since the Refine chain only passes a single document to the LLM at a time, it is well-suited for tasks that require analyzing more documents than can fit in the model&rsquo;s context. The tradeoff is that this chain will make far more LLM calls.</p>
+<p>The <strong>Map-Rerank</strong> algorithm calls an LLMChain on each input document. The LLMChain is expected to have an OutputParser that parses the result into both an answer (<code>answer_key</code>) and a score (<code>rank_key</code>). The answer with the highest score is then returned.</p>
+<p>           </p>
+<h3 id="32-chatbot">3.2. Chatbot</h3>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-10-10.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-10-10.png" alt=""> </a></p>
+<p>The architecture of the Chatbot is shown in the figure above. Most importantly, to build a Chatbot, we need to employ the conversational retrieval chain, because it will take the history and the new question and condenses it into a stand-alone question to pass to the vector store to look up relevant documents. The new input to the chain has not only the question, but also chat history. In particular, the chat history feature is enabled by <code>ConversationBufferMemory</code>, which keeps a list of chat messages in history and pass it along with the question to the chatbot every time. </p>
+<h2 id="4-model-development">4. Model development</h2>
+<h3 id="41-data-pre-processing">4.1. Data Pre-Processing</h3>
+<p>Similar to Project 9, the documents we will use in this study are 10 articles from L.L. Bean. These articles are very interesting and teach people with some very useful knowledge. Here are the links to these articles. We will print each article as a PDF file. Or we can combine them together into a single file, e.g., Outdoor-Basics.pdf.</p>
+<ul>
+<li>
+<p><a href="https://www.rei.com/learn/expert-advice/camping-for-beginners.html">Camping for Beginners</a></p>
+</li>
+<li>
+<p><a href="https://www.rei.com/learn/expert-advice/campfire-basics.html?series=intro-to-camping">How to Build a Campfire</a></p>
+</li>
+<li>
+<p><a href="https://www.rei.com/learn/expert-advice/downhill-skis.html">How to Choose Downhill Skis</a></p>
+</li>
+<li>
+<p><a href="https://www.rei.com/learn/expert-advice/mountain-bike.html">How to Choose Mountain Bikes</a></p>
+</li>
+<li>
+<p><a href="https://www.rei.com/learn/expert-advice/underwear.html">How to Choose Base Layers</a></p>
+</li>
+<li>
+<p><a href="https://www.rei.com/learn/expert-advice/binoculars.html">How to Choose Binoculars</a></p>
+</li>
+<li>
+<p><a href="https://www.rei.com/learn/expert-advice/energy-foods.html">How to Choose Energy Food and Drinks</a></p>
+</li>
+<li>
+<p><a href="https://www.rei.com/learn/expert-advice/altitude-sickness.html">How to Identify and Treat Altitude Sickness</a></p>
+</li>
+<li>
+<p><a href="https://www.rei.com/learn/expert-advice/training-for-your-first-marathon.html">How to Train for a Marathon</a></p>
+</li>
+<li>
+<p><a href="https://www.rei.com/learn/expert-advice/ultralight-backpacking.html">Ultralight Backpacking Basics</a></p>
+</li>
+</ul>
+<p>In the code snippet below, we will load these PDF files by <code>PyPDFLoader</code>, split them using <code>RecursiveCharacterTextSplitter</code>, create embedding by <code>CohereEmbeddings</code>, and store them into <code>Chroma</code> Vector Database.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>loaders <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>    PyPDFLoader(<span style="color:#e6db74">&#34;docs/outdoor/Beginners_Guide_to_Your_First_Campout.pdf&#34;</span>),
+</span></span><span style="display:flex;"><span>    PyPDFLoader(<span style="color:#e6db74">&#34;docs/outdoor/How_to_Build_a_Campfire.pdf&#34;</span>),
+</span></span><span style="display:flex;"><span>    PyPDFLoader(<span style="color:#e6db74">&#34;docs/outdoor/How_to_Buy_Skis.pdf&#34;</span>),
+</span></span><span style="display:flex;"><span>    PyPDFLoader(<span style="color:#e6db74">&#34;docs/outdoor/How_to_Choose_a_Mountain_Bike.pdf&#34;</span>),
+</span></span><span style="display:flex;"><span>    PyPDFLoader(<span style="color:#e6db74">&#34;docs/outdoor/How_to_Choose_Base_Layers.pdf&#34;</span>),
+</span></span><span style="display:flex;"><span>    PyPDFLoader(<span style="color:#e6db74">&#34;docs/outdoor/How_to_Choose_Binoculars.pdf&#34;</span>),
+</span></span><span style="display:flex;"><span>    PyPDFLoader(<span style="color:#e6db74">&#34;docs/outdoor/How_to_Choose_Energy_Food_for_Hiking.pdf&#34;</span>),
+</span></span><span style="display:flex;"><span>    PyPDFLoader(<span style="color:#e6db74">&#34;docs/outdoor/How_to_Prevent_and_Treat_Altitude_Sickness.pdf&#34;</span>),
+</span></span><span style="display:flex;"><span>    PyPDFLoader(<span style="color:#e6db74">&#34;docs/outdoor/Training_For_a_Marathon.pdf&#34;</span>),
+</span></span><span style="display:flex;"><span>    PyPDFLoader(<span style="color:#e6db74">&#34;docs/outdoor/Ultralight_Backpacking_Basics.pdf&#34;</span>)
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>docs <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> loader <span style="color:#f92672">in</span> loaders:
+</span></span><span style="display:flex;"><span>    docs<span style="color:#f92672">.</span>extend(loader<span style="color:#f92672">.</span>load())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>text_splitter <span style="color:#f92672">=</span> RecursiveCharacterTextSplitter(chunk_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">1500</span>, chunk_overlap <span style="color:#f92672">=</span> <span style="color:#ae81ff">150</span>)
+</span></span><span style="display:flex;"><span>splits <span style="color:#f92672">=</span> text_splitter<span style="color:#f92672">.</span>split_documents(docs)
+</span></span><span style="display:flex;"><span>embedding <span style="color:#f92672">=</span> CohereEmbeddings(model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;embed-english-light-v3.0&#34;</span>, cohere_api_key <span style="color:#f92672">=</span> COHERE_API_KEY)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>persist_directory <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;docs/chroma/&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>rm <span style="color:#f92672">-</span>rf <span style="color:#f92672">./</span>docs<span style="color:#f92672">/</span>chroma
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>vectordb <span style="color:#f92672">=</span> Chroma<span style="color:#f92672">.</span>from_documents(documents<span style="color:#f92672">=</span>splits, embedding<span style="color:#f92672">=</span>embedding, persist_directory<span style="color:#f92672">=</span>persist_directory)
+</span></span></code></pre></div><p>           </p>
+<h3 id="42-minimum-viable-product-mvp-qa-chatbot-with-rag">4.2. Minimum viable product (MVP) QA Chatbot with RAG</h3>
+<p>In this subsection, we will build a MVP QA Chatbot that works in Jupyter Notebook. In the next subsection, we will create a chat interface for it by using Panel’s ChatInterface widget.</p>
+<p>First we need to build prompt and the RetrievalQA chain. This will give us a RAG QA model.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>template <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;Use the following pieces of context to answer the question at the end. If you don&#39;t know the answer, just say that you don&#39;t know, don&#39;t try to make up an answer. Use three sentences maximum. Keep the answer as concise as possible. Always say &#34;thanks for asking!&#34; at the end of the answer. 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span><span style="color:#e6db74">{context}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Question: </span><span style="color:#e6db74">{question}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Helpful Answer:&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>llm <span style="color:#f92672">=</span> ChatCohere(model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;command&#34;</span>, max_tokens<span style="color:#f92672">=</span><span style="color:#ae81ff">256</span>, temperature<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, cohere_api_key <span style="color:#f92672">=</span> COHERE_API_KEY)
+</span></span><span style="display:flex;"><span>QA_CHAIN_PROMPT <span style="color:#f92672">=</span> PromptTemplate(input_variables<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;context&#34;</span>, <span style="color:#e6db74">&#34;question&#34;</span>],template<span style="color:#f92672">=</span>template)
+</span></span><span style="display:flex;"><span>question <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;What are the three variations of altitude illnesses?&#34;</span>
+</span></span><span style="display:flex;"><span>qa_chain <span style="color:#f92672">=</span> RetrievalQA<span style="color:#f92672">.</span>from_chain_type(llm, retriever<span style="color:#f92672">=</span>vectordb<span style="color:#f92672">.</span>as_retriever(), return_source_documents<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, chain_type_kwargs<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;prompt&#34;</span>: QA_CHAIN_PROMPT})
+</span></span><span style="display:flex;"><span>result <span style="color:#f92672">=</span> qa_chain({<span style="color:#e6db74">&#34;query&#34;</span>: question})
+</span></span><span style="display:flex;"><span>result[<span style="color:#e6db74">&#34;result&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#75715e">####################### Output ##########################</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#39;Thanks for asking! The three variations of altitude sickness are Acute Mountain Sickness (AMS), High-Altitude Cerebral Edema (HACE), and High-Altitude Pulmonary Edema (HAPE). AMS is the mildest form and HACE and HAPE can become fatal if not treated properly. Would you like to know more about altitude sickness?&#39;</span>
+</span></span></code></pre></div><p>In the code snippet below, we then add Memory and ConversationalRetrievalChain to the model. Now the model has memory and we have a working Chatbot!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>memory <span style="color:#f92672">=</span> ConversationBufferMemory(memory_key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;chat_history&#34;</span>, return_messages<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>retriever<span style="color:#f92672">=</span>vectordb<span style="color:#f92672">.</span>as_retriever()
+</span></span><span style="display:flex;"><span>qa <span style="color:#f92672">=</span> ConversationalRetrievalChain<span style="color:#f92672">.</span>from_llm(llm, retriever<span style="color:#f92672">=</span>retriever, memory<span style="color:#f92672">=</span>memory)
+</span></span><span style="display:flex;"><span>question <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;What are All-Mountain Wide Skis best for?&#34;</span>
+</span></span><span style="display:flex;"><span>result <span style="color:#f92672">=</span> qa({<span style="color:#e6db74">&#34;question&#34;</span>: question})
+</span></span><span style="display:flex;"><span>print(result[<span style="color:#e6db74">&#39;answer&#39;</span>])
+</span></span><span style="display:flex;"><span><span style="color:#75715e">####################### Output ##########################</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># All-Mountain Wide Skis are an excellent choice for skiers looking for versatile performance and handling across various snow conditions and terrain types. Their wider width and shape provide stability and balance, making them effective in soft snow and powder while also performing well on groomed trails. The stability offered by these skis is especially useful when navigating through crud or making quick turns on groomed runs.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># The tapered tip design on All-Mountain Wide Skis enhances their ability to float in deeper snow, making them suitable for skiers who want to explore off-piste areas and fresh powder. This feature also reduces the risk of tip catch on hardpack or groomed snow.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># When selecting All-Mountain Wide Skis, it&#39;s important to consider factors such as the skier&#39;s weight, ability level, and preferred skiing style to determine the appropriate ski size. Shorter skis may be preferred for a more playful and agile experience, while longer skis offer high-speed stability and carving capabilities.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># To further enhance your understanding of All-Mountain Wide Skis, consider the following additional information:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ability Level: All-Mountain Wide Skis are suitable for intermediate to advanced skiers. Intermediate skiers will appreciate the versatility and ease of use offered by these skis as they explore different parts of the mountain. Advanced skiers can take advantage of the stability and width of All-Mountain Wide Skis to tackle more challenging terrain and pursue more aggressive skiing styles.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Weight Considerations: The width and sidecut geometry of All-Mountain Wide Skis provide good balance and control, especially when skiing in variable snow conditions. However, heavier skiers may consider skis with a bit more width to ensure adequate floatation in deeper snow. On the other hand, lighter skiers may not need the widest option and can opt for a narrower ski to maintain agility and maneuverability.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Skiing Style: Skiers who prefer a more playful and agile experience may look for All-Mountain Wide Skis with a shorter turning radius. This allows for quicker and tighter turns, especially in groomed terrain or when navigating through trees and narrow passages. Additionally, a shorter ski will provide a more nimble feel for skiers who like to make quick transitions and ski with varying speeds. </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Specific Models: There are numerous models of All-Mountain Wide Skis available from different ski manufacturers. Some popular models include the Blizzard Rustler 11 skis, which offer a balance of versatility and performance for intermediate skiers. For advanced skiers, the Rossignol Soul 7 HD skis provide a blend of power, floatation, and maneuverability in various snow conditions. It&#39;s always recommended to research and explore different models based on your specific needs and preferences. </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># I hope this additional information is helpful in further clarifying the advantages and considerations when using All-Mountain Wide Skis. If you have any other questions or would like more information about skiing equipment and techniques, please let me know!</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>question <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Can you give me some other types of Skis mentioned in the document?&#34;</span>
+</span></span><span style="display:flex;"><span>result <span style="color:#f92672">=</span> qa({<span style="color:#e6db74">&#34;question&#34;</span>: question})
+</span></span><span style="display:flex;"><span>print(result[<span style="color:#e6db74">&#39;answer&#39;</span>])
+</span></span><span style="display:flex;"><span><span style="color:#75715e">####################### Output ##########################</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># That is an excellent summary of the different ski types. Thank you for highlighting these options and explaining their features and intended uses. The description of each ski type provides a clear understanding of how they differ and what kind of skier might prefer each type. </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Based on this information, skiers can make more informed decisions when it comes to selecting the appropriate ski type for their needs. Whether it&#39;s All-Mountain Skis for their versatility, Carving Skis for high-speed turns, Freestyle Skis for tricks in the park, or Backcountry Skis for hiking and variable terrain, each type of ski is designed to cater to different preferences and skiing styles. </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Is there any other information you would like to see added to this response about the different types of skis? I am happy to provide more details or answer any questions you may have about skiing equipment and techniques.</span>
+</span></span></code></pre></div><p>           </p>
+<h3 id="43-use-panels-chat-interface-for-our-chatbot">4.3. Use Panel’s chat interface for our Chatbot</h3>
+<p>In this subsection,we will upgrade the chatbot above by using Panel’s ChatInterface widget. Another upgrade is that we change the LLM to gpt-3.5-turbo.</p>
+<p>First we will define a function for Chatbot to load documents, split documents, define embedding, create vector database from data, define retriever, and create a chatbot chain.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> langchain.embeddings.openai <span style="color:#f92672">import</span> OpenAIEmbeddings
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> langchain.text_splitter <span style="color:#f92672">import</span> CharacterTextSplitter, RecursiveCharacterTextSplitter
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> langchain.vectorstores <span style="color:#f92672">import</span> DocArrayInMemorySearch
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> langchain.document_loaders <span style="color:#f92672">import</span> TextLoader
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> langchain.chains <span style="color:#f92672">import</span> RetrievalQA,  ConversationalRetrievalChain
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> langchain.memory <span style="color:#f92672">import</span> ConversationBufferMemory
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> langchain.chat_models <span style="color:#f92672">import</span> ChatOpenAI
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> langchain.document_loaders <span style="color:#f92672">import</span> TextLoader
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> langchain.document_loaders <span style="color:#f92672">import</span> PyPDFLoader
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">load_db</span>(file, chain_type, k):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># load documents</span>
+</span></span><span style="display:flex;"><span>    loader <span style="color:#f92672">=</span> PyPDFLoader(file)
+</span></span><span style="display:flex;"><span>    documents <span style="color:#f92672">=</span> loader<span style="color:#f92672">.</span>load()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># split documents</span>
+</span></span><span style="display:flex;"><span>    text_splitter <span style="color:#f92672">=</span> RecursiveCharacterTextSplitter(chunk_size<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>, chunk_overlap<span style="color:#f92672">=</span><span style="color:#ae81ff">150</span>)
+</span></span><span style="display:flex;"><span>    docs <span style="color:#f92672">=</span> text_splitter<span style="color:#f92672">.</span>split_documents(documents)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># define embedding</span>
+</span></span><span style="display:flex;"><span>    embeddings <span style="color:#f92672">=</span> OpenAIEmbeddings()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># create vector database from data</span>
+</span></span><span style="display:flex;"><span>    db <span style="color:#f92672">=</span> DocArrayInMemorySearch<span style="color:#f92672">.</span>from_documents(docs, embeddings)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># define retriever</span>
+</span></span><span style="display:flex;"><span>    retriever <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>as_retriever(search_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;similarity&#34;</span>, search_kwargs<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;k&#34;</span>: k})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># create a chatbot chain. Memory is managed externally.</span>
+</span></span><span style="display:flex;"><span>    qa <span style="color:#f92672">=</span> ConversationalRetrievalChain<span style="color:#f92672">.</span>from_llm(llm<span style="color:#f92672">=</span>ChatOpenAI(model_name<span style="color:#f92672">=</span>llm_name, temperature<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>), chain_type<span style="color:#f92672">=</span>chain_type,  retriever<span style="color:#f92672">=</span>retriever, return_source_documents<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, return_generated_question<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> qa 
+</span></span></code></pre></div><p>Next we will define the Chatbot by the code below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> panel <span style="color:#66d9ef">as</span> pn
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> param
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">cbfs</span>(param<span style="color:#f92672">.</span>Parameterized):
+</span></span><span style="display:flex;"><span>    chat_history <span style="color:#f92672">=</span> param<span style="color:#f92672">.</span>List([])
+</span></span><span style="display:flex;"><span>    answer <span style="color:#f92672">=</span> param<span style="color:#f92672">.</span>String(<span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>    db_query  <span style="color:#f92672">=</span> param<span style="color:#f92672">.</span>String(<span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>    db_response <span style="color:#f92672">=</span> param<span style="color:#f92672">.</span>List([])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self,  <span style="color:#f92672">**</span>params):
+</span></span><span style="display:flex;"><span>        super(cbfs, self)<span style="color:#f92672">.</span>__init__( <span style="color:#f92672">**</span>params)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>panels <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>loaded_file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;docs/outdoor/Outdoor-Basics.pdf&#34;</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>qa <span style="color:#f92672">=</span> load_db(self<span style="color:#f92672">.</span>loaded_file,<span style="color:#e6db74">&#34;stuff&#34;</span>, <span style="color:#ae81ff">4</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">call_load_db</span>(self, count):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> count <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">or</span> file_input<span style="color:#f92672">.</span>value <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:  <span style="color:#75715e"># init or no file specified :</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> pn<span style="color:#f92672">.</span>pane<span style="color:#f92672">.</span>Markdown(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Loaded File: </span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>loaded_file<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            file_input<span style="color:#f92672">.</span>save(<span style="color:#e6db74">&#34;temp.pdf&#34;</span>)  <span style="color:#75715e"># local copy</span>
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>loaded_file <span style="color:#f92672">=</span> file_input<span style="color:#f92672">.</span>filename
+</span></span><span style="display:flex;"><span>            button_load<span style="color:#f92672">.</span>button_style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;outline&#34;</span>
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>qa <span style="color:#f92672">=</span> load_db(<span style="color:#e6db74">&#34;temp.pdf&#34;</span>, <span style="color:#e6db74">&#34;stuff&#34;</span>, <span style="color:#ae81ff">4</span>)
+</span></span><span style="display:flex;"><span>            button_load<span style="color:#f92672">.</span>button_style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;solid&#34;</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>clr_history()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> pn<span style="color:#f92672">.</span>pane<span style="color:#f92672">.</span>Markdown(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Loaded File: </span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>loaded_file<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">convchain</span>(self, query):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> query:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> pn<span style="color:#f92672">.</span>WidgetBox(pn<span style="color:#f92672">.</span>Row(<span style="color:#e6db74">&#39;User:&#39;</span>, pn<span style="color:#f92672">.</span>pane<span style="color:#f92672">.</span>Markdown(<span style="color:#e6db74">&#34;&#34;</span>, width<span style="color:#f92672">=</span><span style="color:#ae81ff">600</span>)), scroll<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>qa({<span style="color:#e6db74">&#34;question&#34;</span>: query, <span style="color:#e6db74">&#34;chat_history&#34;</span>: self<span style="color:#f92672">.</span>chat_history})
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>chat_history<span style="color:#f92672">.</span>extend([(query, result[<span style="color:#e6db74">&#34;answer&#34;</span>])])
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>db_query <span style="color:#f92672">=</span> result[<span style="color:#e6db74">&#34;generated_question&#34;</span>]
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>db_response <span style="color:#f92672">=</span> result[<span style="color:#e6db74">&#34;source_documents&#34;</span>]
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>answer <span style="color:#f92672">=</span> result[<span style="color:#e6db74">&#39;answer&#39;</span>]
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>panels<span style="color:#f92672">.</span>extend([
+</span></span><span style="display:flex;"><span>            pn<span style="color:#f92672">.</span>Row(<span style="color:#e6db74">&#39;User:&#39;</span>, pn<span style="color:#f92672">.</span>pane<span style="color:#f92672">.</span>Markdown(query, width<span style="color:#f92672">=</span><span style="color:#ae81ff">600</span>)),
+</span></span><span style="display:flex;"><span>            pn<span style="color:#f92672">.</span>Row(<span style="color:#e6db74">&#39;ChatBot:&#39;</span>, pn<span style="color:#f92672">.</span>pane<span style="color:#f92672">.</span>Markdown(self<span style="color:#f92672">.</span>answer, width<span style="color:#f92672">=</span><span style="color:#ae81ff">600</span>, style<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;background-color&#39;</span>: <span style="color:#e6db74">&#39;#F6F6F6&#39;</span>}))
+</span></span><span style="display:flex;"><span>        ])
+</span></span><span style="display:flex;"><span>        inp<span style="color:#f92672">.</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>  <span style="color:#75715e">#clears loading indicator when cleared</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> pn<span style="color:#f92672">.</span>WidgetBox(<span style="color:#f92672">*</span>self<span style="color:#f92672">.</span>panels,scroll<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@param.depends</span>(<span style="color:#e6db74">&#39;db_query &#39;</span>, )
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_lquest</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>db_query :
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> pn<span style="color:#f92672">.</span>Column(
+</span></span><span style="display:flex;"><span>                pn<span style="color:#f92672">.</span>Row(pn<span style="color:#f92672">.</span>pane<span style="color:#f92672">.</span>Markdown(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Last question to DB:&#34;</span>, styles<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;background-color&#39;</span>: <span style="color:#e6db74">&#39;#F6F6F6&#39;</span>})),
+</span></span><span style="display:flex;"><span>                pn<span style="color:#f92672">.</span>Row(pn<span style="color:#f92672">.</span>pane<span style="color:#f92672">.</span>Str(<span style="color:#e6db74">&#34;no DB accesses so far&#34;</span>))
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> pn<span style="color:#f92672">.</span>Column(
+</span></span><span style="display:flex;"><span>            pn<span style="color:#f92672">.</span>Row(pn<span style="color:#f92672">.</span>pane<span style="color:#f92672">.</span>Markdown(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;DB query:&#34;</span>, styles<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;background-color&#39;</span>: <span style="color:#e6db74">&#39;#F6F6F6&#39;</span>})),
+</span></span><span style="display:flex;"><span>            pn<span style="color:#f92672">.</span>pane<span style="color:#f92672">.</span>Str(self<span style="color:#f92672">.</span>db_query )
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@param.depends</span>(<span style="color:#e6db74">&#39;db_response&#39;</span>, )
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_sources</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>db_response:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>        rlist<span style="color:#f92672">=</span>[pn<span style="color:#f92672">.</span>Row(pn<span style="color:#f92672">.</span>pane<span style="color:#f92672">.</span>Markdown(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Result of DB lookup:&#34;</span>, styles<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;background-color&#39;</span>: <span style="color:#e6db74">&#39;#F6F6F6&#39;</span>}))]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> doc <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>db_response:
+</span></span><span style="display:flex;"><span>            rlist<span style="color:#f92672">.</span>append(pn<span style="color:#f92672">.</span>Row(pn<span style="color:#f92672">.</span>pane<span style="color:#f92672">.</span>Str(doc)))
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> pn<span style="color:#f92672">.</span>WidgetBox(<span style="color:#f92672">*</span>rlist, width<span style="color:#f92672">=</span><span style="color:#ae81ff">600</span>, scroll<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@param.depends</span>(<span style="color:#e6db74">&#39;convchain&#39;</span>, <span style="color:#e6db74">&#39;clr_history&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_chats</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>chat_history:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> pn<span style="color:#f92672">.</span>WidgetBox(pn<span style="color:#f92672">.</span>Row(pn<span style="color:#f92672">.</span>pane<span style="color:#f92672">.</span>Str(<span style="color:#e6db74">&#34;No History Yet&#34;</span>)), width<span style="color:#f92672">=</span><span style="color:#ae81ff">600</span>, scroll<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>        rlist<span style="color:#f92672">=</span>[pn<span style="color:#f92672">.</span>Row(pn<span style="color:#f92672">.</span>pane<span style="color:#f92672">.</span>Markdown(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Current Chat History variable&#34;</span>, styles<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;background-color&#39;</span>: <span style="color:#e6db74">&#39;#F6F6F6&#39;</span>}))]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> exchange <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>chat_history:
+</span></span><span style="display:flex;"><span>            rlist<span style="color:#f92672">.</span>append(pn<span style="color:#f92672">.</span>Row(pn<span style="color:#f92672">.</span>pane<span style="color:#f92672">.</span>Str(exchange)))
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> pn<span style="color:#f92672">.</span>WidgetBox(<span style="color:#f92672">*</span>rlist, width<span style="color:#f92672">=</span><span style="color:#ae81ff">600</span>, scroll<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">clr_history</span>(self,count<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>chat_history <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span></code></pre></div><p>Finally, we will create the chatbot by the code below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cb <span style="color:#f92672">=</span> cbfs()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>file_input <span style="color:#f92672">=</span> pn<span style="color:#f92672">.</span>widgets<span style="color:#f92672">.</span>FileInput(accept<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;.pdf&#39;</span>)
+</span></span><span style="display:flex;"><span>button_load <span style="color:#f92672">=</span> pn<span style="color:#f92672">.</span>widgets<span style="color:#f92672">.</span>Button(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Load DB&#34;</span>, button_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;primary&#39;</span>)
+</span></span><span style="display:flex;"><span>button_clearhistory <span style="color:#f92672">=</span> pn<span style="color:#f92672">.</span>widgets<span style="color:#f92672">.</span>Button(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Clear History&#34;</span>, button_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;warning&#39;</span>)
+</span></span><span style="display:flex;"><span>button_clearhistory<span style="color:#f92672">.</span>on_click(cb<span style="color:#f92672">.</span>clr_history)
+</span></span><span style="display:flex;"><span>inp <span style="color:#f92672">=</span> pn<span style="color:#f92672">.</span>widgets<span style="color:#f92672">.</span>TextInput( placeholder<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Enter text here…&#39;</span>)
+</span></span><span style="display:flex;"><span>bound_button_load <span style="color:#f92672">=</span> pn<span style="color:#f92672">.</span>bind(cb<span style="color:#f92672">.</span>call_load_db, button_load<span style="color:#f92672">.</span>param<span style="color:#f92672">.</span>clicks)
+</span></span><span style="display:flex;"><span>conversation <span style="color:#f92672">=</span> pn<span style="color:#f92672">.</span>bind(cb<span style="color:#f92672">.</span>convchain, inp)
+</span></span><span style="display:flex;"><span>jpg_pane <span style="color:#f92672">=</span> pn<span style="color:#f92672">.</span>pane<span style="color:#f92672">.</span>Image( <span style="color:#e6db74">&#39;./img/convchain.jpg&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tab1 <span style="color:#f92672">=</span> pn<span style="color:#f92672">.</span>Column(pn<span style="color:#f92672">.</span>Row(inp), pn<span style="color:#f92672">.</span>layout<span style="color:#f92672">.</span>Divider(), pn<span style="color:#f92672">.</span>panel(conversation,  loading_indicator<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, height<span style="color:#f92672">=</span><span style="color:#ae81ff">300</span>), pn<span style="color:#f92672">.</span>layout<span style="color:#f92672">.</span>Divider())
+</span></span><span style="display:flex;"><span>tab2<span style="color:#f92672">=</span> pn<span style="color:#f92672">.</span>Column(pn<span style="color:#f92672">.</span>panel(cb<span style="color:#f92672">.</span>get_lquest), pn<span style="color:#f92672">.</span>layout<span style="color:#f92672">.</span>Divider(), pn<span style="color:#f92672">.</span>panel(cb<span style="color:#f92672">.</span>get_sources ))
+</span></span><span style="display:flex;"><span>tab3<span style="color:#f92672">=</span> pn<span style="color:#f92672">.</span>Column(pn<span style="color:#f92672">.</span>panel(cb<span style="color:#f92672">.</span>get_chats), pn<span style="color:#f92672">.</span>layout<span style="color:#f92672">.</span>Divider())
+</span></span><span style="display:flex;"><span>tab4<span style="color:#f92672">=</span>pn<span style="color:#f92672">.</span>Column(pn<span style="color:#f92672">.</span>Row( file_input, button_load, bound_button_load), pn<span style="color:#f92672">.</span>Row( button_clearhistory, pn<span style="color:#f92672">.</span>pane<span style="color:#f92672">.</span>Markdown(<span style="color:#e6db74">&#34;Clears chat history. Can use to start a new topic&#34;</span> )), pn<span style="color:#f92672">.</span>layout<span style="color:#f92672">.</span>Divider(), pn<span style="color:#f92672">.</span>Row(jpg_pane<span style="color:#f92672">.</span>clone(width<span style="color:#f92672">=</span><span style="color:#ae81ff">400</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dashboard <span style="color:#f92672">=</span> pn<span style="color:#f92672">.</span>Column(pn<span style="color:#f92672">.</span>Row(pn<span style="color:#f92672">.</span>pane<span style="color:#f92672">.</span>Markdown(<span style="color:#e6db74">&#39;# ChatWithYourData_Bot&#39;</span>)), pn<span style="color:#f92672">.</span>Tabs((<span style="color:#e6db74">&#39;Conversation&#39;</span>, tab1), (<span style="color:#e6db74">&#39;Database&#39;</span>, tab2), (<span style="color:#e6db74">&#39;Chat History&#39;</span>, tab3),(<span style="color:#e6db74">&#39;Configure&#39;</span>, tab4)))
+</span></span><span style="display:flex;"><span>dashboard
+</span></span></code></pre></div><p>The following figures show the performance of the Chatbot. From these figures, we can see that the Chatbot works very well with Panel’s chat interface. In addition, it is also observed that the Chatbot has good memory and can answer question and follow up questions very naturally.</p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-10-11.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-10-11.png" alt=""> </a></p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-10-12.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-10-12.png" alt=""> </a></p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-10-13.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-10-13.png" alt=""> </a></p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-10-14.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-10-14.png" alt=""> </a></p>
+<p><a href="https://andysucao.github.io/Andy_Portfolio/images/projects-10-15.png"><img src="https://andysucao.github.io/Andy_Portfolio/images/projects-10-15.png" alt=""> </a></p>
+<p>           
+           </p>
+<h2 id="5-conclusions">5. Conclusions</h2>
+<p>In this project, we have built a Retrieval-Augmented Generation Chatbot with the help of <a href="https://www.langchain.com/">LangChain</a> that can answer questions from internal documentation and have memory. Furthermore, we have integrated it with Panel’s chat interface to make the chatbot more user-friendly.</p>
+<h2 id="references">References:</h2>
+<p>Source of hero image: <a href="https://www.haptik.ai/blog/how-does-a-chatbot-learn-on-its-own/">https://www.haptik.ai/blog/how-does-a-chatbot-learn-on-its-own/</a></p>
+<p>Source of images in this post: <a href="https://learn.deeplearning.ai/langchain-chat-with-your-data">https://learn.deeplearning.ai/langchain-chat-with-your-data</a></p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="https://andysucao.github.io/Andy_Portfolio/tags/natural-language-processing" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Natural Language Processing</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://andysucao.github.io/Andy_Portfolio/tags/generative-question-answering-qa" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Generative Question Answering (QA)</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://andysucao.github.io/Andy_Portfolio/tags/chatbot" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ChatBot</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://andysucao.github.io/Andy_Portfolio/tags/chroma" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Chroma</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://andysucao.github.io/Andy_Portfolio/tags/cohere" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">cohere</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://andysucao.github.io/Andy_Portfolio/tags/openai" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">OpenAI</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://andysucao.github.io/Andy_Portfolio/tags/retrieval-augmented-generation-rag" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Retrieval-Augmented Generation (RAG)</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://andysucao.github.io/Andy_Portfolio/tags/langchain" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">LangChain</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="https://andysucao.github.io/Andy_Portfolio/post/project-9/">Project 9: Generative QA with Retrieval-Augmented Generation (RAG) and TruEra Evaluation</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="https://andysucao.github.io/Andy_Portfolio/post/project-8/">Project 8: Machine Translation with Transformers</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="https://andysucao.github.io/Andy_Portfolio/post/project-7/">Project 7: Extractive QA with a Fine-Tuned BERT</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="https://andysucao.github.io/Andy_Portfolio/post/project-6/">Project 6: Natural Language Inference with BERT and Explainable Artificial Intelligence</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://andysucao.github.io/Andy_Portfolio/" >
+    &copy;  Andy Cao 2024 
+  </a>
+    <div>
+
+
+
+
+
+
+
+<a href="https://www.linkedin.com/in/cao/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/andysucao" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="https://andysucao.github.io/Andy_Portfolio/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

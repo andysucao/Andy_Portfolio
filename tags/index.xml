@@ -6,13 +6,62 @@
     <description>Recent content in Tags on Andy Cao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Aug 2023 06:08:00 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 20 Aug 2023 06:09:00 -0400</lastBuildDate>
     <atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ChatBot</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/tags/chatbot/</link>
+      <pubDate>Sun, 20 Aug 2023 06:09:00 -0400</pubDate>
+      <guid>https://andysucao.github.io/Andy_Portfolio/tags/chatbot/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Chroma</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/tags/chroma/</link>
+      <pubDate>Sun, 20 Aug 2023 06:09:00 -0400</pubDate>
+      <guid>https://andysucao.github.io/Andy_Portfolio/tags/chroma/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>cohere</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/tags/cohere/</link>
+      <pubDate>Sun, 20 Aug 2023 06:09:00 -0400</pubDate>
+      <guid>https://andysucao.github.io/Andy_Portfolio/tags/cohere/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Generative Question Answering (QA)</title>
       <link>https://andysucao.github.io/Andy_Portfolio/tags/generative-question-answering-qa/</link>
-      <pubDate>Sun, 20 Aug 2023 06:08:00 -0400</pubDate>
+      <pubDate>Sun, 20 Aug 2023 06:09:00 -0400</pubDate>
       <guid>https://andysucao.github.io/Andy_Portfolio/tags/generative-question-answering-qa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LangChain</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/tags/langchain/</link>
+      <pubDate>Sun, 20 Aug 2023 06:09:00 -0400</pubDate>
+      <guid>https://andysucao.github.io/Andy_Portfolio/tags/langchain/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Natural Language Processing</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/tags/natural-language-processing/</link>
+      <pubDate>Sun, 20 Aug 2023 06:09:00 -0400</pubDate>
+      <guid>https://andysucao.github.io/Andy_Portfolio/tags/natural-language-processing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenAI</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/tags/openai/</link>
+      <pubDate>Sun, 20 Aug 2023 06:09:00 -0400</pubDate>
+      <guid>https://andysucao.github.io/Andy_Portfolio/tags/openai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Retrieval-Augmented Generation (RAG)</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/tags/retrieval-augmented-generation-rag/</link>
+      <pubDate>Sun, 20 Aug 2023 06:09:00 -0400</pubDate>
+      <guid>https://andysucao.github.io/Andy_Portfolio/tags/retrieval-augmented-generation-rag/</guid>
       <description></description>
     </item>
     <item>
@@ -20,20 +69,6 @@
       <link>https://andysucao.github.io/Andy_Portfolio/tags/gpt/</link>
       <pubDate>Sun, 20 Aug 2023 06:08:00 -0400</pubDate>
       <guid>https://andysucao.github.io/Andy_Portfolio/tags/gpt/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Natural Language Processing</title>
-      <link>https://andysucao.github.io/Andy_Portfolio/tags/natural-language-processing/</link>
-      <pubDate>Sun, 20 Aug 2023 06:08:00 -0400</pubDate>
-      <guid>https://andysucao.github.io/Andy_Portfolio/tags/natural-language-processing/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Retrieval-Augmented Generation (RAG)</title>
-      <link>https://andysucao.github.io/Andy_Portfolio/tags/retrieval-augmented-generation-rag/</link>
-      <pubDate>Sun, 20 Aug 2023 06:08:00 -0400</pubDate>
-      <guid>https://andysucao.github.io/Andy_Portfolio/tags/retrieval-augmented-generation-rag/</guid>
       <description></description>
     </item>
     <item>
@@ -139,13 +174,6 @@
       <link>https://andysucao.github.io/Andy_Portfolio/tags/courses/</link>
       <pubDate>Fri, 11 Aug 2023 08:58:08 -0400</pubDate>
       <guid>https://andysucao.github.io/Andy_Portfolio/tags/courses/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>misc</title>
-      <link>https://andysucao.github.io/Andy_Portfolio/tags/misc/</link>
-      <pubDate>Tue, 11 Jul 2023 08:58:08 -0400</pubDate>
-      <guid>https://andysucao.github.io/Andy_Portfolio/tags/misc/</guid>
       <description></description>
     </item>
   </channel>

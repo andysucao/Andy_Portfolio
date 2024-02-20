@@ -6,8 +6,15 @@
     <description>Recent content in Data Science Portfolio on Andy Cao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Aug 2023 06:08:00 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 20 Aug 2023 06:09:00 -0400</lastBuildDate>
     <atom:link href="https://andysucao.github.io/Andy_Portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project 10: Build a Chatbot with LangChain and Chroma to chat with your own documents</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-10/</link>
+      <pubDate>Sun, 20 Aug 2023 06:09:00 -0400</pubDate>
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-10/</guid>
+      <description>1. Overview In this project, we will build a Retrieval-Augmented Generation Chatbot with the help of LangChain that can answer questions from internal documentation and have memory. By using Panel’s chat interface, we will also build a LangChain-powered AI chatbot for our RAG application.&#xA;The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.&#xA;2. LangChain LangChain is an open-source developer framework for building LLM applications.</description>
+    </item>
     <item>
       <title>Project 9: Generative QA with Retrieval-Augmented Generation (RAG) and TruEra Evaluation</title>
       <link>https://andysucao.github.io/Andy_Portfolio/post/project-9/</link>
@@ -84,13 +91,6 @@
       <pubDate>Fri, 11 Aug 2023 08:58:08 -0400</pubDate>
       <guid>https://andysucao.github.io/Andy_Portfolio/skills/data-science-courses/</guid>
       <description>Business Statistics and Analysis Specialization course certificate&#xA;Introduction to Data Analysis Using Excel course certificate&#xA;Basic Data Descriptors Statistical Distributions and Application to Business Decisions course certificate&#xA;Business Applications of Hypothesis Testing and Confidence Interval Estimation course certificate&#xA;Linear Regression for Business Statistics course certificate&#xA;Business Statistics and Analysis Capstone course certificate&#xA;Data Science Specialization&#xA;The Data Scientists Toolbox course certificate&#xA;R Programming course certificate&#xA;Getting and Cleaning Data course certificate</description>
-    </item>
-    <item>
-      <title>Project 0: Template &amp; Misc</title>
-      <link>https://andysucao.github.io/Andy_Portfolio/post/project-0/</link>
-      <pubDate>Tue, 11 Jul 2023 08:58:08 -0400</pubDate>
-      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-0/</guid>
-      <description> </description>
     </item>
     <item>
       <title>Contact</title>

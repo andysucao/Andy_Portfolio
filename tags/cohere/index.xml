@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cohere on Andy Cao</title>
+    <link>https://andysucao.github.io/Andy_Portfolio/tags/cohere/</link>
+    <description>Recent content in cohere on Andy Cao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Aug 2023 06:09:00 -0400</lastBuildDate>
+    <atom:link href="https://andysucao.github.io/Andy_Portfolio/tags/cohere/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project 10: Build a Chatbot with LangChain and Chroma to chat with your own documents</title>
+      <link>https://andysucao.github.io/Andy_Portfolio/post/project-10/</link>
+      <pubDate>Sun, 20 Aug 2023 06:09:00 -0400</pubDate>
+      <guid>https://andysucao.github.io/Andy_Portfolio/post/project-10/</guid>
+      <description>1. Overview In this project, we will build a Retrieval-Augmented Generation Chatbot with the help of LangChain that can answer questions from internal documentation and have memory. By using Panel’s chat interface, we will also build a LangChain-powered AI chatbot for our RAG application.&#xA;The Python Notebook containing the complete model development process and the data used in this project can be found at Google Drive.&#xA;2. LangChain LangChain is an open-source developer framework for building LLM applications.</description>
+    </item>
+  </channel>
+</rss>
